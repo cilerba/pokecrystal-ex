@@ -1296,7 +1296,7 @@ JohtoGrassWildMons:
 	db 4, LEDYBA
 	db 4, CATERPIE
 	db 5, BELLSPROUT
-	db 5, PIDGEY
+	db 6, PIDGEY
 	db 4, WEEDLE
 	db 5, HOPPIP
 	db 5, HOPPIP
@@ -1304,7 +1304,7 @@ JohtoGrassWildMons:
 	db 4, PIDGEY
 	db 4, CATERPIE
 	db 5, BELLSPROUT
-	db 5, PIDGEY
+	db 6, PIDGEY
 	db 4, WEEDLE
 	db 5, HOPPIP
 	db 5, HOPPIP
@@ -1315,7 +1315,7 @@ JohtoGrassWildMons:
 	db 5, HOOTHOOT
 	db 4, ZUBAT
 	db 5, GASTLY
-	db 5, GASTLY
+	db 6, GASTLY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_32
