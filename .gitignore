@@ -24,6 +24,7 @@ gfx/pokemon/*/frames.asm
 data/tilesets/*_collision.bin
 bank_ends.txt
 *.sav
+*.rtc
 
 # local tools
 deploy.sh
