@@ -995,6 +995,17 @@ TentacruelEvosAttacks:
 GeodudeEvosAttacks:
 	db EVOLVE_LEVEL, 25, GRAVELER
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, DEFENSE_CURL
+	db 10, ROLLOUT
+	db 16, MAGNITUDE
+	db 22, SELFDESTRUCT
+	db 27, SPIKES
+	db 31, ROCK_THROW
+	db 36, EARTHQUAKE
+	db 41, EXPLOSION
+else
 	db 1, TACKLE
 	db 6, DEFENSE_CURL
 	db 11, ROCK_THROW
@@ -1004,6 +1015,7 @@ GeodudeEvosAttacks:
 	db 31, ROLLOUT
 	db 36, EARTHQUAKE
 	db 41, EXPLOSION
+endc
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
