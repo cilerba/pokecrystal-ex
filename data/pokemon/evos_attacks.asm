@@ -2061,6 +2061,19 @@ MewEvosAttacks:
 ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, GROWL
+	db 6, RAZOR_LEAF
+	db 9, POISONPOWDER
+	db 13, SYNTHESIS
+	db 18, REFLECT
+	db 22, GIGA_DRAIN
+	db 27, LIGHT_SCREEN
+	db 32, BODY_SLAM
+	db 39, SAFEGUARD
+	db 45, SOLARBEAM
+else
 	db 1, TACKLE
 	db 1, GROWL
 	db 8, RAZOR_LEAF
@@ -2071,11 +2084,26 @@ ChikoritaEvosAttacks:
 	db 36, LIGHT_SCREEN
 	db 43, SAFEGUARD
 	db 50, SOLARBEAM
+endc
 	db 0 ; no more level-up moves
 
 BayleefEvosAttacks:
 	db EVOLVE_LEVEL, 32, MEGANIUM
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, RAZOR_LEAF
+	db 1, POISONPOWDER
+	db 6, RAZOR_LEAF
+	db 12, SYNTHESIS
+	db 18, REFLECT
+	db 24, GIGA_DRAIN
+	db 35, BODY_SLAM
+	db 36, LIGHT_SCREEN
+	db 45, SAFEGUARD
+	db 54, SOLARBEAM
+else
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, RAZOR_LEAF
@@ -2088,10 +2116,25 @@ BayleefEvosAttacks:
 	db 39, LIGHT_SCREEN
 	db 47, SAFEGUARD
 	db 55, SOLARBEAM
+endc
 	db 0 ; no more level-up moves
 
 MeganiumEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, RAZOR_LEAF
+	db 1, REFLECT
+	db 8, RAZOR_LEAF
+	db 9, POISONPOWDER
+	db 18, REFLECT
+	db 23, SYNTHESIS
+	db 31, BODY_SLAM
+	db 41, LIGHT_SCREEN
+	db 51, SAFEGUARD
+	db 61, SOLARBEAM
+else
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, RAZOR_LEAF
@@ -2104,11 +2147,13 @@ MeganiumEvosAttacks:
 	db 41, LIGHT_SCREEN
 	db 51, SAFEGUARD
 	db 61, SOLARBEAM
+endc
 	db 0 ; no more level-up moves
 
 CyndaquilEvosAttacks:
 	db EVOLVE_LEVEL, 14, QUILAVA
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
 	db 1, TACKLE
 	db 1, LEER
 	db 6, SMOKESCREEN
@@ -2117,6 +2162,16 @@ CyndaquilEvosAttacks:
 	db 27, FLAME_WHEEL
 	db 36, SWIFT
 	db 46, FLAMETHROWER
+else
+	db 1, TACKLE
+	db 1, LEER
+	db 6, SMOKESCREEN
+	db 12, EMBER
+	db 19, QUICK_ATTACK
+	db 27, FLAME_WHEEL
+	db 36, SWIFT
+	db 46, FLAMETHROWER
+endc
 	db 0 ; no more level-up moves
 
 QuilavaEvosAttacks:
@@ -2219,6 +2274,18 @@ FurretEvosAttacks:
 HoothootEvosAttacks:
 	db EVOLVE_LEVEL, 20, NOCTOWL
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, FORESIGHT
+	db 6, PECK
+	db 12, HYPNOSIS
+	db 18, CONFUSION
+	db 23, WING_ATTACK
+	db 28, REFLECT
+	db 34, TAKE_DOWN
+	db 48, DREAM_EATER
+else
 	db 1, TACKLE
 	db 1, GROWL
 	db 6, FORESIGHT
@@ -2228,6 +2295,7 @@ HoothootEvosAttacks:
 	db 28, TAKE_DOWN
 	db 34, CONFUSION
 	db 48, DREAM_EATER
+endc
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:
