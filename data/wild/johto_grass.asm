@@ -1318,6 +1318,34 @@ JohtoGrassWildMons:
 	db 6, GASTLY
 	end_grass_wildmons
 
+	def_grass_wildmons VIOLET_CITY
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 4, EKANS
+	db 4, MAREEP
+	db 5, BELLSPROUT
+	db 6, RATTATA
+	db 4, PIDGEY
+	db 5, HOPPIP
+	db 5, MAREEP
+	; day
+	db 4, EKANS
+	db 4, RATTATA
+	db 5, BELLSPROUT
+	db 6, HOPPIP
+	db 4, PIDGEY
+	db 5, MAREEP
+	db 5, HOPPIP
+	; nite
+	db 4, WOOPER
+	db 4, RATTATA
+	db 5, BELLSPROUT
+	db 6, ZUBAT
+	db 4, HOOTHOOT
+	db 5, GASTLY
+	db 5, GASTLY
+	end_grass_wildmons
+
 	def_grass_wildmons ROUTE_32
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
