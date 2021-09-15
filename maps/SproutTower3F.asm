@@ -76,11 +76,20 @@ SageLiScript:
 	opentext
 	writetext SageLiTakeThisFlashText
 	promptbutton
-	verbosegiveitem HM_FLASH
 	setevent EVENT_GOT_HM05_FLASH
 	setevent EVENT_BEAT_SAGE_LI
+	readmem wHMUnlocks
+	addval 1
+	writemem wHMUnlocks
+	verbosegiveitem POKEPAGER
 	writetext SageLiFlashExplanationText
 	waitbutton
+	writetext SageLiGetAmpharosText
+	playsound SFX_ITEM
+	waitsfx
+	writetext SageLiAfterBattleText
+	waitbutton
+	waitsfx
 	closetext
 	end
 
@@ -157,7 +166,7 @@ SproutTowerElderLecturesRivalText:
 	cont "trainer."
 
 	para "As promised, here"
-	line "is your HM."
+	line "is your reward."
 
 	para "But let me say"
 	line "this: You should"
@@ -231,26 +240,44 @@ SageLiBeatenText:
 	done
 
 SageLiTakeThisFlashText:
-	text "You and your #-"
-	line "MON should have"
+	text "You've proven"
+	line "your strength."
 
-	para "no problem using"
-	line "this move."
+	para "I am going to"
+	line "give you something"
+	cont "to help you on"
+	cont "your journey."
 
-	para "Take this FLASH"
-	line "HM."
+	para "It's called a"
+	line "#PAGER."
+
+	para "With this item,"
+	line "you can call on"
+	cont "#MON to clear"
+	cont "any obstacles"
+	cont "that may be in"
+	cont "your way."
+
 	done
 
 SageLiFlashExplanationText:
-	text "FLASH illuminates"
-	line "even the darkest"
-	cont "of all places."
+	text "To start you off,"
+	line "I am going to"
+	cont "give you the"
+	cont "access code to"
+	cont "AMPHAROS!"
 
-	para "But to use it out"
-	line "of battle, you"
+	para "AMPHAROS"
+	line "illuminates even"
+	cont "the darkest of"
+	cont "all places."
 
-	para "need the BADGE"
-	line "from VIOLET's GYM."
+	done
+
+SageLiGetAmpharosText:
+	text "<PLAYER> can now"
+	line "call AMPHAROS!"
+
 	done
 
 SageLiAfterBattleText:
