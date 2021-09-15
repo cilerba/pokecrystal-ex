@@ -78,9 +78,7 @@ SageLiScript:
 	promptbutton
 	setevent EVENT_GOT_HM05_FLASH
 	setevent EVENT_BEAT_SAGE_LI
-	readmem wHMUnlocks
-	addval 1
-	writemem wHMUnlocks
+	loadmem wHMUnlocks, 1
 	verbosegiveitem POKEPAGER
 	writetext SageLiFlashExplanationText
 	waitbutton
