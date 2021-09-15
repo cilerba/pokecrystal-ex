@@ -3075,15 +3075,15 @@ ExecutiveFGroup:
 SageGroup:
 	; SAGE (1)
 	db "CHOW@", TRAINERTYPE_NORMAL
-	db  5, BELLSPROUT
-	db  5, BELLSPROUT
+	db  5, HOOTHOOT
+	db  5, RATTATA
 	db  6, BELLSPROUT
 	db -1 ; end
 
 	; SAGE (2)
 	db "NICO@", TRAINERTYPE_NORMAL
-	db  5, BELLSPROUT
-	db  5, BELLSPROUT
+	db  5, HOOTHOOT
+	db  5, HOOTHOOT
 	db  6, BELLSPROUT
 	db -1 ; end
 
@@ -3114,8 +3114,8 @@ SageGroup:
 
 	; SAGE (7)
 	db "EDMOND@", TRAINERTYPE_NORMAL
-	db  5, BELLSPROUT
-	db  5, BELLSPROUT
+	db  5, RATTATA
+	db  5, GASTLY
 	db  6, BELLSPROUT
 	db -1 ; end
 
@@ -3126,7 +3126,7 @@ SageGroup:
 
 	; SAGE (9)
 	db "LI@", TRAINERTYPE_NORMAL
-	db  7, BELLSPROUT
+	db  7, GASTLY
 	db  8, BELLSPROUT
 	db 10, HOOTHOOT
 	db -1 ; end
