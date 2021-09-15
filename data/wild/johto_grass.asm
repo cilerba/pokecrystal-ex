@@ -8,16 +8,16 @@ JohtoGrassWildMons:
 	db 4, BELLSPROUT
 	db 4, GASTLY
 	db 5, BELLSPROUT
-	db 5, BELLSPROUT
-	db 6, BELLSPROUT
+	db 5, RATTATA
+	db 6, HOOTHOOT
 	db 5, GASTLY
 	db 6, BELLSPROUT
 	; day
 	db 4, GASTLY
-	db 4, BELLSPROUT
+	db 4, RATTATA
 	db 5, BELLSPROUT
 	db 4, GASTLY
-	db 6, BELLSPROUT
+	db 6, HOOTHOOT
 	db 5, HOOTHOOT
 	db 6, BELLSPROUT
 	; nite
@@ -1326,20 +1326,20 @@ JohtoGrassWildMons:
 	db 5, BELLSPROUT
 	db 6, RATTATA
 	db 4, PIDGEY
-	db 5, HOPPIP
+	db 5, MAREEP
 	db 5, MAREEP
 	; day
 	db 4, EKANS
 	db 4, RATTATA
-	db 5, BELLSPROUT
-	db 6, HOPPIP
+	db 5, MAREEP
+	db 6, MAREEP
 	db 4, PIDGEY
 	db 5, MAREEP
 	db 5, HOPPIP
 	; nite
-	db 4, WOOPER
+	db 4, MAREEP
 	db 4, RATTATA
-	db 5, BELLSPROUT
+	db 5, MAREEP
 	db 6, ZUBAT
 	db 4, HOOTHOOT
 	db 5, GASTLY
