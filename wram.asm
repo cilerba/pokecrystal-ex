@@ -1805,7 +1805,9 @@ wMinutesSince:: db
 wHoursSince:: db
 wDaysSince:: db
 
-
+wUsingHMItem:: db
+wHMUnlocks:: db
+wHMCall:: db
 SECTION "WRAM 1", WRAMX
 
 wGBCOnlyDecompressBuffer:: ; a $540-byte buffer that continues past this SECTION

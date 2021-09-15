@@ -114,6 +114,15 @@ FieldMoveFailed:
 	text_far _CantUseItemText
 	text_end
 
+FieldMoveNotUnlocked:
+	ld hl, .MoveNotUnlockedText
+	call MenuTextboxBackup
+	ret
+
+.MoveNotUnlockedText:
+	text_far _MoveNotUnlockedText
+	text_end
+
 CutFunction:
 	call FieldMoveJumptableReset
 .loop
@@ -130,15 +139,23 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
-	ld de, ENGINE_HIVEBADGE
-	call CheckBadge
-	jr c, .nohivebadge
+	ld a, [wHMUnlocks] ; Checks to see if the player has unlocked CUT
+	cp PR_CUT
+	jr c, .noCutUnlocked
+
 	call CheckMapForSomethingToCut
 	jr c, .nothingtocut
 	ld a, $1
 	ret
 
-.nohivebadge
+.noCutUnlocked
+	call FieldMoveNotUnlocked
+	ld a, $80
+	ret
+
+.noCut
+	ld hl, CutNothingText
+	call MenuTextboxBackup
 	ld a, $80
 	ret
 
@@ -204,8 +221,11 @@ Script_CutFromMenu:
 	special UpdateTimePals
 
 Script_Cut:
-	callasm GetPartyNickname
 	writetext UseCutText
+	refreshscreen
+	pokepic SCYTHER
+	cry SCYTHER
+	waitbutton
 	reloadmappart
 	callasm CutDownTreeOrGrass
 	closetext
@@ -279,9 +299,14 @@ FlashFunction:
 
 .CheckUseFlash:
 ; Flash
-	ld de, ENGINE_ZEPHYRBADGE
-	farcall CheckBadge
-	jr c, .nozephyrbadge
+	;ld de, ENGINE_ZEPHYRBADGE
+	;farcall CheckBadge
+	;jr c, .nozephyrbadge
+	
+	ld a, [wHMUnlocks] ; Checks to see if we've unlocked the HM
+	cp PR_FLASH
+	jr c, .noFlashUnlock
+	
 	push hl
 	farcall SpecialAerodactylChamber
 	pop hl
@@ -299,6 +324,11 @@ FlashFunction:
 	ld a, $80
 	ret
 
+.noFlashUnlock
+	call FieldMoveNotUnlocked
+	ld a, $80
+	ret
+
 .nozephyrbadge
 	ld a, $80
 	ret
@@ -310,6 +340,11 @@ UseFlash:
 Script_UseFlash:
 	reloadmappart
 	special UpdateTimePals
+	
+	pokepic AMPHAROS
+	cry AMPHAROS
+	waitbutton
+	
 	writetext UseFlashTextScript
 	callasm BlindingFlash
 	closetext
@@ -404,6 +439,10 @@ UsedSurfScript:
 	writetext UsedSurfText ; "used SURF!"
 	waitbutton
 	closetext
+	
+	pokepic LAPRAS
+	cry LAPRAS
+	waitbutton
 
 	callasm .stubbed_fn
 
@@ -964,9 +1003,9 @@ StrengthFunction:
 
 .TryStrength:
 ; Strength
-	ld de, ENGINE_PLAINBADGE
-	call CheckBadge
-	jr c, .Failed
+	;ld de, ENGINE_PLAINBADGE
+	;call CheckBadge
+	;jr c, .Failed
 	jr .UseStrength
 
 .AlreadyUsingStrength: ; unreferenced
@@ -1007,11 +1046,20 @@ Script_StrengthFromMenu:
 	special UpdateTimePals
 
 Script_UsedStrength:
-	callasm SetStrengthFlag
+	callasm SetStrengthFlag	
 	writetext .UseStrengthText
-	readmem wStrengthSpecies
-	cry 0 ; plays [wStrengthSpecies] cry
-	pause 3
+	waitbutton
+	refreshscreen
+	pokepic PRIMEAPE
+	cry PRIMEAPE
+	waitbutton
+	reloadmappart
+	refreshscreen
+	
+	;readmem wStrengthSpecies
+	;cry 0 ; plays [wStrengthSpecies] cry
+	;pause 3
+
 	writetext .MoveBoulderText
 	closetext
 	end
@@ -1761,14 +1809,16 @@ GotOffBikeText:
 	text_end
 
 TryCutOW::
-	ld d, CUT
-	call CheckPartyMove
+	ld a, POKEPAGER ; Checks to see if the player has the POKEPAGER
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .cant_cut
+	
+	ld a, [wHMUnlocks] ; Checks to see if the player has unlocked CUT
+	cp PR_CUT
 	jr c, .cant_cut
-
-	ld de, ENGINE_HIVEBADGE
-	call CheckEngineFlag
-	jr c, .cant_cut
-
+	
 	ld a, BANK(AskCutScript)
 	ld hl, AskCutScript
 	call CallScript
@@ -1812,3 +1862,27 @@ CantCutScript:
 CanCutText:
 	text_far _CanCutText
 	text_end
+	
+PPFunction:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall ShowPokeRideChoices
+	ld a, [wMenuCursorY]
+	dec a
+	cp 0 ; Ampharos, Flash
+	call z, FlashFunction
+	cp 1 ; Pidgeot, Fly
+	call z, FlyFunction
+	cp 2 ; Scyther, Cut
+	call z, CutFunction
+	cp 3 ; Primeape, Strength
+	call z, StrengthFunction
+	cp 4 ; GOLEM, Rock Smash
+	call z, RockSmashFunction
+	cp 5 ; Lapras, Surf
+	call z, SurfFunction
+	cp 6 ; Feraligatr, Whirlpool
+	call z, WhirlpoolFunction
+	cp 7 ; Gyarados, Waterfall
+	call z, WaterfallFunction
+	ret

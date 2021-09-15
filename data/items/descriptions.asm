@@ -145,7 +145,7 @@ ItemDescriptions:
 	dw TeruSama13Desc
 	dw MetalCoatDesc
 	dw DragonFangDesc
-	dw TeruSama14Desc
+	dw PokePagerDesc
 	dw LeftoversDesc
 	dw TeruSama15Desc
 	dw TeruSama16Desc
@@ -817,8 +817,9 @@ DragonFangDesc:
 	db   "Powers up dragon-"
 	next "type moves. (HOLD)@"
 
-TeruSama14Desc:
-	db   "?@"
+PokePagerDesc:
+	db   "Calls a #MON"
+	next "for help.@"
 
 LeftoversDesc:
 	db   "Restores HP during"

@@ -300,50 +300,52 @@ _CantUseItemText::
 	line "here."
 	prompt
 
+_MoveNotUnlockedText::
+	text "That #MON can't"
+	line "be reached yet."
+	prompt
+
 _UseCutText::
-	text_ram wStringBuffer2
-	text " used"
-	line "CUT!"
+	text "SCYTHER cut the"
+	line "surrounding plants!"
 	prompt
 
 _CutNothingText::
 	text "There's nothing to"
-	line "CUT here."
+	line "cut here."
 	prompt
 
 _BlindingFlashText::
-	text "A blinding FLASH"
-	line "lights the area!@"
+	text "AMPHAROS lit up"
+	line "the area!@"
 	text_promptbutton
 	text_end
 
 	text_end ; unreferenced
 
 _UsedSurfText::
-	text_ram wStringBuffer2
-	text " used"
-	line "SURF!"
+	text "LAPRAS got in the"
+	line "water!"
 	done
 
 _CantSurfText::
-	text "You can't SURF"
-	line "here."
+	text "You can't call"
+	line "LAPRAS here."
 	prompt
 
 _AlreadySurfingText::
 	text "You're already"
-	line "SURFING."
+	line "on LAPRAS."
 	prompt
 
 _AskSurfText::
 	text "The water is calm."
-	line "Want to SURF?"
+	line "Want to call LAPRAS?"
 	done
 
 _UseWaterfallText::
-	text_ram wStringBuffer2
-	text " used"
-	line "WATERFALL!"
+	text "GYARADOS swam up"
+	line "the waterfall!"
 	done
 
 _HugeWaterfallText::
@@ -352,8 +354,8 @@ _HugeWaterfallText::
 	done
 
 _AskWaterfallText::
-	text "Do you want to use"
-	line "WATERFALL?"
+	text "Do you want to call"
+	line "GYARADOS?"
 	done
 
 _UseDigText::
@@ -385,19 +387,17 @@ _CantUseTeleportText::
 	done
 
 _AlreadyUsingStrengthText::
-	text "A #MON is using"
-	line "STRENGTH already."
+	text "PRIMEAPE is already"
+	line "helping."
 	prompt
 
 _UseStrengthText::
-	text_ram wStringBuffer2
-	text " used"
-	line "STRENGTH!"
+	text "PRIMEAPE came to"
+	line "push boulders!"
 	done
 
 _MoveBoulderText::
-	text_ram wStringBuffer1
-	text " can"
+	text "PRIMEAPE can"
 	line "move boulders."
 	prompt
 
@@ -405,8 +405,8 @@ _AskStrengthText::
 	text "A #MON may be"
 	line "able to move this."
 
-	para "Want to use"
-	line "STRENGTH?"
+	para "Want to call for"
+	line "help?"
 	done
 
 _BouldersMoveText::
@@ -420,9 +420,9 @@ _BouldersMayMoveText::
 	done
 
 _UseWhirlpoolText::
-	text_ram wStringBuffer2
-	text " used"
-	line "WHIRLPOOL!"
+	text "FERALIGATR swam"
+	line "through the"
+	cont "whirlpool!"
 	prompt
 
 _MayPassWhirlpoolText::
@@ -437,8 +437,8 @@ _AskWhirlpoolText::
 	text "A whirlpool is in"
 	line "the way."
 
-	para "Want to use"
-	line "WHIRLPOOL?"
+	para "Want to call"
+	line "FERALIGATR?"
 	done
 
 _UseHeadbuttText::
@@ -460,9 +460,8 @@ _AskHeadbuttText::
 	done
 
 _UseRockSmashText::
-	text_ram wStringBuffer2
-	text " used"
-	line "ROCK SMASH!"
+	text "GOLEM smashed the"
+	line "rock!"
 	prompt
 
 _MaySmashText::
@@ -474,8 +473,8 @@ _AskRockSmashText::
 	text "This rock looks"
 	line "breakable."
 
-	para "Want to use ROCK"
-	line "SMASH?"
+	para "Want to call"
+	line "GOLEM?"
 	done
 
 _RodBiteText::
@@ -513,14 +512,15 @@ _GotOffBikeText::
 
 _AskCutText::
 	text "This tree can be"
-	line "CUT!"
+	line "cut!"
 
-	para "Want to use CUT?"
+	para "Want to call"
+	line "SCYTHER?"
 	done
 
 _CanCutText::
 	text "This tree can be"
-	line "CUT!"
+	line "cut!"
 	done
 
 _FoundItemText::
