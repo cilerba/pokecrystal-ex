@@ -2536,6 +2536,18 @@ XatuEvosAttacks:
 MareepEvosAttacks:
 	db EVOLVE_LEVEL, 15, FLAAFFY
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, GROWL
+	db 4, THUNDER_WAVE
+	db 8, THUNDERSHOCK
+	db 12, COTTON_SPORE
+	db 18, TAKE_DOWN
+	db 25, CONFUSE_RAY
+	db 30, ROCK_THROW
+	db 37, LIGHT_SCREEN
+	db 46, THUNDER
+else
 	db 1, TACKLE
 	db 1, GROWL
 	db 9, THUNDERSHOCK
@@ -2543,6 +2555,7 @@ MareepEvosAttacks:
 	db 23, COTTON_SPORE
 	db 30, LIGHT_SCREEN
 	db 37, THUNDER
+endc
 	db 0 ; no more level-up moves
 
 FlaaffyEvosAttacks:
