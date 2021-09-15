@@ -226,14 +226,26 @@ BeedrillEvosAttacks:
 PidgeyEvosAttacks:
 	db EVOLVE_LEVEL, 18, PIDGEOTTO
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
 	db 1, TACKLE
 	db 5, SAND_ATTACK
 	db 9, GUST
-	db 15, QUICK_ATTACK
+	db 13, QUICK_ATTACK
 	db 21, WHIRLWIND
 	db 29, WING_ATTACK
 	db 37, AGILITY
 	db 47, MIRROR_MOVE
+else
+	db 1, TACKLE
+	db 5, SAND_ATTACK
+	db 9, GUST
+	db 13, QUICK_ATTACK
+	db 17, WHIRLWIND
+	db 21, TWISTER
+	db 29, WING_ATTACK
+	db 35, AGILITY
+	db 45, MIRROR_MOVE
+endc
 	db 0 ; no more level-up moves
 
 PidgeottoEvosAttacks:
