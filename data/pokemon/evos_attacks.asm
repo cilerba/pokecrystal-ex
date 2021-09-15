@@ -2232,6 +2232,19 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 1, LEER
+	db 6, WATER_GUN
+	db 8, RAGE
+	db 13, BITE
+	db 15, SCARY_FACE
+	db 20, CRUNCH
+	db 30, SLASH
+	db 37, SCREECH
+	db 42, THRASH
+	db 52, HYDRO_PUMP
+else
 	db 1, SCRATCH
 	db 1, LEER
 	db 7, RAGE
@@ -2241,6 +2254,7 @@ TotodileEvosAttacks:
 	db 35, SLASH
 	db 43, SCREECH
 	db 52, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 CroconawEvosAttacks:
