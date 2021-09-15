@@ -7,6 +7,7 @@
 	const VIOLETCITY_FRUIT_TREE
 	const VIOLETCITY_POKE_BALL1
 	const VIOLETCITY_POKE_BALL2
+	const VIOLETCITY_GYM_GUIDE
 
 VioletCity_MapScripts:
 	def_scene_scripts
@@ -177,6 +178,9 @@ VioletCitySpinningEarl_MovementData:
 	turn_head DOWN
 	step_end
 
+VioletCityGymGuideScript:
+	jumptextfaceplayer VioletCityGymGuideText
+
 Text_EarlAsksIfYouBeatFalkner:
 	text "Hello!"
 	line "You are trainer?"
@@ -276,6 +280,29 @@ EarlsPokemonAcademySignText:
 	line "ACADEMY"
 	done
 
+VioletCityGymGuideText:
+	text "Hey! You must be"
+	line "here to challenge"
+	cont "FALKNER, right?"
+
+	para "This city has a"
+	line "tower called the"
+	cont "SPROUT TOWER"
+	cont "where Trainers"
+	cont "come to train"
+	cont "themselves."
+
+	para "Challenging"
+	line "FALKNER may be too"
+	cont "difficult if you"
+
+	para "haven't gone"
+	line "through their"
+	cont "training."
+
+	para "Ha ha ha!"
+	done
+
 VioletCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -310,3 +337,4 @@ VioletCity_MapEvents:
 	object_event 14, 29, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
 	object_event  4,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP
 	object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY
+	object_event 18, 18, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletCityGymGuideScript, EVENT_GOT_HM05_FLASH
