@@ -113,6 +113,7 @@ FieldMoveFailed:
 .CantUseItemText:
 	text_far _CantUseItemText
 	text_end
+	end
 
 FieldMoveNotUnlocked:
 	ld hl, .MoveNotUnlockedText
@@ -345,6 +346,9 @@ Script_UseFlash:
 	cry AMPHAROS
 	waitbutton
 	
+	reloadmappart
+	refreshscreen
+
 	writetext UseFlashTextScript
 	callasm BlindingFlash
 	closetext
@@ -1870,19 +1874,20 @@ PPFunction:
 	ld a, [wMenuCursorY]
 	dec a
 	cp 0 ; Ampharos, Flash
-	call z, FlashFunction
+	jp z, FlashFunction
 	cp 1 ; Pidgeot, Fly
-	call z, FlyFunction
+	jp z, FlyFunction
 	cp 2 ; Scyther, Cut
-	call z, CutFunction
+	jp z, CutFunction
 	cp 3 ; Primeape, Strength
-	call z, StrengthFunction
+	jp z, StrengthFunction
 	cp 4 ; GOLEM, Rock Smash
-	call z, RockSmashFunction
+	jp z, RockSmashFunction
 	cp 5 ; Lapras, Surf
-	call z, SurfFunction
+	jp z, SurfFunction
 	cp 6 ; Feraligatr, Whirlpool
-	call z, WhirlpoolFunction
+	jp z, WhirlpoolFunction
 	cp 7 ; Gyarados, Waterfall
-	call z, WaterfallFunction
+	jp z, WaterfallFunction
+	ld a, $0
 	ret
