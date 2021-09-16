@@ -9,10 +9,10 @@ PokeRideMenuHeader:
 	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B ; flags
 	db 8 ; items
 	db "FLASH@"
-	db "FLY@"
-	db "CUT@"
-	db "STRENGTH@"
 	db "ROCK SMASH@"
+	db "CUT@"
+	db "FLY@"
+	db "STRENGTH@"
 	db "SURF@"
 	db "WHIRLPOOL@"
 	db "WATERFALL@"

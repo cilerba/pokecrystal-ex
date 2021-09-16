@@ -1875,14 +1875,14 @@ PPFunction:
 	dec a
 	cp 0 ; Ampharos, Flash
 	jp z, FlashFunction
-	cp 1 ; Pidgeot, Fly
-	jp z, FlyFunction
+	cp 1 ; GOLEM, Rock Smash
+	jp z, RockSmashFunction
 	cp 2 ; Scyther, Cut
 	jp z, CutFunction
-	cp 3 ; Primeape, Strength
+	cp 3 ; Pidgeot, Fly
+	jp z, FlyFunction
+	cp 4 ; Primeape, Strength
 	jp z, StrengthFunction
-	cp 4 ; GOLEM, Rock Smash
-	jp z, RockSmashFunction
 	cp 5 ; Lapras, Surf
 	jp z, SurfFunction
 	cp 6 ; Feraligatr, Whirlpool
