@@ -18,7 +18,7 @@ IlexForest_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .FarfetchdCallback
 
 .FarfetchdCallback:
-	checkevent EVENT_GOT_HM01_CUT
+	checkevent EVENT_GOT_DOUBLE_TEAM
 	iftrue .Static
 	readmem wFarfetchdPosition
 	ifequal  1, .PositionOne
@@ -345,12 +345,12 @@ IlexForestFarfetchdScript:
 IlexForestCharcoalMasterScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_HM01_CUT
+	checkevent EVENT_GOT_DOUBLE_TEAM
 	iftrue .AlreadyGotCut
 	writetext Text_CharcoalMasterIntro
 	promptbutton
-	verbosegiveitem HM_CUT
-	setevent EVENT_GOT_HM01_CUT
+	verbosegiveitem TM_DOUBLE_TEAM
+	setevent EVENT_GOT_DOUBLE_TEAM
 	writetext Text_CharcoalMasterOutro
 	waitbutton
 	closetext
@@ -782,7 +782,7 @@ Text_CharcoalMasterIntro:
 	para "Without it, we"
 	line "wouldn't be able"
 
-	para "to CUT trees for"
+	para "to cut trees for"
 	line "charcoal."
 
 	para "Thanks, kid!"
@@ -795,17 +795,21 @@ Text_CharcoalMasterIntro:
 	done
 
 Text_CharcoalMasterOutro:
-	text "That's the CUT HM."
-	line "Teach that to a"
+	text "That's the"
+	line "DOUBLE TEAM TM."
 
-	para "#MON to clear"
-	line "small trees."
+	para "When a #MON"
+	line "uses that move"
+	cont "they can easily"
+	
+	para "dodge an opponent's"
+	line "attack."
 
-	para "Of course, you"
-	line "have to have the"
+	para "Of course, a"
+	line "great Trainer like"
 
-	para "GYM BADGE from"
-	line "AZALEA to use it."
+	para "would know all"
+	line "about that, eh?"
 	done
 
 Text_CharcoalMasterTalkAfter:
