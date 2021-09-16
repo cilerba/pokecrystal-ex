@@ -26,14 +26,9 @@ AzaleaPokecenter1FPokefanFScript:
 	jumptextfaceplayer AzaleaPokecenter1FPokefanFText
 
 AzaleaPokecenter1FGentlemanText:
-	text "Do your #MON"
-	line "know HM moves?"
-
-	para "Those moves can"
-	line "be used even if"
-
-	para "your #MON has"
-	line "fainted."
+	text "I got here using"
+	line "my #PAGER!"
+	
 	done
 
 AzaleaPokecenter1FUnusedText: ; unreferenced

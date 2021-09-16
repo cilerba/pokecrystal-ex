@@ -425,57 +425,57 @@ JohtoGrassWildMons:
 	def_grass_wildmons UNION_CAVE_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 6, GEODUDE
-	db 6, SANDSHREW
-	db 5, ZUBAT
-	db 4, RATTATA
-	db 7, ZUBAT
-	db 6, ONIX
-	db 6, ONIX
+	db 10, GEODUDE
+	db 11, SANDSHREW
+	db 12, VULPIX
+	db 11, RATTATA
+	db 10, ZUBAT
+	db 11, ONIX
+	db 10, ONIX
 	; day
-	db 6, GEODUDE
-	db 6, SANDSHREW
-	db 5, ZUBAT
-	db 4, RATTATA
-	db 7, ZUBAT
-	db 6, ONIX
-	db 6, ONIX
+	db 10, GEODUDE
+	db 11, SANDSHREW
+	db 12, VULPIX
+	db 11, RATTATA
+	db 10, ZUBAT
+	db 11, ONIX
+	db 10, ONIX
 	; nite
-	db 6, GEODUDE
-	db 6, RATTATA
-	db 5, WOOPER
-	db 4, RATTATA
-	db 7, ZUBAT
-	db 6, ONIX
-	db 6, ONIX
+	db 10, GEODUDE
+	db 11, VULPIX
+	db 12, WOOPER
+	db 11, RATTATA
+	db 10, ZUBAT
+	db 11, ONIX
+	db 10, ONIX
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 8, GEODUDE
-	db 6, ZUBAT
-	db 8, ZUBAT
-	db 8, ONIX
-	db 6, RATTATA
-	db 8, RATTATA
-	db 8, RATTATA
+	db 10, GEODUDE
+	db 11, ZUBAT
+	db 12, ZUBAT
+	db 11, ONIX
+	db 10, RATTATA
+	db 11, RATTATA
+	db 10, RATTATA
 	; day
-	db 8, GEODUDE
-	db 6, ZUBAT
-	db 8, ZUBAT
-	db 8, ONIX
-	db 6, RATTATA
-	db 8, RATTATA
-	db 8, RATTATA
+	db 10, GEODUDE
+	db 11, ZUBAT
+	db 12, ZUBAT
+	db 11, ONIX
+	db 10, RATTATA
+	db 11, RATTATA
+	db 10, RATTATA
 	; nite
-	db 8, GEODUDE
-	db 6, ZUBAT
-	db 8, WOOPER
-	db 8, ONIX
-	db 6, RATTATA
-	db 8, RATTATA
-	db 8, RATTATA
+	db 10, GEODUDE
+	db 11, ZUBAT
+	db 12, WOOPER
+	db 11, ONIX
+	db 10, RATTATA
+	db 11, RATTATA
+	db 10, RATTATA
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B2F
@@ -509,29 +509,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons SLOWPOKE_WELL_B1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, ZUBAT
-	db 6, ZUBAT
-	db 7, ZUBAT
-	db 6, SLOWPOKE
-	db 8, ZUBAT
-	db 8, SLOWPOKE
-	db 8, SLOWPOKE
+	db 12, ZUBAT
+	db 12, ZUBAT
+	db 13, ZUBAT
+	db 13, SLOWPOKE
+	db 13, ZUBAT
+	db 14, SLOWPOKE
+	db 14, SLOWPOKE
 	; day
-	db 5, ZUBAT
-	db 6, ZUBAT
-	db 7, ZUBAT
-	db 6, SLOWPOKE
-	db 8, ZUBAT
-	db 8, SLOWPOKE
-	db 8, SLOWPOKE
+	db 12, ZUBAT
+	db 12, ZUBAT
+	db 13, ZUBAT
+	db 13, SLOWPOKE
+	db 13, ZUBAT
+	db 14, SLOWPOKE
+	db 14, SLOWPOKE
 	; nite
-	db 5, ZUBAT
-	db 6, ZUBAT
-	db 7, ZUBAT
-	db 6, SLOWPOKE
-	db 8, ZUBAT
-	db 8, SLOWPOKE
-	db 8, SLOWPOKE
+	db 12, ZUBAT
+	db 12, ZUBAT
+	db 13, ZUBAT
+	db 13, SLOWPOKE
+	db 13, ZUBAT
+	db 14, SLOWPOKE
+	db 14, SLOWPOKE
 	end_grass_wildmons
 
 	def_grass_wildmons SLOWPOKE_WELL_B2F
@@ -1349,57 +1349,57 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_32
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 11, EKANS
-	db 12, MAREEP
-	db 11, BELLSPROUT
-	db 12, RATTATA
-	db 11, PIDGEY
-	db 12, HOPPIP
+	db 9, EKANS
 	db 11, MAREEP
-	; day
-	db 11, EKANS
-	db 12, RATTATA
-	db 11, BELLSPROUT
-	db 12, HOPPIP
-	db 11, PIDGEY
-	db 12, MAREEP
+	db 10, BELLSPROUT
+	db 11, RATTATA
+	db 10, PIDGEY
 	db 11, HOPPIP
+	db 9, MAREEP
+	; day
+	db 9, EKANS
+	db 11, RATTATA
+	db 10, BELLSPROUT
+	db 11, HOPPIP
+	db 10, PIDGEY
+	db 11, MAREEP
+	db 9, HOPPIP
 	; nite
-	db 11, WOOPER
-	db 12, RATTATA
-	db 11, BELLSPROUT
-	db 12, ZUBAT
-	db 11, HOOTHOOT
-	db 12, GASTLY
+	db 9, WOOPER
+	db 11, RATTATA
+	db 10, BELLSPROUT
+	db 11, ZUBAT
+	db 10, HOOTHOOT
 	db 11, GASTLY
+	db 9, GASTLY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_33
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 6, RATTATA
-	db 6, SPEAROW
-	db 6, GEODUDE
-	db 6, HOPPIP
-	db 7, EKANS
-	db 7, HOPPIP
-	db 7, HOPPIP
+	db 11, RATTATA
+	db 12, SPEAROW
+	db 11, GEODUDE
+	db 12, HOPPIP
+	db 13, EKANS
+	db 13, HOPPIP
+	db 13, HOPPIP
 	; day
-	db 6, RATTATA
-	db 6, SPEAROW
-	db 6, GEODUDE
-	db 6, HOPPIP
-	db 7, EKANS
-	db 7, HOPPIP
-	db 7, HOPPIP
+	db 11, RATTATA
+	db 12, SPEAROW
+	db 11, GEODUDE
+	db 12, HOPPIP
+	db 13, EKANS
+	db 13, HOPPIP
+	db 13, HOPPIP
 	; nite
-	db 6, RATTATA
-	db 6, ZUBAT
-	db 6, GEODUDE
-	db 6, ZUBAT
-	db 7, RATTATA
-	db 7, RATTATA
-	db 7, RATTATA
+	db 11, RATTATA
+	db 12, ZUBAT
+	db 11, GEODUDE
+	db 12, ZUBAT
+	db 13, RATTATA
+	db 13, RATTATA
+	db 13, RATTATA
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_34

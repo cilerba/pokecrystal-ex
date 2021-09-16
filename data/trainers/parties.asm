@@ -349,13 +349,13 @@ YoungsterGroup:
 
 	; YOUNGSTER (3)
 	db "ALBERT@", TRAINERTYPE_NORMAL
-	db  6, RATTATA
-	db  8, ZUBAT
+	db  9, RATTATA
+	db  11, ZUBAT
 	db -1 ; end
 
 	; YOUNGSTER (4)
 	db "GORDON@", TRAINERTYPE_NORMAL
-	db 10, WOOPER
+	db 11, WOOPER
 	db -1 ; end
 
 	; YOUNGSTER (5)
@@ -648,9 +648,9 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (13)
 	db "PETER@", TRAINERTYPE_NORMAL
-	db  6, PIDGEY
-	db  6, PIDGEY
-	db  8, SPEAROW
+	db  7, PIDGEY
+	db  9, PIDGEY
+	db  11, SPEAROW
 	db -1 ; end
 
 	; BIRD_KEEPER (14)
@@ -1523,20 +1523,20 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (5)
 	db "BENNY@", TRAINERTYPE_NORMAL
-	db  7, WEEDLE
-	db  9, KAKUNA
-	db 12, BEEDRILL
+	db  10, WEEDLE
+	db  12, KAKUNA
+	db 14, BEEDRILL
 	db -1 ; end
 
 	; BUG_CATCHER (6)
 	db "AL@", TRAINERTYPE_NORMAL
-	db 12, CATERPIE
-	db 12, WEEDLE
+	db 14, CATERPIE
+	db 14, WEEDLE
 	db -1 ; end
 
 	; BUG_CATCHER (7)
 	db "JOSH@", TRAINERTYPE_NORMAL
-	db 13, PARAS
+	db 15, PARAS
 	db -1 ; end
 
 	; BUG_CATCHER (8)
@@ -1616,15 +1616,15 @@ BugCatcherGroup:
 FisherGroup:
 	; FISHER (1)
 	db "JUSTIN@", TRAINERTYPE_NORMAL
-	db  5, MAGIKARP
-	db  5, MAGIKARP
+	db  9, MAGIKARP
+	db  9, MAGIKARP
 	db 15, MAGIKARP
-	db  5, MAGIKARP
+	db  9, MAGIKARP
 	db -1 ; end
 
 	; FISHER (2)
 	db "RALPH@", TRAINERTYPE_NORMAL
-	db 10, GOLDEEN
+	db 11, GOLDEEN
 	db -1 ; end
 
 	; FISHER (3)
@@ -1641,8 +1641,8 @@ FisherGroup:
 
 	; FISHER (5)
 	db "HENRY@", TRAINERTYPE_NORMAL
-	db  8, POLIWAG
-	db  8, POLIWAG
+	db  9, POLIWAG
+	db  10, POLIWAG
 	db -1 ; end
 
 	; FISHER (6)
@@ -2762,7 +2762,7 @@ PsychicGroup:
 PicnickerGroup:
 	; PICNICKER (1)
 	db "LIZ@", TRAINERTYPE_NORMAL
-	db  9, NIDORAN_F
+	db  10, NIDORAN_F
 	db -1 ; end
 
 	; PICNICKER (2)
@@ -2917,7 +2917,7 @@ PicnickerGroup:
 CamperGroup:
 	; CAMPER (1)
 	db "ROLAND@", TRAINERTYPE_NORMAL
-	db  9, NIDORAN_M
+	db  10, NIDORAN_M
 	db -1 ; end
 
 	; CAMPER (2)
@@ -3329,8 +3329,8 @@ KimonoGirlGroup:
 TwinsGroup:
 	; TWINS (1)
 	db "AMY & MAY@", TRAINERTYPE_NORMAL
-	db 10, SPINARAK
-	db 10, LEDYBA
+	db 14, SPINARAK
+	db 14, LEDYBA
 	db -1 ; end
 
 	; TWINS (2)
