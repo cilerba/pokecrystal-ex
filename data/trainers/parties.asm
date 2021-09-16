@@ -360,16 +360,16 @@ YoungsterGroup:
 
 	; YOUNGSTER (5)
 	db "SAMUEL@", TRAINERTYPE_NORMAL
-	db  7, RATTATA
-	db 10, SANDSHREW
-	db  8, SPEAROW
-	db  8, SPEAROW
+	db 14, RATTATA
+	db 14, SANDSHREW
+	db  15, SPEAROW
+	db  15, SPEAROW
 	db -1 ; end
 
 	; YOUNGSTER (6)
 	db "IAN@", TRAINERTYPE_NORMAL
-	db 10, MANKEY
-	db 12, DIGLETT
+	db 14, MANKEY
+	db 16, DIGLETT
 	db -1 ; end
 
 	; YOUNGSTER (7)
@@ -2767,9 +2767,9 @@ PicnickerGroup:
 
 	; PICNICKER (2)
 	db "GINA@", TRAINERTYPE_NORMAL
-	db  9, HOPPIP
-	db  9, HOPPIP
-	db 12, BULBASAUR
+	db  14, HOPPIP
+	db  14, HOPPIP
+	db 15, BULBASAUR
 	db -1 ; end
 
 	; PICNICKER (3)
@@ -2922,7 +2922,7 @@ CamperGroup:
 
 	; CAMPER (2)
 	db "TODD@", TRAINERTYPE_NORMAL
-	db 14, PSYDUCK
+	db 17, PSYDUCK
 	db -1 ; end
 
 	; CAMPER (3)
@@ -3251,7 +3251,7 @@ PokefanMGroup:
 
 	; POKEFANM (7)
 	db "BRANDON@", TRAINERTYPE_ITEM
-	db 13, SNUBBULL,   BERRY
+	db 15, SNUBBULL,   BERRY
 	db -1 ; end
 
 	; POKEFANM (8)
