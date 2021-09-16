@@ -307,7 +307,7 @@ _MoveNotUnlockedText::
 
 _UseCutText::
 	text "SCYTHER cut the"
-	line "surrounding plants!"
+	line "nearby plants!"
 	prompt
 
 _CutNothingText::
