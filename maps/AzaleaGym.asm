@@ -47,6 +47,12 @@ AzaleaGymBugsyScript:
 	setevent EVENT_GOT_TM49_FURY_CUTTER
 	writetext BugsyText_FuryCutterSpeech
 	waitbutton
+	loadmem wHMUnlocks, 3
+	writetext BugsyText_GetScytherText
+	playsound SFX_ITEM
+	waitsfx
+	writetext BugsyText_BugMonsAreDeep
+	waitbutton
 	closetext
 	end
 
@@ -194,12 +200,6 @@ BugsyText_HiveBadgeSpeech:
 	para "will obey you,"
 	line "even traded ones."
 
-	para "#MON that know"
-	line "CUT will be able"
-
-	para "to use it outside"
-	line "of battle too."
-
 	para "Here, I also want"
 	line "you to have this."
 	done
@@ -218,6 +218,27 @@ BugsyText_FuryCutterSpeech:
 
 	para "Isn't that great?"
 	line "I discovered it!"
+	
+	para "I also noticed"
+	line "you had a"
+	cont "#PAGER."
+
+	para "I'd like to give"
+	line "you the access"
+	cont "code to SCYTHER."
+	
+	para "Calling SCYTHER"
+	line "will allow you to"
+	cont "cut down nearby"
+	
+	para "plants."
+
+	done
+
+BugsyText_GetScytherText:
+	text "<PLAYER> can now"
+	line "call SCYTHER!"
+
 	done
 
 BugsyText_BugMonsAreDeep:
