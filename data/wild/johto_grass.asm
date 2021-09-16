@@ -1405,29 +1405,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_34
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 10, SNUBBULL
-	db 11, RATTATA
-	db 12, PIDGEY
-	db 10, ABRA
-	db 12, JIGGLYPUFF
-	db 10, DITTO
-	db 10, DITTO
+	db 15, SNUBBULL
+	db 16, RATTATA
+	db 15, PIDGEY
+	db 16, ABRA
+	db 15, JIGGLYPUFF
+	db 16, DITTO
+	db 17, DITTO
 	; day
-	db 10, SNUBBULL
-	db 11, RATTATA
-	db 12, PIDGEY
-	db 10, ABRA
-	db 12, JIGGLYPUFF
-	db 10, DITTO
-	db 10, DITTO
+	db 15, SNUBBULL
+	db 16, RATTATA
+	db 15, PIDGEY
+	db 16, ABRA
+	db 15, JIGGLYPUFF
+	db 16, DITTO
+	db 17, DITTO
 	; nite
-	db 12, DROWZEE
-	db 11, RATTATA
-	db 12, HOOTHOOT
-	db 10, ABRA
-	db 12, JIGGLYPUFF
-	db 10, DITTO
-	db 10, DITTO
+	db 15, DROWZEE
+	db 16, RATTATA
+	db 15, HOOTHOOT
+	db 16, ABRA
+	db 15, JIGGLYPUFF
+	db 16, DITTO
+	db 17, DITTO
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_35
