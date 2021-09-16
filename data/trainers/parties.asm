@@ -1160,7 +1160,7 @@ BeautyGroup:
 PokemaniacGroup:
 	; POKEMANIAC (1)
 	db "LARRY@", TRAINERTYPE_NORMAL
-	db 10, SLOWPOKE
+	db 11, SLOWPOKE
 	db -1 ; end
 
 	; POKEMANIAC (2)
@@ -2276,9 +2276,9 @@ HikerGroup:
 
 	; HIKER (2)
 	db "RUSSELL@", TRAINERTYPE_NORMAL
-	db  4, GEODUDE
-	db  6, GEODUDE
 	db  8, GEODUDE
+	db  8, GEODUDE
+	db  12, GEODUDE
 	db -1 ; end
 
 	; HIKER (3)
@@ -2383,7 +2383,7 @@ HikerGroup:
 
 	; HIKER (18)
 	db "DANIEL@", TRAINERTYPE_NORMAL
-	db 11, ONIX
+	db 12, ONIX
 	db -1 ; end
 
 	; HIKER (19)
@@ -2529,8 +2529,8 @@ FirebreatherGroup:
 
 	; FIREBREATHER (5)
 	db "BILL@", TRAINERTYPE_NORMAL
-	db  6, KOFFING
-	db  6, KOFFING
+	db  8, KOFFING
+	db  10, KOFFING
 	db -1 ; end
 
 	; FIREBREATHER (6)
@@ -2541,7 +2541,7 @@ FirebreatherGroup:
 
 	; FIREBREATHER (7)
 	db "RAY@", TRAINERTYPE_NORMAL
-	db  9, VULPIX
+	db  10, VULPIX
 	db -1 ; end
 
 	; FIREBREATHER (8)
