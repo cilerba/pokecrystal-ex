@@ -1408,23 +1408,23 @@ JohtoGrassWildMons:
 	db 15, SNUBBULL
 	db 16, RATTATA
 	db 15, PIDGEY
-	db 16, ABRA
+	db 15, ABRA
 	db 15, JIGGLYPUFF
-	db 16, DITTO
+	db 16, DROWZEE
 	db 17, DITTO
 	; day
 	db 15, SNUBBULL
 	db 16, RATTATA
 	db 15, PIDGEY
-	db 16, ABRA
+	db 15, ABRA
 	db 15, JIGGLYPUFF
-	db 16, DITTO
+	db 16, DROWZEE
 	db 17, DITTO
 	; nite
 	db 15, DROWZEE
 	db 16, RATTATA
 	db 15, HOOTHOOT
-	db 16, ABRA
+	db 15, ABRA
 	db 15, JIGGLYPUFF
 	db 16, DITTO
 	db 17, DITTO
