@@ -392,6 +392,17 @@ endc
 SpearowEvosAttacks:
 	db EVOLVE_LEVEL, 20, FEAROW
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, PECK
+	db 1, GROWL
+	db 4, LEER
+	db 8, PURSUIT
+	db 11, FURY_ATTACK
+	db 15, WING_ATTACK
+	db 22, AGILITY
+	db 29, MIRROR_MOVE
+	db 36, DRILL_PECK
+else
 	db 1, PECK
 	db 1, GROWL
 	db 7, LEER
@@ -400,10 +411,25 @@ SpearowEvosAttacks:
 	db 31, MIRROR_MOVE
 	db 37, DRILL_PECK
 	db 43, AGILITY
+endc
 	db 0 ; no more level-up moves
 
 FearowEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, DRILL_PECK
+	db 1, PECK
+	db 1, GROWL
+	db 1, LEER
+	db 1, PURSUIT
+	db 4, LEER
+	db 8, PURSUIT
+	db 11, FURY_ATTACK
+	db 22, FOCUS_ENERGY
+	db 27, AGILITY
+	db 34, MIRROR_MOVE
+	db 40, DRILL_PECK
+else
 	db 1, PECK
 	db 1, GROWL
 	db 1, LEER
@@ -414,6 +440,7 @@ FearowEvosAttacks:
 	db 32, MIRROR_MOVE
 	db 40, DRILL_PECK
 	db 47, AGILITY
+endc
 	db 0 ; no more level-up moves
 
 EkansEvosAttacks:
