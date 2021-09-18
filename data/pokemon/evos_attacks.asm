@@ -338,6 +338,18 @@ endc
 RattataEvosAttacks:
 	db EVOLVE_LEVEL, 20, RATICATE
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 4, QUICK_ATTACK
+	db 7, HYPER_FANG
+	db 10, BITE
+	db 13, PURSUIT
+	db 16, HYPER_FANG
+	db 22, CRUNCH
+	db 28, SUPER_FANG
+	db 32, DOUBLE_EDGE
+else
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 7, QUICK_ATTACK
@@ -345,10 +357,27 @@ RattataEvosAttacks:
 	db 20, FOCUS_ENERGY
 	db 27, PURSUIT
 	db 34, SUPER_FANG
+endc
 	db 0 ; no more level-up moves
 
 RaticateEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCARY_FACE
+	db 1, SWORDS_DANCE
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 1, QUICK_ATTACK
+	db 1, FOCUS_ENERGY
+	db 4, QUICK_ATTACK
+	db 7, FOCUS_ENERGY
+	db 10, BITE
+	db 13, PURSUIT
+	db 16, HYPER_FANG
+	db 22, CRUNCH
+	db 34, SUPER_FANG
+	db 39, DOUBLE_EDGE
+else
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 1, QUICK_ATTACK
@@ -357,6 +386,7 @@ RaticateEvosAttacks:
 	db 20, SCARY_FACE
 	db 30, PURSUIT
 	db 40, SUPER_FANG
+endc
 	db 0 ; no more level-up moves
 
 SpearowEvosAttacks:
