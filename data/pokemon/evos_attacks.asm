@@ -3324,6 +3324,20 @@ YanmaEvosAttacks:
 WooperEvosAttacks:
 	db EVOLVE_LEVEL, 20, QUAGSIRE
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, WATER_GUN
+	db 1, TAIL_WHIP
+	db 7, MUD_SLAP
+	db 15, SLAM
+	db 20, AMNESIA
+	db 24, DIG
+	db 28, BUBBLEBEAM
+	db 32, EARTHQUAKE
+	db 37, RAIN_DANCE
+	db 43, MIST
+	db 43, HAZE
+	db 47, SURF
+else
 	db 1, WATER_GUN
 	db 1, TAIL_WHIP
 	db 11, SLAM
@@ -3332,10 +3346,25 @@ WooperEvosAttacks:
 	db 41, RAIN_DANCE
 	db 51, MIST
 	db 51, HAZE
+endc
 	db 0 ; no more level-up moves
 
 QuagsireEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, WATER_GUN
+	db 1, TAIL_WHIP
+	db 7, MUD_SLAP
+	db 14, SLAM
+	db 21, AMNESIA
+	db 28, DIG
+	db 33, BUBBLEBEAM
+	db 37, EARTHQUAKE
+	db 41, RAIN_DANCE
+	db 48, MIST
+	db 48, HAZE
+	db 53, SURF
+else
 	db 1, WATER_GUN
 	db 1, TAIL_WHIP
 	db 11, SLAM
@@ -3344,6 +3373,7 @@ QuagsireEvosAttacks:
 	db 47, RAIN_DANCE
 	db 59, MIST
 	db 59, HAZE
+endc
 	db 0 ; no more level-up moves
 
 EspeonEvosAttacks:
