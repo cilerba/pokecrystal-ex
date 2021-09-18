@@ -1073,6 +1073,20 @@ MachampEvosAttacks:
 BellsproutEvosAttacks:
 	db EVOLVE_LEVEL, 21, WEEPINBELL
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, VINE_WHIP
+	db 7, GROWTH
+	db 11, WRAP
+	db 13, SLEEP_POWDER
+	db 15, POISONPOWDER
+	db 17, STUN_SPORE
+	db 23, ACID
+	db 27, FAINT_ATTACK
+	db 30, SWEET_SCENT
+	db 35, SLUDGE
+	db 39, RAZOR_LEAF
+	db 45, SLAM
+else
 	db 1, VINE_WHIP
 	db 6, GROWTH
 	db 11, WRAP
@@ -1083,11 +1097,28 @@ BellsproutEvosAttacks:
 	db 30, SWEET_SCENT
 	db 37, RAZOR_LEAF
 	db 45, SLAM
+endc
 	db 0 ; no more level-up moves
 
 WeepinbellEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, VICTREEBEL
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, VINE_WHIP
+	db 1, GROWTH
+	db 1, WRAP
+	db 7, GROWTH
+	db 11, WRAP
+	db 13, SLEEP_POWDER
+	db 15, POISONPOWDER
+	db 17, STUN_SPORE
+	db 24, ACID
+	db 29, FAINT_ATTACK
+	db 32, SWEET_SCENT
+	db 39, SLUDGE
+	db 44, RAZOR_LEAF
+	db 52, SLAM
+else
 	db 1, VINE_WHIP
 	db 1, GROWTH
 	db 1, WRAP
@@ -1100,14 +1131,23 @@ WeepinbellEvosAttacks:
 	db 33, SWEET_SCENT
 	db 42, RAZOR_LEAF
 	db 54, SLAM
+endc
 	db 0 ; no more level-up moves
 
 VictreebelEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
 	db 1, VINE_WHIP
 	db 1, SLEEP_POWDER
 	db 1, SWEET_SCENT
 	db 1, RAZOR_LEAF
+	db 41, SOLARBEAM
+else
+	db 1, VINE_WHIP
+	db 1, SLEEP_POWDER
+	db 1, SWEET_SCENT
+	db 1, RAZOR_LEAF
+endc
 	db 0 ; no more level-up moves
 
 TentacoolEvosAttacks:
