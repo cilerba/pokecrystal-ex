@@ -417,8 +417,8 @@ YoungsterGroup:
 SchoolboyGroup:
 	; SCHOOLBOY (1)
 	db "JACK@", TRAINERTYPE_NORMAL
-	db 12, ODDISH
-	db 15, VOLTORB
+	db 16, ODDISH
+	db 19, VOLTORB
 	db -1 ; end
 
 	; SCHOOLBOY (2)
@@ -708,8 +708,8 @@ LassGroup:
 
 	; LASS (4)
 	db "KRISE@", TRAINERTYPE_NORMAL
-	db 12, ODDISH
-	db 15, CUBONE
+	db 16, ODDISH
+	db 18, CUBONE
 	db -1 ; end
 
 	; LASS (5)
@@ -1213,13 +1213,13 @@ PokemaniacGroup:
 
 	; POKEMANIAC (11)
 	db "ISSAC@", TRAINERTYPE_MOVES
-	db 12, LICKITUNG,  LICK, SUPERSONIC, CUT, NO_MOVE
+	db 16, LICKITUNG,  LICK, SUPERSONIC, CUT, NO_MOVE
 	db -1 ; end
 
 	; POKEMANIAC (12)
 	db "DONALD@", TRAINERTYPE_NORMAL
-	db 10, SLOWPOKE
-	db 10, SLOWPOKE
+	db 16, SLOWPOKE
+	db 16, SLOWPOKE
 	db -1 ; end
 
 	; POKEMANIAC (13)
@@ -1609,8 +1609,8 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (19)
 	db "WAYNE@", TRAINERTYPE_NORMAL
-	db  8, LEDYBA
-	db 10, PARAS
+	db  12, LEDYBA
+	db 15, PARAS
 	db -1 ; end
 
 FisherGroup:
@@ -2115,8 +2115,8 @@ SuperNerdGroup:
 
 	; SUPER_NERD (2)
 	db "ERIC@", TRAINERTYPE_NORMAL
-	db 11, GRIMER
-	db 11, GRIMER
+	db 16, GRIMER
+	db 16, GRIMER
 	db -1 ; end
 
 	; SUPER_NERD (3)
@@ -2164,10 +2164,10 @@ SuperNerdGroup:
 
 	; SUPER_NERD (10)
 	db "TERU@", TRAINERTYPE_NORMAL
-	db  7, MAGNEMITE
-	db 11, VOLTORB
-	db  7, MAGNEMITE
-	db  9, MAGNEMITE
+	db  14, MAGNEMITE
+	db 14, VOLTORB
+	db  16, MAGNEMITE
+	db  16, MAGNEMITE
 	db -1 ; end
 
 	; SUPER_NERD (11)
@@ -3214,7 +3214,7 @@ BoarderGroup:
 PokefanMGroup:
 	; POKEFANM (1)
 	db "WILLIAM@", TRAINERTYPE_ITEM
-	db 14, RAICHU,     BERRY
+	db 18, RAICHU,     BERRY
 	db -1 ; end
 
 	; POKEFANM (2)
@@ -3390,7 +3390,7 @@ TwinsGroup:
 PokefanFGroup:
 	; POKEFANF (1)
 	db "BEVERLY@", TRAINERTYPE_ITEM
-	db 14, SNUBBULL,   BERRY
+	db 18, SNUBBULL,   BERRY
 	db -1 ; end
 
 	; POKEFANF (2)
