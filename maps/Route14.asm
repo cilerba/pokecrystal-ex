@@ -82,10 +82,10 @@ BirdKeeperRoyBeatenText:
 	done
 
 BirdKeeperRoyAfterBattleText:
-	text "You have #MON"
-	line "that know the HM"
+	text "You have the"
+	line "access code to"
 
-	para "move FLY, don't"
+	para "PIDGEOT, don't"
 	line "you? I envy you."
 	done
 
