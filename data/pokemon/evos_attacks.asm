@@ -185,6 +185,19 @@ MetapodEvosAttacks:
 
 ButterfreeEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, CONFUSION
+	db 11, GUST
+	db 12, CONFUSION
+	db 15, POISONPOWDER
+	db 15, STUN_SPORE
+	db 15, SLEEP_POWDER
+	db 17, PSYBEAM
+	db 23, SUPERSONIC
+	db 25, SAFEGUARD
+	db 29, WHIRLWIND
+	db 35, WING_ATTACK
+else
 	db 1, CONFUSION
 	db 10, CONFUSION
 	db 13, POISONPOWDER
@@ -195,6 +208,7 @@ ButterfreeEvosAttacks:
 	db 28, GUST
 	db 34, PSYBEAM
 	db 40, SAFEGUARD
+endc
 	db 0 ; no more level-up moves
 
 WeedleEvosAttacks:
