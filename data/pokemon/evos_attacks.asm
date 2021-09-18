@@ -16,6 +16,7 @@ SECTION "Evolutions and Attacks", ROMX
 ; - db 0 ; no more level-up moves
 
 INCLUDE "data/pokemon/evos_attacks_pointers.asm"
+INCLUDE "data/pokemon/evos_moves.asm"
 
 BulbasaurEvosAttacks:
 	db EVOLVE_LEVEL, 16, IVYSAUR
@@ -54,6 +55,7 @@ IvysaurEvosAttacks:
 VenusaurEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, PETAL_DANCE
 	db 1, GROWL
 	db 1, LEECH_SEED
 	db 1, VINE_WHIP
@@ -180,14 +182,13 @@ MetapodEvosAttacks:
 	db EVOLVE_LEVEL, 10, BUTTERFREE
 	db 0 ; no more evolutions
 	db 1, HARDEN
-	db 7, HARDEN
 	db 0 ; no more level-up moves
 
 ButterfreeEvosAttacks:
 	db 0 ; no more evolutions
 if DEF(_CRYSTAL11_HACK)
 	db 1, CONFUSION
-	db 11, GUST
+	db 1, GUST
 	db 12, CONFUSION
 	db 15, POISONPOWDER
 	db 15, STUN_SPORE
@@ -222,14 +223,13 @@ KakunaEvosAttacks:
 	db EVOLVE_LEVEL, 10, BEEDRILL
 	db 0 ; no more evolutions
 	db 1, HARDEN
-	db 7, HARDEN
 	db 0 ; no more level-up moves
 
 BeedrillEvosAttacks:
 	db 0 ; no more evolutions
 if DEF(_CRYSTAL11_HACK)
 	db 1, FURY_ATTACK
-	db 11, TWINEEDLE
+	db 1, TWINEEDLE
 	db 13, FURY_ATTACK
 	db 16, RAGE
 	db 19, PURSUIT
@@ -1001,7 +1001,6 @@ KadabraEvosAttacks:
 	db 1, TELEPORT
 	db 1, KINESIS
 	db 1, CONFUSION
-	db 16, CONFUSION
 	db 18, DISABLE
 	db 21, PSYBEAM
 	db 26, RECOVER
@@ -1141,7 +1140,7 @@ if DEF(_CRYSTAL11_HACK)
 	db 1, SLEEP_POWDER
 	db 1, SWEET_SCENT
 	db 1, RAZOR_LEAF
-	db 41, SOLARBEAM
+	db 1, SOLARBEAM
 else
 	db 1, VINE_WHIP
 	db 1, SLEEP_POWDER
@@ -2353,6 +2352,7 @@ if DEF(_CRYSTAL11_HACK)
 	db 1, GROWL
 	db 1, RAZOR_LEAF
 	db 1, REFLECT
+	db 1, PETAL_DANCE
 	db 8, RAZOR_LEAF
 	db 9, POISONPOWDER
 	db 18, REFLECT
@@ -2957,6 +2957,7 @@ if DEF(_CRYSTAL11_HACK)
 	db 1, GROWL
 	db 1, THUNDER_WAVE
 	db 1, THUNDERSHOCK
+	db 1, THUNDERPUNCH
 	db 4, THUNDER_WAVE
 	db 8, THUNDERSHOCK
 	db 12, COTTON_SPORE
