@@ -1051,6 +1051,18 @@ AbraEvosAttacks:
 KadabraEvosAttacks:
 	db EVOLVE_TRADE, -1, ALAKAZAM
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TELEPORT
+	db 1, KINESIS
+	db 1, CONFUSION
+	db 16, KINESIS
+	db 18, DISABLE
+	db 21, PSYBEAM
+	db 26, REFLECT
+	db 30, RECOVER
+	db 38, PSYCHIC_M,
+	db 43, FUTURE_SIGHT
+else
 	db 1, TELEPORT
 	db 1, KINESIS
 	db 1, CONFUSION
@@ -1060,10 +1072,23 @@ KadabraEvosAttacks:
 	db 31, FUTURE_SIGHT
 	db 38, PSYCHIC_M
 	db 45, REFLECT
+endc
 	db 0 ; no more level-up moves
 
 AlakazamEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TELEPORT
+	db 1, KINESIS
+	db 1, CONFUSION
+	db 16, KINESIS
+	db 18, DISABLE
+	db 21, PSYBEAM
+	db 26, REFLECT
+	db 30, RECOVER
+	db 38, PSYCHIC_M,
+	db 43, FUTURE_SIGHT
+else
 	db 1, TELEPORT
 	db 1, KINESIS
 	db 1, CONFUSION
@@ -1074,6 +1099,7 @@ AlakazamEvosAttacks:
 	db 31, FUTURE_SIGHT
 	db 38, PSYCHIC_M
 	db 45, REFLECT
+endc
 	db 0 ; no more level-up moves
 
 MachopEvosAttacks:
