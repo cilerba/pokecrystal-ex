@@ -689,6 +689,22 @@ ClefableEvosAttacks:
 VulpixEvosAttacks:
 	db EVOLVE_ITEM, FIRE_STONE, NINETALES
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, EMBER
+	db 4, TAIL_WHIP
+	db 7, ROAR
+	db 9, CHARM
+	db 10, QUICK_ATTACK
+	db 12, CONFUSE_RAY
+	db 15, FIRE_SPIN
+	db 18, PURSUIT
+	db 23, FAINT_ATTACK
+	db 26, SHADOW_BALL
+	db 28, FLAME_WHEEL
+	db 33, PSYBEAM
+	db 37, FLAMETHROWER
+	db 42, FIRE_BLAST
+else
 	db 1, EMBER
 	db 1, TAIL_WHIP
 	db 7, QUICK_ATTACK
@@ -697,15 +713,25 @@ VulpixEvosAttacks:
 	db 25, SAFEGUARD
 	db 31, FLAMETHROWER
 	db 37, FIRE_SPIN
+endc
 	db 0 ; no more level-up moves
 
 NinetalesEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, EMBER
+	db 1, QUICK_ATTACK
+	db 1, CONFUSE_RAY
+	db 1, SAFEGUARD
+	db 1, CONFUSE_RAY
+	db 1, FLAMETHROWER
+else
 	db 1, EMBER
 	db 1, QUICK_ATTACK
 	db 1, CONFUSE_RAY
 	db 1, SAFEGUARD
 	db 43, FIRE_SPIN
+endc
 	db 0 ; no more level-up moves
 
 JigglypuffEvosAttacks:
