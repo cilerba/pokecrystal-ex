@@ -2506,6 +2506,17 @@ endc
 SentretEvosAttacks:
 	db EVOLVE_LEVEL, 15, FURRET
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 1, FORESIGHT
+	db 4, EFFECT_DEFENSE_CURL
+	db 8, QUICK_ATTACK
+	db 15, FURY_SWIPES,
+	db 23, SLAM
+	db 28, REST
+	db 31, FAINT_ATTACK
+	db 41, AMNESIA
+else
 	db 1, TACKLE
 	db 5, DEFENSE_CURL
 	db 11, QUICK_ATTACK
@@ -2513,10 +2524,28 @@ SentretEvosAttacks:
 	db 25, SLAM
 	db 33, REST
 	db 41, AMNESIA
+	db 52, DOUBLE_EDGE
+endc
 	db 0 ; no more level-up moves
 
 FurretEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 1, FORESIGHT
+	db 1, AGILITY
+	db 1, DEFENSE_CURL
+	db 1, QUICK_ATTACK
+	db 4, EFFECT_DEFENSE_CURL
+	db 8, QUICK_ATTACK
+	db 15, FURY_SWIPES,
+	db 17, AGILITY
+	db 25, SLAM
+	db 30, REST
+	db 36, FAINT_ATTACK
+	db 42, AMNESIA
+	db 52, DOUBLE_EDGE
+else
 	db 1, SCRATCH
 	db 1, DEFENSE_CURL
 	db 1, QUICK_ATTACK
@@ -2526,6 +2555,7 @@ FurretEvosAttacks:
 	db 28, SLAM
 	db 38, REST
 	db 48, AMNESIA
+endc
 	db 0 ; no more level-up moves
 
 HoothootEvosAttacks:
