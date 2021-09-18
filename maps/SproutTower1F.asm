@@ -65,7 +65,8 @@ SageChowAfterBattleText:
 SproutTower1FSage1Text:
 	text "Only if you reach"
 	line "the top will you"
-	cont "obtain an HM."
+	cont "receive some-"
+	cont "thing special."
 	done
 
 SproutTower1FSage2Text:
