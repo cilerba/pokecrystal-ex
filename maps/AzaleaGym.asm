@@ -47,7 +47,7 @@ AzaleaGymBugsyScript:
 	setevent EVENT_GOT_TM49_FURY_CUTTER
 	writetext BugsyText_FuryCutterSpeech
 	waitbutton
-	loadmem wHMUnlocks, 3
+	loadmem wUnlockedCUT, 1
 	writetext BugsyText_GetScytherText
 	playsound SFX_ITEM
 	waitsfx
