@@ -446,6 +446,20 @@ endc
 EkansEvosAttacks:
 	db EVOLVE_LEVEL, 22, ARBOK
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, WRAP
+	db 1, LEER
+	db 4, POISON_STING
+	db 9, BITE
+	db 12, GLARE
+	db 17, SCREECH
+	db 20, ACID
+	db 25, SLUDGE
+	db 33, DIG
+	db 38, TOXIC
+	db 44, SLUDGE_BOMB
+	db 48, HAZE
+else
 	db 1, WRAP
 	db 1, LEER
 	db 9, POISON_STING
@@ -454,10 +468,28 @@ EkansEvosAttacks:
 	db 29, SCREECH
 	db 37, ACID
 	db 43, HAZE
+endc
 	db 0 ; no more level-up moves
 
 ArbokEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, CRUNCH
+	db 1, WRAP
+	db 1, LEER
+	db 1, POISON_STING
+	db 1, BITE
+	db 4, POISON_STING
+	db 9, BITE
+	db 12, GLARE
+	db 17, SCREECH
+	db 20, ACID
+	db 27, SLUDGE
+	db 35, DIG
+	db 40, TOXIC
+	db 45, SLUDGE_BOMB
+	db 49, HAZE
+else
 	db 1, WRAP
 	db 1, LEER
 	db 1, POISON_STING
@@ -468,6 +500,7 @@ ArbokEvosAttacks:
 	db 33, SCREECH
 	db 43, ACID
 	db 51, HAZE
+endc
 	db 0 ; no more level-up moves
 
 PikachuEvosAttacks:
