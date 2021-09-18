@@ -2685,6 +2685,22 @@ endc
 SpinarakEvosAttacks:
 	db EVOLVE_LEVEL, 22, ARIADOS
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, POISON_STING
+	db 1, STRING_SHOT
+	db 1, CONSTRICT
+	db 5, ABSORB
+	db 8, TWINEEDLE
+	db 12, SCARY_FACE
+	db 15, NIGHT_SHADE
+	db 20, FURY_SWIPES
+	db 27, SPIDER_WEB
+	db 33, AGILITY
+	db 36, PIN_MISSILE
+	db 40, PSYCHIC_M
+	db 45, SLUDGE
+	db 52, TOXIC
+else
 	db 1, POISON_STING
 	db 1, STRING_SHOT
 	db 6, SCARY_FACE
@@ -2695,10 +2711,30 @@ SpinarakEvosAttacks:
 	db 37, SPIDER_WEB
 	db 45, AGILITY
 	db 53, PSYCHIC_M
+endc
 	db 0 ; no more level-up moves
 
 AriadosEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SWORDS_DANCE
+	db 1, FOCUS_ENERGY
+	db 1, POISON_STING
+	db 1, STRING_SHOT
+	db 1, CONSTRICT
+	db 1, ABSORB
+	db 1, SCARY_FACE
+	db 5, ABSORB
+	db 12, SCARY_FACE
+	db 15, NIGHT_SHADE
+	db 23, SWORDS_DANCE
+	db 28, BITE
+	db 32, SPIDER_WEB
+	db 37, AGILITY
+	db 41, PIN_MISSILE
+	db 46, PSYCHIC_M,
+	db 52, TOXIC
+else
 	db 1, POISON_STING
 	db 1, STRING_SHOT
 	db 1, SCARY_FACE
@@ -2711,6 +2747,7 @@ AriadosEvosAttacks:
 	db 43, SPIDER_WEB
 	db 53, AGILITY
 	db 63, PSYCHIC_M
+endc
 	db 0 ; no more level-up moves
 
 CrobatEvosAttacks:
