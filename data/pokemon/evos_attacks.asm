@@ -1179,6 +1179,23 @@ endc
 MachopEvosAttacks:
 	db EVOLVE_LEVEL, 28, MACHOKE
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, LOW_KICK
+	db 1, LEER
+	db 3, FOCUS_ENERGY
+	db 7, KARATE_CHOP
+	db 12, FORESIGHT
+	db 15, SEISMIC_TOSS
+	db 21, FAINT_ATTACK
+	db 25, VITAL_THROW
+	db 27, JUMP_KICK
+	db 33, SUBMISSION
+	db 37, MEDITATE
+	db 39, CROSS_CHOP
+	db 43, SCARY_FACE
+	db 45, DYNAMICPUNCH
+	db 52, DOUBLE_EDGE
+else
 	db 1, LOW_KICK
 	db 1, LEER
 	db 7, FOCUS_ENERGY
@@ -1189,11 +1206,30 @@ MachopEvosAttacks:
 	db 37, CROSS_CHOP
 	db 43, SCARY_FACE
 	db 49, SUBMISSION
+endc
 	db 0 ; no more level-up moves
 
 MachokeEvosAttacks:
 	db EVOLVE_TRADE, -1, MACHAMP
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, LOW_KICK
+	db 1, LEER
+	db 1, FOCUS_ENERGY
+	db 3, FOCUS_ENERGY
+	db 7, KARATE_CHOP
+	db 12, FORESIGHT
+	db 15, SEISMIC_TOSS
+	db 21, FAINT_ATTACK
+	db 25, VITAL_THROW
+	db 27, JUMP_KICK
+	db 37, SUBMISSION
+	db 43, MEDITATE
+	db 47, CROSS_CHOP
+	db 53, SCARY_FACE
+	db 57, DYNAMICPUNCH
+	db 62, DOUBLE_EDGE
+else
 	db 1, LOW_KICK
 	db 1, LEER
 	db 1, FOCUS_ENERGY
@@ -1205,10 +1241,30 @@ MachokeEvosAttacks:
 	db 43, CROSS_CHOP
 	db 52, SCARY_FACE
 	db 61, SUBMISSION
+endc
 	db 0 ; no more level-up moves
 
 MachampEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, STRENGTH
+	db 1, LOW_KICK
+	db 1, LEER
+	db 1, FOCUS_ENERGY
+	db 3, FOCUS_ENERGY
+	db 7, KARATE_CHOP
+	db 12, FORESIGHT
+	db 15, SEISMIC_TOSS
+	db 21, FAINT_ATTACK
+	db 25, VITAL_THROW
+	db 27, JUMP_KICK
+	db 37, SUBMISSION
+	db 43, MEDITATE
+	db 47, CROSS_CHOP
+	db 53, SCARY_FACE
+	db 57, DYNAMICPUNCH
+	db 62, DOUBLE_EDGE
+else
 	db 1, LOW_KICK
 	db 1, LEER
 	db 1, FOCUS_ENERGY
@@ -1220,6 +1276,7 @@ MachampEvosAttacks:
 	db 43, CROSS_CHOP
 	db 52, SCARY_FACE
 	db 61, SUBMISSION
+endc
 	db 0 ; no more level-up moves
 
 BellsproutEvosAttacks:

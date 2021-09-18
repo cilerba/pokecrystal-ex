@@ -66,7 +66,7 @@ EvolutionMoves::
 	db NO_MOVE              ; ALAKAZAM
 	db NO_MOVE              ; MACHOP
 	db NO_MOVE              ; MACHOKE
-	db NO_MOVE              ; MACHAMP
+	db STRENGTH             ; MACHAMP
 	db NO_MOVE              ; BELLSPROUT
 	db NO_MOVE              ; WEEPINBELL
 	db SOLARBEAM            ; VICTREEBEL
