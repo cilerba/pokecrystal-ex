@@ -2587,6 +2587,21 @@ endc
 
 NoctowlEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, FORESIGHT
+	db 1, DREAM_EATER
+	db 1, SKY_ATTACK
+	db 1, HYPNOSIS
+	db 7, PECK
+	db 10, CONFUSION
+	db 18, PSYBEAM
+	db 27, TAKE_DOWN
+	db 31, REFLECT
+	db 36, WING_ATTACK
+	db 43, RECOVER
+else
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, FORESIGHT
@@ -2598,6 +2613,7 @@ NoctowlEvosAttacks:
 	db 33, TAKE_DOWN
 	db 41, CONFUSION
 	db 57, DREAM_EATER
+endc
 	db 0 ; no more level-up moves
 
 LedybaEvosAttacks:
