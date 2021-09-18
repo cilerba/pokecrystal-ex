@@ -226,7 +226,7 @@ Script_Cut:
 	refreshscreen
 	pokepic SCYTHER
 	cry SCYTHER
-	waitbutton
+	waitsfx
 	reloadmappart
 	callasm CutDownTreeOrGrass
 	closetext
@@ -337,7 +337,7 @@ Script_UseFlash:
 	
 	pokepic AMPHAROS
 	cry AMPHAROS
-	waitbutton
+	waitsfx
 	
 	reloadmappart
 	refreshscreen
@@ -439,7 +439,7 @@ UsedSurfScript:
 	
 	pokepic LAPRAS
 	cry LAPRAS
-	waitbutton
+	waitsfx
 
 	callasm .stubbed_fn
 
@@ -1049,7 +1049,7 @@ Script_UsedStrength:
 	refreshscreen
 	pokepic PRIMEAPE
 	cry PRIMEAPE
-	waitbutton
+	waitsfx
 	reloadmappart
 	refreshscreen
 	
