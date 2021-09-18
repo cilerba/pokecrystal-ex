@@ -530,6 +530,7 @@ RaichuEvosAttacks:
 SandshrewEvosAttacks:
 	db EVOLVE_LEVEL, 22, SANDSLASH
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
 	db 1, SCRATCH
 	db 6, DEFENSE_CURL
 	db 11, SAND_ATTACK
@@ -538,6 +539,16 @@ SandshrewEvosAttacks:
 	db 30, SWIFT
 	db 37, FURY_SWIPES
 	db 45, SANDSTORM
+else
+	db 1, SCRATCH
+	db 6, DEFENSE_CURL
+	db 11, SAND_ATTACK
+	db 17, POISON_STING
+	db 23, SLASH
+	db 30, SWIFT
+	db 37, FURY_SWIPES
+	db 45, SANDSTORM
+endc
 	db 0 ; no more level-up moves
 
 SandslashEvosAttacks:
@@ -1477,6 +1488,22 @@ endc
 HaunterEvosAttacks:
 	db EVOLVE_TRADE, -1, GENGAR
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, HYPNOSIS
+	db 1, LICK
+	db 1, SPITE
+	db 1, SPITE
+	db 5, SPITE
+	db 8, MEAN_LOOK
+	db 12, CURSE
+	db 15, NIGHT_SHADE
+	db 19, CONFUSE_RAY
+	db 22, BITE
+	db 30, SHADOW_BALL
+	db 39, DREAM_EATER
+	db 45, CRUNCH
+	db 50, DESTINY_BOND
+else
 	db 1, HYPNOSIS
 	db 1, LICK
 	db 1, SPITE
@@ -1487,10 +1514,27 @@ HaunterEvosAttacks:
 	db 31, CONFUSE_RAY
 	db 39, DREAM_EATER
 	db 48, DESTINY_BOND
+endc
 	db 0 ; no more level-up moves
 
 GengarEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, HYPNOSIS
+	db 1, LICK
+	db 1, SPITE
+	db 1, SPITE
+	db 5, SPITE
+	db 8, MEAN_LOOK
+	db 12, CURSE
+	db 15, NIGHT_SHADE
+	db 19, CONFUSE_RAY
+	db 22, BITE
+	db 30, SHADOW_BALL
+	db 39, DREAM_EATER
+	db 45, CRUNCH
+	db 50, DESTINY_BOND
+else
 	db 1, HYPNOSIS
 	db 1, LICK
 	db 1, SPITE
@@ -1501,6 +1545,7 @@ GengarEvosAttacks:
 	db 31, CONFUSE_RAY
 	db 39, DREAM_EATER
 	db 48, DESTINY_BOND
+endc
 	db 0 ; no more level-up moves
 
 OnixEvosAttacks:
