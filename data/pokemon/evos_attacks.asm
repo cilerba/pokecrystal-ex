@@ -2896,6 +2896,22 @@ endc
 FlaaffyEvosAttacks:
 	db EVOLVE_LEVEL, 30, AMPHAROS
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, THUNDER_WAVE
+	db 1, THUNDERSHOCK
+	db 4, THUNDER_WAVE
+	db 8, THUNDERSHOCK
+	db 12, COTTON_SPORE
+	db 18, TAKE_DOWN
+	db 25, SPARK
+	db 29, CONFUSE_RAY
+	db 34, ROCK_THROW
+	db 38, THUNDERBOLT
+	db 45, LIGHT_SCREEN
+	db 52, THUNDER
+else
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, THUNDERSHOCK
@@ -2904,10 +2920,29 @@ FlaaffyEvosAttacks:
 	db 27, COTTON_SPORE
 	db 36, LIGHT_SCREEN
 	db 45, THUNDER
+endc
 	db 0 ; no more level-up moves
 
 AmpharosEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, THUNDERSHOCK
+	db 1, THUNDER_WAVE
+	db 1, FIRE_PUNCH
+	db 4, THUNDER_WAVE
+	db 8, THUNDERSHOCK
+	db 12, COTTON_SPORE
+	db 18, TAKE_DOWN
+	db 25, SPARK
+	db 29, CONFUSE_RAY
+	db 31, THUNDERPUNCH
+	db 36, ROCK_THROW
+	db 42, THUNDERBOLT
+	db 48, LIGHT_SCREEN
+	db 58, THUNDER
+else
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, THUNDERSHOCK
@@ -2918,6 +2953,7 @@ AmpharosEvosAttacks:
 	db 30, THUNDERPUNCH
 	db 42, LIGHT_SCREEN
 	db 57, THUNDER
+endc
 	db 0 ; no more level-up moves
 
 BellossomEvosAttacks:
