@@ -227,6 +227,17 @@ KakunaEvosAttacks:
 
 BeedrillEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, FURY_ATTACK
+	db 11, TWINEEDLE
+	db 13, FURY_ATTACK
+	db 16, RAGE
+	db 19, PURSUIT
+	db 22, FOCUS_ENERGY
+	db 26, SLUDGE
+	db 30, PIN_MISSILE
+	db 36, AGILITY
+else
 	db 1, FURY_ATTACK
 	db 10, FURY_ATTACK
 	db 15, FOCUS_ENERGY
@@ -235,6 +246,7 @@ BeedrillEvosAttacks:
 	db 30, PURSUIT
 	db 35, PIN_MISSILE
 	db 40, AGILITY
+endc
 	db 0 ; no more level-up moves
 
 PidgeyEvosAttacks:
