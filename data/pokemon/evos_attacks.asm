@@ -1448,6 +1448,21 @@ CloysterEvosAttacks:
 GastlyEvosAttacks:
 	db EVOLVE_LEVEL, 25, HAUNTER
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, HYPNOSIS
+	db 1, LICK
+	db 5, SPITE
+	db 8, MEAN_LOOK
+	db 12, CURSE
+	db 15, NIGHT_SHADE
+	db 19, CONFUSE_RAY
+	db 22, BITE
+	db 27, SHADOW_BALL
+	db 33, DREAM_EATER
+	db 38, CRUNCH
+	db 40, DESTINY_BOND
+	db 47, NIGHTMARE
+else
 	db 1, HYPNOSIS
 	db 1, LICK
 	db 8, SPITE
@@ -1457,6 +1472,7 @@ GastlyEvosAttacks:
 	db 28, CONFUSE_RAY
 	db 33, DREAM_EATER
 	db 36, DESTINY_BOND
+endc
 	db 0 ; no more level-up moves
 
 HaunterEvosAttacks:
