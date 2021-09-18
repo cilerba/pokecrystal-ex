@@ -60,7 +60,7 @@ wMusicID:: dw
 wMusicBank:: db
 wNoiseSampleAddress:: dw
 wNoiseSampleDelay:: db
-	ds 1
+wBuffer1:: db ; Move Reminder
 wMusicNoiseSampleSet:: db
 wSFXNoiseSampleSet:: db
 

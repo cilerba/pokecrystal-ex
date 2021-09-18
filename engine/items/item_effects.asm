@@ -2959,5 +2959,5 @@ GetMthMoveOfCurrentMon:
 	ret
 	
 PokePagerEffect:
-	farcall PPFunction
+	farcall MoveReminder
 	ret
