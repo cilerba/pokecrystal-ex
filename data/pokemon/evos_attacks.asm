@@ -3618,6 +3618,19 @@ SteelixEvosAttacks:
 SnubbullEvosAttacks:
 	db EVOLVE_LEVEL, 23, GRANBULL
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, SCARY_FACE
+	db 1, TAIL_WHIP
+	db 1, CHARM
+	db 7, BITE
+	db 13, LICK
+	db 19, HEADBUTT
+	db 25, ROAR
+	db 31, RAGE
+	db 37, TAKE_DOWN
+	db 43, CRUNCH
+else
 	db 1, TACKLE
 	db 1, SCARY_FACE
 	db 4, TAIL_WHIP
@@ -3627,10 +3640,25 @@ SnubbullEvosAttacks:
 	db 26, ROAR
 	db 34, RAGE
 	db 43, TAKE_DOWN
+endc
 	db 0 ; no more level-up moves
 
 GranbullEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, SCARY_FACE
+	db 1, TAIL_WHIP
+	db 1, CHARM
+	db 7, BITE
+	db 13, LICK
+	db 19, HEADBUTT
+	db 27, ROAR
+	db 35, RAGE
+	db 43, TAKE_DOWN
+	db 50, CRUNCH
+	db 60, OUTRAGE
+else
 	db 1, TACKLE
 	db 1, SCARY_FACE
 	db 4, TAIL_WHIP
@@ -3640,6 +3668,7 @@ GranbullEvosAttacks:
 	db 28, ROAR
 	db 38, RAGE
 	db 51, TAKE_DOWN
+endc
 	db 0 ; no more level-up moves
 
 QwilfishEvosAttacks:
