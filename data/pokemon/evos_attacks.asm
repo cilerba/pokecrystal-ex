@@ -3017,6 +3017,21 @@ PolitoedEvosAttacks:
 HoppipEvosAttacks:
 	db EVOLVE_LEVEL, 18, SKIPLOOM
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, ABSORB
+	db 1, SPLASH
+	db 4, SYNTHESIS
+	db 6, TAIL_WHIP
+	db 8, TACKLE
+	db 11, POISONPOWDER
+	db 13, STUN_SPORE
+	db 15, SLEEP_POWDER
+	db 20, LEECH_SEED
+	db 25, MEGA_DRAIN
+	db 28, GUST
+	db 34, COTTON_SPORE
+	db 40, GIGA_DRAIN
+else
 	db 1, SPLASH
 	db 5, SYNTHESIS
 	db 5, TAIL_WHIP
@@ -3027,11 +3042,29 @@ HoppipEvosAttacks:
 	db 20, LEECH_SEED
 	db 25, COTTON_SPORE
 	db 30, MEGA_DRAIN
+endc
 	db 0 ; no more level-up moves
 
 SkiploomEvosAttacks:
 	db EVOLVE_LEVEL, 27, JUMPLUFF
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, ABSORB
+	db 1, SPLASH
+	db 1, SYNTHESIS
+	db 1, TAIL_WHIP
+	db 4, SYNTHESIS
+	db 6, TAIL_WHIP
+	db 8, TACKLE
+	db 13, POISONPOWDER
+	db 15, STUN_SPORE
+	db 17, SLEEP_POWDER
+	db 22, LEECH_SEED
+	db 28, MEGA_DRAIN
+	db 32, GUST
+	db 40, COTTON_SPORE
+	db 50, GIGA_DRAIN
+else
 	db 1, SPLASH
 	db 1, SYNTHESIS
 	db 1, TAIL_WHIP
@@ -3045,10 +3078,28 @@ SkiploomEvosAttacks:
 	db 22, LEECH_SEED
 	db 29, COTTON_SPORE
 	db 36, MEGA_DRAIN
+endc
 	db 0 ; no more level-up moves
 
 JumpluffEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, ABSORB
+	db 1, SPLASH
+	db 1, SYNTHESIS
+	db 1, TAIL_WHIP
+	db 4, SYNTHESIS
+	db 6, TAIL_WHIP
+	db 8, TACKLE
+	db 13, POISONPOWDER
+	db 15, STUN_SPORE
+	db 17, SLEEP_POWDER
+	db 22, LEECH_SEED
+	db 29, MEGA_DRAIN
+	db 35, GUST
+	db 42, COTTON_SPORE
+	db 52, GIGA_DRAIN
+else
 	db 1, SPLASH
 	db 1, SYNTHESIS
 	db 1, TAIL_WHIP
@@ -3062,6 +3113,7 @@ JumpluffEvosAttacks:
 	db 22, LEECH_SEED
 	db 33, COTTON_SPORE
 	db 44, MEGA_DRAIN
+endc
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:
