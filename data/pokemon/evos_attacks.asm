@@ -277,6 +277,20 @@ endc
 PidgeottoEvosAttacks:
 	db EVOLVE_LEVEL, 36, PIDGEOT
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, SAND_ATTACK
+	db 1, GUST
+	db 5, SAND_ATTACK
+	db 9, GUST
+	db 13, QUICK_ATTACK
+	db 17, WHIRLWIND
+	db 22, TWISTER
+	db 27, WING_ATTACK
+	db 32, AGILITY
+	db 37, CHARM
+	db 55, MIRROR_MOVE
+else
 	db 1, TACKLE
 	db 1, SAND_ATTACK
 	db 1, GUST
@@ -287,10 +301,26 @@ PidgeottoEvosAttacks:
 	db 33, WING_ATTACK
 	db 43, AGILITY
 	db 55, MIRROR_MOVE
+endc
 	db 0 ; no more level-up moves
 
 PidgeotEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, SAND_ATTACK
+	db 1, GUST
+	db 5, SAND_ATTACK
+	db 9, GUST
+	db 13, QUICK_ATTACK
+	db 17, WHIRLWIND
+	db 22, TWISTER
+	db 27, WING_ATTACK
+	db 40, CHARM
+	db 47, AGILITY
+	db 55, FLY
+	db 61, MIRROR_MOVE
+else
 	db 1, TACKLE
 	db 1, SAND_ATTACK
 	db 1, GUST
@@ -302,6 +332,7 @@ PidgeotEvosAttacks:
 	db 33, WING_ATTACK
 	db 46, AGILITY
 	db 61, MIRROR_MOVE
+endc
 	db 0 ; no more level-up moves
 
 RattataEvosAttacks:
