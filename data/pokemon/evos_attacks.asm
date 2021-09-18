@@ -2619,6 +2619,22 @@ endc
 LedybaEvosAttacks:
 	db EVOLVE_LEVEL, 18, LEDIAN
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 5, SUPERSONIC
+	db 8, SWIFT
+	db 12, LIGHT_SCREEN
+	db 12, REFLECT
+	db 15, MACH_PUNCH
+	db 19, LEECH_LIFE
+	db 22, COMET_PUNCH
+	db 26, SAFEGUARD
+	db 29, BATON_PASS
+	db 33, PIN_MISSILE
+	db 36, AGILITY
+	db 43, WING_ATTACK
+	db 50, DOUBLE_EDGE
+else
 	db 1, TACKLE
 	db 8, SUPERSONIC
 	db 15, COMET_PUNCH
@@ -2629,10 +2645,29 @@ LedybaEvosAttacks:
 	db 36, SWIFT
 	db 43, AGILITY
 	db 50, DOUBLE_EDGE
+endc
 	db 0 ; no more level-up moves
 
 LedianEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, SUPERSONIC
+	db 1, SWIFT
+	db 5, SUPERSONIC
+	db 8, SWIFT
+	db 12, LIGHT_SCREEN
+	db 12, REFLECT
+	db 15, MACH_PUNCH
+	db 20, LEECH_LIFE
+	db 24, COMET_PUNCH
+	db 27, SAFEGUARD
+	db 30, BATON_PASS
+	db 35, PIN_MISSILE
+	db 38, AGILITY
+	db 44, WING_ATTACK
+	db 50, DOUBLE_EDGE
+else
 	db 1, TACKLE
 	db 1, SUPERSONIC
 	db 8, SUPERSONIC
@@ -2644,6 +2679,7 @@ LedianEvosAttacks:
 	db 42, SWIFT
 	db 51, AGILITY
 	db 60, DOUBLE_EDGE
+endc
 	db 0 ; no more level-up moves
 
 SpinarakEvosAttacks:
