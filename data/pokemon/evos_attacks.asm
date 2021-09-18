@@ -2351,6 +2351,20 @@ endc
 QuilavaEvosAttacks:
 	db EVOLVE_LEVEL, 36, TYPHLOSION
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, LEER
+	db 1, SMOKESCREEN
+	db 6, SMOKESCREEN
+	db 10, EMBER
+	db 13, QUICK_ATTACK
+	db 20, FLAME_WHEEL
+	db 24, DEFENSE_CURL
+	db 31, SWIFT
+	db 46, FLAMETHROWER 
+	db 54, ROLLOUT
+	db 60, DOUBLE_EDGE
+else
 	db 1, TACKLE
 	db 1, LEER
 	db 1, SMOKESCREEN
@@ -2360,10 +2374,27 @@ QuilavaEvosAttacks:
 	db 31, FLAME_WHEEL
 	db 42, SWIFT
 	db 54, FLAMETHROWER
+endc
 	db 0 ; no more level-up moves
 
 TyphlosionEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, DOUBLE_EDGE
+	db 1, LEER
+	db 1, SMOKESCREEN
+	db 1, EMBER
+	db 6, SMOKESCREEN
+	db 10, EMBER
+	db 13, QUICK_ATTACK
+	db 20, FLAME_WHEEL
+	db 24, DEFENSE_CURL
+	db 31, SWIFT
+	db 45, FLAMETHROWER 
+	db 61, ROLLOUT
+	db 67, DOUBLE_EDGE
+	db 74, FIRE_BLAST
+else
 	db 1, TACKLE
 	db 1, LEER
 	db 1, SMOKESCREEN
@@ -2374,6 +2405,7 @@ TyphlosionEvosAttacks:
 	db 31, FLAME_WHEEL
 	db 45, SWIFT
 	db 60, FLAMETHROWER
+endc
 	db 0 ; no more level-up moves
 
 TotodileEvosAttacks:
