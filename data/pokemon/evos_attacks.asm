@@ -3395,6 +3395,22 @@ SunfloraEvosAttacks:
 
 YanmaEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, FORESIGHT
+	db 6, QUICK_ATTACK
+	db 11, DOUBLE_TEAM
+	db 14, SONICBOOM
+	db 17, DETECT
+	db 22, SUPERSONIC
+	db 27, SWIFT
+	db 30, PURSUIT
+	db 33, ANCIENTPOWER
+	db 38, HYPNOSIS
+	db 43, WING_ATTACK
+	db 46, SCREECH
+	db 55, AEROBLAST
+else
 	db 1, TACKLE
 	db 1, FORESIGHT
 	db 7, QUICK_ATTACK
@@ -3404,6 +3420,7 @@ YanmaEvosAttacks:
 	db 31, SUPERSONIC
 	db 37, WING_ATTACK
 	db 43, SCREECH
+endc
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
