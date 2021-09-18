@@ -1246,6 +1246,19 @@ endc
 GravelerEvosAttacks:
 	db EVOLVE_TRADE, -1, GOLEM
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, DEFENSE_CURL
+	db 1, ROCK_THROW
+	db 10, ROLLOUT
+	db 17, MAGNITUDE
+	db 24, SELFDESTRUCT
+	db 30, SPIKES
+	db 35, ROCK_THROW
+	db 40, EARTHQUAKE
+	db 44, EXPLOSION
+	db 50, DOUBLE_EDGE
+else
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
 	db 1, ROCK_THROW
@@ -1257,10 +1270,24 @@ GravelerEvosAttacks:
 	db 34, ROLLOUT
 	db 41, EARTHQUAKE
 	db 48, EXPLOSION
+endc
 	db 0 ; no more level-up moves
 
 GolemEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, DEFENSE_CURL
+	db 1, ROCK_THROW
+	db 10, ROLLOUT
+	db 17, MAGNITUDE
+	db 24, SELFDESTRUCT
+	db 30, SPIKES
+	db 35, ROCK_THROW
+	db 40, EARTHQUAKE
+	db 44, EXPLOSION
+	db 50, DOUBLE_EDGE
+else
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
 	db 1, ROCK_THROW
@@ -1273,6 +1300,7 @@ GolemEvosAttacks:
 	db 34, ROLLOUT
 	db 41, EARTHQUAKE
 	db 48, EXPLOSION
+endc
 	db 0 ; no more level-up moves
 
 PonytaEvosAttacks:
