@@ -347,7 +347,7 @@ JohtoGrassWildMons:
 	db 16, PIDGEY
 	db 17, CATERPIE
 	db 16, WEEDLE
-	db 17, WEEDLE
+	db 17, TEDDIURSA
 	; day
 	db 15, NIDORAN_F
 	db 16, NIDORAN_M
@@ -355,14 +355,14 @@ JohtoGrassWildMons:
 	db 16, PIDGEY
 	db 17, CATERPIE
 	db 16, WEEDLE
-	db 17, WEEDLE
+	db 17, TEDDIURSA
 	; nite
 	db 15, PSYDUCK
 	db 16, HOOTHOOT
 	db 16, SPINARAK
 	db 16, HOOTHOOT
 	db 17, VENONAT
-	db 16, VENONAT
+	db 16, TEDDIURSA
 	db 17, VENONAT
 	end_grass_wildmons
 
