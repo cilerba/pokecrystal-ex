@@ -532,13 +532,21 @@ SandshrewEvosAttacks:
 	db 0 ; no more evolutions
 if DEF(_CRYSTAL11_HACK)
 	db 1, SCRATCH
-	db 6, DEFENSE_CURL
-	db 11, SAND_ATTACK
-	db 17, POISON_STING
-	db 23, SLASH
-	db 30, SWIFT
-	db 37, FURY_SWIPES
-	db 45, SANDSTORM
+	db 1, DEFENSE_CURL
+	db 3, SAND_ATTACK
+	db 5, POISON_STING
+	db 7, ROLLOUT
+	db 9, RAPID_SPIN
+	db 11, FURY_CUTTER
+	db 14, MAGNITUDE
+	db 17, SWIFT
+	db 20, FURY_SWIPES
+	db 25, SLASH
+	db 30, DIG
+	db 34, METAL_CLAW
+	db 38, SWORDS_DANCE
+	db 42, SANDSTORM
+	db 46, EARTHQUAKE
 else
 	db 1, SCRATCH
 	db 6, DEFENSE_CURL
@@ -553,6 +561,25 @@ endc
 
 SandslashEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 1, DEFENSE_CURL
+	db 1, SAND_ATTACK
+	db 1, POISON_STING
+	db 5, POISON_STING
+	db 7, ROLLOUT
+	db 9, RAPID_SPIN
+	db 11, FURY_CUTTER
+	db 14, MAGNITUDE
+	db 17, SWIFT
+	db 20, FURY_SWIPES
+	db 25, SLASH
+	db 32, DIG
+	db 38, METAL_CLAW
+	db 43, SWORDS_DANCE
+	db 48, SANDSTORM
+	db 53, EARTHQUAKE
+else
 	db 1, SCRATCH
 	db 1, DEFENSE_CURL
 	db 1, SAND_ATTACK
@@ -563,6 +590,7 @@ SandslashEvosAttacks:
 	db 33, SWIFT
 	db 42, FURY_SWIPES
 	db 52, SANDSTORM
+endc
 	db 0 ; no more level-up moves
 
 NidoranFEvosAttacks:
