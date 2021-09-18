@@ -2439,6 +2439,23 @@ endc
 CroconawEvosAttacks:
 	db EVOLVE_LEVEL, 30, FERALIGATR
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 1, LEER
+	db 1, RAGE
+	db 1, WATER_GUN
+	db 6, WATER_GUN
+	db 8, RAGE
+	db 13, BITE
+	db 15, SCARY_FACE
+	db 21, ICE_PUNCH
+	db 24, FLAIL
+	db 30, CRUNCH
+	db 37, SLASH
+	db 42, SCREECH
+	db 48, THRASH
+	db 55, HYDRO_PUMP
+else
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, RAGE
@@ -2449,10 +2466,29 @@ CroconawEvosAttacks:
 	db 37, SLASH
 	db 45, SCREECH
 	db 55, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 FeraligatrEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, AGILITY
+	db 1, SCRATCH
+	db 1, LEER
+	db 1, WATER_GUN
+	db 1, RAGE
+	db 6, WATER_GUN
+	db 8, RAGE
+	db 13, BITE
+	db 15, SCARY_FACE
+	db 21, ICE_PUNCH
+	db 24, FLAIL
+	db 32, CRUNCH
+	db 38, SLASH
+	db 44, SCREECH
+	db 53, THRASH
+	db 58, HYDRO_PUMP
+else
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, RAGE
@@ -2464,6 +2500,7 @@ FeraligatrEvosAttacks:
 	db 38, SLASH
 	db 47, SCREECH
 	db 58, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 SentretEvosAttacks:
