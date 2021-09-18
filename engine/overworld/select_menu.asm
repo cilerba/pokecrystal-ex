@@ -166,7 +166,6 @@ UseRegisteredItem:
 	call RefreshScreen
 
 ._cantuse
-	call CantUseItem
 	call CloseText
 	and a
 	ret
