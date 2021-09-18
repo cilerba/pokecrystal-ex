@@ -60,7 +60,7 @@ EvolutionMoves::
 	db NO_MOVE              ; ARCANINE
 	db NO_MOVE              ; POLIWAG
 	db NO_MOVE              ; POLIWHIRL
-	db NO_MOVE              ; POLIWRATH
+	db SUBMISSION           ; POLIWRATH
 	db NO_MOVE              ; ABRA
 	db NO_MOVE              ; KADABRA
 	db NO_MOVE              ; ALAKAZAM

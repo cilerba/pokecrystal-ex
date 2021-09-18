@@ -1035,6 +1035,19 @@ endc
 PoliwagEvosAttacks:
 	db EVOLVE_LEVEL, 25, POLIWHIRL
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, WATER_GUN
+	db 1, HYPNOSIS
+	db 6, POUND
+	db 12, MUD_SLAP
+	db 18, BUBBLEBEAM
+	db 24, RAIN_DANCE
+	db 30, BODY_SLAM
+	db 36, MAGNITUDE
+	db 42, HYDRO_PUMP
+	db 48, BELLY_DRUM
+	db 54, DOUBLE_EDGE
+else
 	db 1, BUBBLE
 	db 7, HYPNOSIS
 	db 13, WATER_GUN
@@ -1043,12 +1056,26 @@ PoliwagEvosAttacks:
 	db 31, BODY_SLAM
 	db 37, BELLY_DRUM
 	db 43, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 PoliwhirlEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, POLIWRATH
 	db EVOLVE_TRADE, KINGS_ROCK, POLITOED
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, WATER_GUN
+	db 1, HYPNOSIS
+	db 6, POUND
+	db 12, MUD_SLAP
+	db 18, BUBBLEBEAM
+	db 24, RAIN_DANCE
+	db 32, BODY_SLAM
+	db 40, MAGNITUDE
+	db 48, HYDRO_PUMP
+	db 56, BELLY_DRUM
+	db 66, DOUBLE_EDGE
+else
 	db 1, BUBBLE
 	db 1, HYPNOSIS
 	db 1, WATER_GUN
@@ -1059,16 +1086,34 @@ PoliwhirlEvosAttacks:
 	db 35, BODY_SLAM
 	db 43, BELLY_DRUM
 	db 51, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 PoliwrathEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SUBMISSION
+	db 1, MIND_READER
+	db 1, DYNAMICPUNCH
+	db 1, BUBBLEBEAM
+	db 1, RAIN_DANCE
+	db 1, BODY_SLAM
+	db 1, MAGNITUDE
+	db 1, HYDRO_PUMP
+	db 1, BELLY_DRUM
+	db 1, DOUBLE_EDGE
+	db 1, WATER_GUN
+	db 1, HYPNOSIS
+	db 1, POUND
+	db 1, MUD_SLAP
+else
 	db 1, WATER_GUN
 	db 1, HYPNOSIS
 	db 1, DOUBLESLAP
 	db 1, SUBMISSION
 	db 35, SUBMISSION
 	db 51, MIND_READER
+endc
 	db 0 ; no more level-up moves
 
 AbraEvosAttacks:
@@ -3278,12 +3323,28 @@ SudowoodoEvosAttacks:
 
 PolitoedEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, AEROBLAST
+	db 1, SWAGGER
+	db 1, PERISH_SONG
+	db 1, BUBBLEBEAM
+	db 1, RAIN_DANCE
+	db 1, MAGNITUDE
+	db 1, HYDRO_PUMP
+	db 1, BELLY_DRUM
+	db 1, DOUBLE_EDGE
+	db 1, WATER_GUN
+	db 1, HYPNOSIS
+	db 1, POUND
+	db 1, MUD_SLAP
+else
 	db 1, WATER_GUN
 	db 1, HYPNOSIS
 	db 1, DOUBLESLAP
 	db 1, PERISH_SONG
 	db 35, PERISH_SONG
 	db 51, SWAGGER
+endc
 	db 0 ; no more level-up moves
 
 HoppipEvosAttacks:
