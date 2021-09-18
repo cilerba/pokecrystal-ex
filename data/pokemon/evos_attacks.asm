@@ -711,6 +711,19 @@ NinetalesEvosAttacks:
 JigglypuffEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, WIGGLYTUFF
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SING
+	db 5, DEFENSE_CURL
+	db 9, POUND
+	db 13, DISABLE
+	db 19, DOUBLESLAP
+	db 25, ROLLOUT
+	db 29, REST
+	db 33, BODY_SLAM
+	db 37, MACH_PUNCH
+	db 45, MIMIC
+	db 52, DOUBLE_EDGE
+else
 	db 1, SING
 	db 4, DEFENSE_CURL
 	db 9, POUND
@@ -720,6 +733,7 @@ JigglypuffEvosAttacks:
 	db 29, REST
 	db 34, BODY_SLAM
 	db 39, DOUBLE_EDGE
+endc
 	db 0 ; no more level-up moves
 
 WigglytuffEvosAttacks:
@@ -2971,11 +2985,19 @@ CleffaEvosAttacks:
 IgglybuffEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, JIGGLYPUFF
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SING
+	db 1, CHARM
+	db 5, DEFENSE_CURL
+	db 9, POUND
+	db 13, SWEET_KISS
+else
 	db 1, SING
 	db 1, CHARM
 	db 4, DEFENSE_CURL
 	db 9, POUND
 	db 14, SWEET_KISS
+endc
 	db 0 ; no more level-up moves
 
 TogepiEvosAttacks:
