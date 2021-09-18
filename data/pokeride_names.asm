@@ -6,15 +6,13 @@ PokeRideMenuHeader:
 	db 0 ; ????
 	
 .RideMons:
-	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B ; flags
+	db STATICMENU_CURSOR ; flags
 	db 8 ; items
 	db "FLASH@"
-	db "ROCK SMASH@"
 	db "CUT@"
 	db "FLY@"
 	db "STRENGTH@"
 	db "SURF@"
 	db "WHIRLPOOL@"
 	db "WATERFALL@"
-	db 3 ; title indent
-	db " PAGE @" ; title
+	db "CANCEL@"

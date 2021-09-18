@@ -3009,7 +3009,15 @@ wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
-	ds 13
+	ds 5
+wUnlockedFLASH:: db
+wUnlockedROCKSMASH:: db
+wUnlockedCUT:: db
+wUnlockedSTRENGTH:: db
+wUnlockedFLY:: db
+wUnlockedSURF:: db
+wUnlockedWHIRLPOOL:: db
+wUnlockedWATERFALL:: db
 
 ; map scene ids
 wPokecenter2FSceneID::                            db

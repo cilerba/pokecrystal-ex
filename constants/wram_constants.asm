@@ -69,12 +69,6 @@ GBPRINTER_DARKEST  EQU $7f
 	const_def
 	const MENU_ACCOUNT ; 0
 
-	const_def
-	const PR_NONE	; 0
-	const PR_FLASH	; 1
-	const PR_CUT    ; 2
-	const PR_SURF   ; 3
-
 ; wWalkingDirection::
 	const_def -1
 	const STANDING ; -1

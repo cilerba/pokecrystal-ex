@@ -140,9 +140,9 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
-	ld a, [wHMUnlocks] ; Checks to see if the player has unlocked CUT
-	cp PR_CUT
-	jr c, .noCutUnlocked
+	ld a, [wUnlockedCUT] ; Checks to see if we've unlocked the HM
+	cp 1
+	jr c, .noCutUnlocked 
 
 	call CheckMapForSomethingToCut
 	jr c, .nothingtocut
@@ -300,14 +300,11 @@ FlashFunction:
 
 .CheckUseFlash:
 ; Flash
-	;ld de, ENGINE_ZEPHYRBADGE
-	;farcall CheckBadge
-	;jr c, .nozephyrbadge
 	
-	ld a, [wHMUnlocks] ; Checks to see if we've unlocked the HM
-	cp PR_FLASH
+	ld a, [wUnlockedFLASH] ; Checks to see if we've unlocked the HM
+	cp 1
 	jr c, .noFlashUnlock
-	
+
 	push hl
 	farcall SpecialAerodactylChamber
 	pop hl
@@ -327,10 +324,6 @@ FlashFunction:
 
 .noFlashUnlock
 	call FieldMoveNotUnlocked
-	ld a, $80
-	ret
-
-.nozephyrbadge
 	ld a, $80
 	ret
 
@@ -1819,9 +1812,9 @@ TryCutOW::
 	call CheckItem
 	jr nc, .cant_cut
 	
-	ld a, [wHMUnlocks] ; Checks to see if the player has unlocked CUT
-	cp PR_CUT
-	jr c, .cant_cut
+	ld a, [wUnlockedCUT] ; Checks to see if we've unlocked the HM
+	cp 1
+	jr c, .cant_cut 
 	
 	ld a, BANK(AskCutScript)
 	ld hl, AskCutScript
@@ -1875,19 +1868,18 @@ PPFunction:
 	dec a
 	cp 0 ; Ampharos, Flash
 	jp z, FlashFunction
-	cp 1 ; GOLEM, Rock Smash
-	jp z, RockSmashFunction
-	cp 2 ; Scyther, Cut
+	cp 1 ; Scyther, Cut
 	jp z, CutFunction
-	cp 3 ; Pidgeot, Fly
+	cp 2 ; Pidgeot, Fly
 	jp z, FlyFunction
-	cp 4 ; Primeape, Strength
+	cp 3 ; Primeape, Strength
 	jp z, StrengthFunction
-	cp 5 ; Lapras, Surf
+	cp 4 ; Lapras, Surf
 	jp z, SurfFunction
-	cp 6 ; Feraligatr, Whirlpool
+	cp 5 ; Feraligatr, Whirlpool
 	jp z, WhirlpoolFunction
-	cp 7 ; Gyarados, Waterfall
+	cp 6 ; Gyarados, Waterfall
 	jp z, WaterfallFunction
-	ld a, $0
+	ld a, 0 ; Cancel
+	ld [wFieldMoveSucceeded], a
 	ret
