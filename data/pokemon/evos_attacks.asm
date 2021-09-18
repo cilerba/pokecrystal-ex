@@ -1660,6 +1660,21 @@ OnixEvosAttacks:
 DrowzeeEvosAttacks:
 	db EVOLVE_LEVEL, 26, HYPNO
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, POUND
+	db 1, HYPNOSIS
+	db 5, DISABLE
+	db 9, CONFUSION
+	db 13, HEADBUTT
+	db 17, POISON_GAS
+	db 21, MEDITATE
+	db 25, PSYBEAM
+	db 29, MACH_PUNCH
+	db 33, PSYCH_UP
+	db 39, SWAGGER
+	db 45, PSYCHIC_M
+	db 52, FUTURE_SIGHT
+else
 	db 1, POUND
 	db 1, HYPNOSIS
 	db 10, DISABLE
@@ -1670,10 +1685,31 @@ DrowzeeEvosAttacks:
 	db 40, PSYCHIC_M
 	db 43, PSYCH_UP
 	db 45, FUTURE_SIGHT
+endc
 	db 0 ; no more level-up moves
 
 HypnoEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, FUTURE_SIGHT
+	db 1, GROWTH
+	db 1, NIGHTMARE
+	db 1, POUND
+	db 1, HYPNOSIS
+	db 1, DISABLE
+	db 1, CONFUSION
+	db 5, DISABLE
+	db 9, CONFUSION
+	db 13, HEADBUTT
+	db 17, POISON_GAS
+	db 21, MEDITATE
+	db 25, PSYBEAM
+	db 29, MACH_PUNCH
+	db 33, PSYCH_UP
+	db 40, SWAGGER
+	db 47, PSYCHIC_M
+	db 55, FUTURE_SIGHT
+else
 	db 1, POUND
 	db 1, HYPNOSIS
 	db 1, DISABLE
@@ -1686,6 +1722,7 @@ HypnoEvosAttacks:
 	db 49, PSYCHIC_M
 	db 55, PSYCH_UP
 	db 60, FUTURE_SIGHT
+endc
 	db 0 ; no more level-up moves
 
 KrabbyEvosAttacks:
