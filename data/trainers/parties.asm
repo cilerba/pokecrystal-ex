@@ -584,8 +584,8 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (3)
 	db "BRYAN@", TRAINERTYPE_NORMAL
-	db 12, PIDGEY
-	db 14, PIDGEOTTO
+	db 14, PIDGEY
+	db 17, PIDGEOTTO
 	db -1 ; end
 
 	; BIRD_KEEPER (4)
@@ -1541,7 +1541,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (8)
 	db "ARNIE@", TRAINERTYPE_NORMAL
-	db 15, VENONAT
+	db 17, VENONAT
 	db -1 ; end
 
 	; BUG_CATCHER (9)
@@ -2535,8 +2535,8 @@ FirebreatherGroup:
 
 	; FIREBREATHER (6)
 	db "WALT@", TRAINERTYPE_NORMAL
-	db 11, MAGMAR
-	db 13, MAGMAR
+	db 15, MAGMAR
+	db 18, MAGMAR
 	db -1 ; end
 
 	; FIREBREATHER (7)
@@ -2554,10 +2554,10 @@ FirebreatherGroup:
 JugglerGroup:
 	; JUGGLER (1)
 	db "IRWIN@", TRAINERTYPE_NORMAL
-	db  2, VOLTORB
-	db  6, VOLTORB
-	db 10, VOLTORB
-	db 14, VOLTORB
+	db 4, VOLTORB
+	db 8, VOLTORB
+	db 12, VOLTORB
+	db 16, VOLTORB
 	db -1 ; end
 
 	; JUGGLER (2)
@@ -2774,12 +2774,12 @@ PicnickerGroup:
 
 	; PICNICKER (3)
 	db "BROOKE@", TRAINERTYPE_MOVES
-	db 16, PIKACHU,    THUNDERSHOCK, GROWL, QUICK_ATTACK, DOUBLE_TEAM
+	db 18, PIKACHU,    THUNDERSHOCK, GROWL, QUICK_ATTACK, DOUBLE_TEAM
 	db -1 ; end
 
 	; PICNICKER (4)
 	db "KIM@", TRAINERTYPE_NORMAL
-	db 15, VULPIX
+	db 18, VULPIX
 	db -1 ; end
 
 	; PICNICKER (5)
@@ -2927,15 +2927,15 @@ CamperGroup:
 
 	; CAMPER (3)
 	db "IVAN@", TRAINERTYPE_NORMAL
-	db 10, DIGLETT
-	db 10, ZUBAT
-	db 14, DIGLETT
+	db 16, DIGLETT
+	db 16, ZUBAT
+	db 18, DIGLETT
 	db -1 ; end
 
 	; CAMPER (4)
 	db "ELLIOT@", TRAINERTYPE_NORMAL
-	db 13, SANDSHREW
-	db 15, MARILL
+	db 16, SANDSHREW
+	db 18, MARILL
 	db -1 ; end
 
 	; CAMPER (5)
@@ -3452,8 +3452,8 @@ OfficerGroup:
 
 	; OFFICER (2)
 	db "DIRK@", TRAINERTYPE_NORMAL
-	db 14, GROWLITHE
-	db 14, GROWLITHE
+	db 16, GROWLITHE
+	db 18, GROWLITHE
 	db -1 ; end
 
 GruntFGroup:
