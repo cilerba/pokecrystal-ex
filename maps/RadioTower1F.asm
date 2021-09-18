@@ -130,8 +130,10 @@ RadioTower1FRadioCardWomanScript:
 	playsound SFX_ELEVATOR_END
 	waitsfx
 	writetext RadioTower1FRadioCardWomanQuestion3Text
-	yesorno
-	iftrue .WrongAnswer
+	loadmenu RadioTowerQuestion3_MenuHeader
+	verticalmenu
+	closewindow
+	ifless 3, .WrongAnswer
 	playsound SFX_ELEVATOR_END
 	waitsfx
 	writetext RadioTower1FRadioCardWomanQuestion4Text
@@ -199,6 +201,19 @@ RadioTower1FDirectory:
 
 RadioTower1FLuckyChannelSign:
 	jumptext RadioTower1FLuckyChannelSignText
+
+RadioTowerQuestion3_MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 8, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	db 3 ; items
+	db "LANTURN@"
+	db "PIKACHU@"
+	db "AMPHAROS@"
 
 RadioTower1FLuckyNumberManGoToPCMovement:
 	step RIGHT
@@ -343,8 +358,11 @@ RadioTower1FRadioCardWomanQuestion3Text:
 	text "Bull's-eye!"
 	line "Question 3:"
 
-	para "Does HM01 contain"
-	line "the move FLASH?"
+	para "Which #PAGER"
+	line "#MON uses"
+	cont "its tail to illu-"
+	cont "minate the area?"
+
 	done
 
 RadioTower1FRadioCardWomanQuestion4Text:
