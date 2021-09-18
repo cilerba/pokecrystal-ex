@@ -984,6 +984,21 @@ PrimeapeEvosAttacks:
 GrowlitheEvosAttacks:
 	db EVOLVE_ITEM, FIRE_STONE, ARCANINE
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, EMBER
+	db 1, LEER
+	db 4, SHARPEN
+	db 8, BITE
+	db 12, FLAME_WHEEL
+	db 16, FOCUS_ENERGY
+	db 20, AGILITY
+	db 24, FIRE_SPIN
+	db 30, CRUNCH
+	db 36, TAKE_DOWN
+	db 40, FLAMETHROWER
+	db 44, ROAR
+	db 50, REVERSAL
+else
 	db 1, BITE
 	db 1, ROAR
 	db 9, EMBER
@@ -992,15 +1007,29 @@ GrowlitheEvosAttacks:
 	db 34, FLAME_WHEEL
 	db 42, AGILITY
 	db 50, FLAMETHROWER
+endc
 	db 0 ; no more level-up moves
 
 ArcanineEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, FLAME_WHEEL
+	db 1, AGILITY
+	db 1, FOCUS_ENERGY
+	db 1, CRUNCH
+	db 1, TAKE_DOWN
+	db 1, ROAR
+	db 1, REVERSAL
+	db 1, EMBER
+	db 1, LEER
+	db 1, BITE
+else
 	db 1, ROAR
 	db 1, LEER
 	db 1, TAKE_DOWN
 	db 1, FLAME_WHEEL
 	db 50, EXTREMESPEED
+endc
 	db 0 ; no more level-up moves
 
 PoliwagEvosAttacks:
