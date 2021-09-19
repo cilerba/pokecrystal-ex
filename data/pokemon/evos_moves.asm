@@ -47,7 +47,7 @@ EvolutionMoves::
 	db NO_MOVE              ; PARAS
 	db NO_MOVE              ; PARASECT
 	db NO_MOVE              ; VENONAT
-	db NO_MOVE              ; VENOMOTH
+	db GUST                 ; VENOMOTH
 	db NO_MOVE              ; DIGLETT
 	db NO_MOVE              ; DUGTRIO
 	db NO_MOVE              ; MEOWTH
