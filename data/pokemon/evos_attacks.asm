@@ -836,6 +836,19 @@ VileplumeEvosAttacks:
 ParasEvosAttacks:
 	db EVOLVE_LEVEL, 24, PARASECT
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 6, STUN_SPORE
+	db 6, POISONPOWDER
+	db 11, ABSORB
+	db 17, FURY_CUTTER
+	db 22, SPORE
+	db 27, SLASH
+	db 33, GROWTH
+	db 38, GIGA_DRAIN
+	db 43, SPIDER_WEB
+	db 46, LEECH_LIFE
+else
 	db 1, SCRATCH
 	db 7, STUN_SPORE
 	db 13, POISONPOWDER
@@ -844,10 +857,26 @@ ParasEvosAttacks:
 	db 31, SLASH
 	db 37, GROWTH
 	db 43, GIGA_DRAIN
+endc
 	db 0 ; no more level-up moves
 
 ParasectEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 1, STUN_SPORE
+	db 1, POISONPOWDER
+	db 1, ABSORB
+	db 6, STUN_SPORE
+	db 6, POISONPOWDER
+	db 11, ABSORB
+	db 17, FURY_CUTTER
+	db 22, SPORE
+	db 29, SLASH
+	db 37, GROWTH
+	db 44, GIGA_DRAIN
+	db 51, LEECH_LIFE
+else
 	db 1, SCRATCH
 	db 1, STUN_SPORE
 	db 1, POISONPOWDER
@@ -858,6 +887,7 @@ ParasectEvosAttacks:
 	db 37, SLASH
 	db 46, GROWTH
 	db 55, GIGA_DRAIN
+endc
 	db 0 ; no more level-up moves
 
 VenonatEvosAttacks:
@@ -3681,12 +3711,26 @@ UmbreonEvosAttacks:
 
 MurkrowEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, PECK
+	db 1, LICK
+	db 5, PURSUIT
+	db 11, HAZE
+	db 15, WING_ATTACK
+	db 21, NIGHT_SHADE
+	db 25, THIEF
+	db 31, SHARPEN
+	db 35, FAINT_ATTACK
+	db 41, MEAN_LOOK
+	db 50, SKY_ATTACK
+else
 	db 1, PECK
 	db 11, PURSUIT
 	db 16, HAZE
 	db 26, NIGHT_SHADE
 	db 31, FAINT_ATTACK
 	db 41, MEAN_LOOK
+endc
 	db 0 ; no more level-up moves
 
 SlowkingEvosAttacks:
