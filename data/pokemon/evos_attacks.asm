@@ -1178,6 +1178,21 @@ PersianEvosAttacks:
 PsyduckEvosAttacks:
 	db EVOLVE_LEVEL, 33, GOLDUCK
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 4, TAIL_WHIP
+	db 7, WATER_GUN
+	db 10, CONFUSION
+	db 13, FURY_SWIPES
+	db 16, BUBBLEBEAM
+	db 19, DISABLE
+	db 22, SCREECH
+	db 25, PSYBEAM
+	db 28, SURF
+	db 34, PSYCH_UP
+	db 37, AMNESIA
+	db 40, HYDRO_PUMP
+else
 	db 1, SCRATCH
 	db 5, TAIL_WHIP
 	db 10, DISABLE
@@ -1186,10 +1201,28 @@ PsyduckEvosAttacks:
 	db 31, PSYCH_UP
 	db 40, FURY_SWIPES
 	db 50, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 GolduckEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 1, TAIL_WHIP
+	db 1, WATER_GUN
+	db 4, TAIL_WHIP
+	db 7, WATER_GUN
+	db 10, CONFUSION
+	db 13, FURY_SWIPES
+	db 16, BUBBLEBEAM
+	db 19, DISABLE
+	db 22, SCREECH
+	db 25, PSYBEAM
+	db 28, SURF
+	db 36, PSYCH_UP
+	db 41, AMNESIA
+	db 46, HYDRO_PUMP
+else
 	db 1, SCRATCH
 	db 1, TAIL_WHIP
 	db 1, DISABLE
@@ -1201,6 +1234,7 @@ GolduckEvosAttacks:
 	db 31, PSYCH_UP
 	db 44, FURY_SWIPES
 	db 58, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 MankeyEvosAttacks:
