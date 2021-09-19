@@ -4618,6 +4618,20 @@ Porygon2EvosAttacks:
 
 StantlerEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 3, LEER
+	db 7, LICK
+	db 10, HYPNOSIS
+	db 13, STOMP
+	db 16, SAND_ATTACK
+	db 21, TAKE_DOWN
+	db 23, CONFUSE_RAY
+	db 27, GROWTH
+	db 35, PSYBEAM
+	db 42, JUMP_KICK
+	db 51, CHARM
+else
 	db 1, TACKLE
 	db 8, LEER
 	db 15, HYPNOSIS
@@ -4625,6 +4639,7 @@ StantlerEvosAttacks:
 	db 31, SAND_ATTACK
 	db 40, TAKE_DOWN
 	db 49, CONFUSE_RAY
+endc
 	db 0 ; no more level-up moves
 
 SmeargleEvosAttacks:
