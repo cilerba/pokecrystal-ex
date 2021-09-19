@@ -937,6 +937,20 @@ endc
 VenonatEvosAttacks:
 	db EVOLVE_LEVEL, 31, VENOMOTH
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, DISABLE
+	db 1, FORESIGHT
+	db 5, SUPERSONIC
+	db 11, CONFUSION
+	db 13, POISONPOWDER
+	db 17, PSYBEAM
+	db 23, STUN_SPORE
+	db 25, LEECH_LIFE
+	db 29, SLEEP_POWDER
+	db 35, FURY_CUTTER
+	db 47, PSYCHIC_M
+else
 	db 1, TACKLE
 	db 1, DISABLE
 	db 1, FORESIGHT
@@ -948,10 +962,28 @@ VenonatEvosAttacks:
 	db 33, PSYBEAM
 	db 36, SLEEP_POWDER
 	db 41, PSYCHIC_M
+endc
 	db 0 ; no more level-up moves
 
 VenomothEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, GUST
+	db 1, TACKLE
+	db 1, DISABLE
+	db 1, FORESIGHT
+	db 1, SUPERSONIC
+	db 5, SUPERSONIC
+	db 11, CONFUSION
+	db 13, POISONPOWDER
+	db 17, PSYBEAM
+	db 23, STUN_SPORE
+	db 25, LEECH_LIFE
+	db 33, SLEEP_POWDER
+	db 37, FURY_CUTTER
+	db 45, SLUDGE_BOMB
+	db 55, PSYCHIC_M
+else
 	db 1, TACKLE
 	db 1, DISABLE
 	db 1, FORESIGHT
@@ -965,6 +997,7 @@ VenomothEvosAttacks:
 	db 36, PSYBEAM
 	db 42, SLEEP_POWDER
 	db 52, PSYCHIC_M
+endc
 	db 0 ; no more level-up moves
 
 DiglettEvosAttacks:
