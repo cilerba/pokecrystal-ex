@@ -595,6 +595,20 @@ endc
 NidoranFEvosAttacks:
 	db EVOLVE_LEVEL, 16, NIDORINA
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, GROWL
+	db 1, SCRATCH
+	db 7, TAIL_WHIP
+	db 9, DOUBLE_KICK
+	db 13, POISON_STING
+	db 19, FURY_SWIPES
+	db 21, BITE
+	db 25, SHARPEN
+	db 31, SPIKES
+	db 35, CRUNCH
+	db 43, CHARM
+	db 45, SLUDGE_BOMB
+else
 	db 1, GROWL
 	db 1, TACKLE
 	db 8, SCRATCH
@@ -603,11 +617,26 @@ NidoranFEvosAttacks:
 	db 23, TAIL_WHIP
 	db 30, BITE
 	db 38, FURY_SWIPES
+endc
 	db 0 ; no more level-up moves
 
 NidorinaEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, NIDOQUEEN
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, GROWL
+	db 1, SCRATCH
+	db 7, TAIL_WHIP
+	db 9, DOUBLE_KICK
+	db 13, POISON_STING
+	db 20, FURY_SWIPES
+	db 23, BITE
+	db 28, SHARPEN
+	db 35, SPIKES
+	db 40, CRUNCH
+	db 50, CHARM
+	db 56, SLUDGE_BOMB
+else
 	db 1, GROWL
 	db 1, TACKLE
 	db 8, SCRATCH
@@ -616,20 +645,46 @@ NidorinaEvosAttacks:
 	db 27, TAIL_WHIP
 	db 36, BITE
 	db 46, FURY_SWIPES
+endc
 	db 0 ; no more level-up moves
 
 NidoqueenEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, DYNAMICPUNCH
+	db 1, SCRATCH
+	db 1, TAIL_WHIP
+	db 1, DOUBLE_KICK
+	db 1, POISON_STING
+	db 35, BODY_SLAM
+	db 43, EARTHQUAKE
+	db 58, DYNAMICPUNCH
+else
 	db 1, TACKLE
 	db 1, SCRATCH
 	db 1, DOUBLE_KICK
 	db 1, TAIL_WHIP
 	db 23, BODY_SLAM
+endc
 	db 0 ; no more level-up moves
 
 NidoranMEvosAttacks:
 	db EVOLVE_LEVEL, 16, NIDORINO
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, LEER
+	db 1, PECK
+	db 7, FOCUS_ENERGY
+	db 9, DOUBLE_KICK
+	db 13, POISON_STING
+	db 19, FURY_ATTACK
+	db 21, HORN_ATTACK
+	db 25, SHARPEN
+	db 31, SPIKES
+	db 36, SLUDGE
+	db 43, CHARM
+	db 45, HORN_DRILL
+else
 	db 1, LEER
 	db 1, TACKLE
 	db 8, HORN_ATTACK
@@ -638,11 +693,26 @@ NidoranMEvosAttacks:
 	db 23, FOCUS_ENERGY
 	db 30, FURY_ATTACK
 	db 38, HORN_DRILL
+endc
 	db 0 ; no more level-up moves
 
 NidorinoEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, NIDOKING
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, LEER
+	db 1, PECK
+	db 7, FOCUS_ENERGY
+	db 9, DOUBLE_KICK
+	db 13, POISON_STING
+	db 20, FURY_ATTACK
+	db 23, HORN_ATTACK
+	db 28, SHARPEN
+	db 35, SPIKES
+	db 38, SLUDGE
+	db 44, CHARM
+	db 54, HORN_DRILL
+else
 	db 1, LEER
 	db 1, TACKLE
 	db 8, HORN_ATTACK
@@ -651,15 +721,27 @@ NidorinoEvosAttacks:
 	db 27, FOCUS_ENERGY
 	db 36, FURY_ATTACK
 	db 46, HORN_DRILL
+endc
 	db 0 ; no more level-up moves
 
 NidokingEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, MEGAHORN
+	db 1, PECK
+	db 1, FOCUS_ENERGY
+	db 1, DOUBLE_KICK
+	db 1, POISON_STING
+	db 35, THRASH
+	db 43, EARTHQUAKE
+	db 58, MEGAHORN
+else
 	db 1, TACKLE
 	db 1, HORN_ATTACK
 	db 1, DOUBLE_KICK
 	db 1, POISON_STING
 	db 23, THRASH
+endc
 	db 0 ; no more level-up moves
 
 ClefairyEvosAttacks:
