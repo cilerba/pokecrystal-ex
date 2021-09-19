@@ -57,7 +57,7 @@ EvolutionMoves::
 	db NO_MOVE              ; MANKEY
 	db NO_MOVE              ; PRIMEAPE
 	db NO_MOVE              ; GROWLITHE
-	db NO_MOVE              ; ARCANINE
+	db EXTREMESPEED         ; ARCANINE
 	db NO_MOVE              ; POLIWAG
 	db NO_MOVE              ; POLIWHIRL
 	db SUBMISSION           ; POLIWRATH

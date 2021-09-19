@@ -1301,6 +1301,7 @@ endc
 ArcanineEvosAttacks:
 	db 0 ; no more evolutions
 if DEF(_CRYSTAL11_HACK)
+	db 1, EXTREMESPEED
 	db 1, FLAME_WHEEL
 	db 1, AGILITY
 	db 1, FOCUS_ENERGY
