@@ -78,7 +78,7 @@ EvolutionMoves::
 	db NO_MOVE              ; PONYTA
 	db NO_MOVE              ; RAPIDASH
 	db NO_MOVE              ; SLOWPOKE
-	db NO_MOVE              ; SLOWBRO
+	db WITHDRAW             ; SLOWBRO
 	db NO_MOVE              ; MAGNEMITE
 	db NO_MOVE              ; MAGNETON
 	db NO_MOVE              ; FARFETCH'D

@@ -1682,6 +1682,20 @@ SlowpokeEvosAttacks:
 	db EVOLVE_LEVEL, 37, SLOWBRO
 	db EVOLVE_TRADE, KINGS_ROCK, SLOWKING
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, CURSE
+	db 1, TACKLE
+	db 5, GROWL
+	db 9, WATER_GUN
+	db 14, CONFUSION
+	db 19, DISABLE
+	db 23, HEADBUTT
+	db 28, BUBBLEBEAM
+	db 32, PSYBEAM
+	db 39, AMNESIA
+	db 46, RAIN_DANCE
+	db 50, PSYCH_UP
+else
 	db 1, CURSE
 	db 1, TACKLE
 	db 6, GROWL
@@ -1691,10 +1705,28 @@ SlowpokeEvosAttacks:
 	db 34, HEADBUTT
 	db 43, AMNESIA
 	db 48, PSYCHIC_M
+endc
 	db 0 ; no more level-up moves
 
 SlowbroEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, WITHDRAW
+	db 1, CURSE
+	db 1, TACKLE
+	db 1, GROWL
+	db 5, GROWL
+	db 9, WATER_GUN
+	db 14, CONFUSION
+	db 19, DISABLE
+	db 23, HEADBUTT
+	db 28, BUBBLEBEAM
+	db 32, PSYBEAM
+	db 43, AMNESIA
+	db 50, RAIN_DANCE
+	db 55, PSYCH_UP
+	db 60, PSYCHIC_M
+else
 	db 1, CURSE
 	db 1, TACKLE
 	db 1, GROWL
@@ -1707,6 +1739,7 @@ SlowbroEvosAttacks:
 	db 37, WITHDRAW
 	db 46, AMNESIA
 	db 54, PSYCHIC_M
+endc
 	db 0 ; no more level-up moves
 
 MagnemiteEvosAttacks:
@@ -3904,6 +3937,24 @@ endc
 
 SlowkingEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, CURSE
+	db 1, HIDDEN_POWER
+	db 1, TACKLE
+	db 1, GROWL
+	db 5, GROWL
+	db 9, WATER_GUN
+	db 14, CONFUSION
+	db 19, DISABLE
+	db 23, HEADBUTT
+	db 28, BUBBLEBEAM
+	db 32, PSYBEAM
+	db 37, SWAGGER
+	db 43, AMNESIA
+	db 50, RAIN_DANCE
+	db 55, PSYCH_UP
+	db 60, PSYCHIC_M
+else
 	db 1, CURSE
 	db 1, TACKLE
 	db 6, GROWL
@@ -3913,6 +3964,7 @@ SlowkingEvosAttacks:
 	db 34, HEADBUTT
 	db 43, SWAGGER
 	db 48, PSYCHIC_M
+endc
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
