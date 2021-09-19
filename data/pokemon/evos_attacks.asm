@@ -799,6 +799,21 @@ GolbatEvosAttacks:
 OddishEvosAttacks:
 	db EVOLVE_LEVEL, 21, GLOOM
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, ABSORB
+	db 1, GROWTH
+	db 5, SWEET_SCENT
+	db 9, ACID
+	db 13, POISONPOWDER
+	db 14, STUN_SPORE
+	db 15, SLEEP_POWDER
+	db 19, MEGA_DRAIN
+	db 23, RAZOR_LEAF
+	db 27, MOONLIGHT
+	db 31, GIGA_DRAIN
+	db 35, TOXIC
+	db 41, PETAL_DANCE
+else
 	db 1, ABSORB
 	db 7, SWEET_SCENT
 	db 14, POISONPOWDER
@@ -807,12 +822,30 @@ OddishEvosAttacks:
 	db 23, ACID
 	db 32, MOONLIGHT
 	db 39, PETAL_DANCE
+endc
 	db 0 ; no more level-up moves
 
 GloomEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, VILEPLUME
 	db EVOLVE_ITEM, SUN_STONE, BELLOSSOM
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, ABSORB
+	db 1, GROWTH
+	db 1, SWEET_SCENT
+	db 1, ACID
+	db 5, SWEET_SCENT
+	db 9, ACID
+	db 13, POISONPOWDER
+	db 14, STUN_SPORE
+	db 15, SLEEP_POWDER
+	db 19, MEGA_DRAIN
+	db 24, RAZOR_LEAF
+	db 29, MOONLIGHT
+	db 34, GIGA_DRAIN
+	db 39, TOXIC
+	db 46, PETAL_DANCE
+else
 	db 1, ABSORB
 	db 1, SWEET_SCENT
 	db 1, POISONPOWDER
@@ -823,14 +856,25 @@ GloomEvosAttacks:
 	db 24, ACID
 	db 35, MOONLIGHT
 	db 44, PETAL_DANCE
+endc
 	db 0 ; no more level-up moves
 
 VileplumeEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, MEGA_DRAIN
+	db 1, ABSORB
+	db 1, SWEET_SCENT
+	db 1, POISONPOWDER
+	db 1, STUN_SPORE
+	db 1, PETAL_DANCE
+	db 60, SOLARBEAM
+else
 	db 1, ABSORB
 	db 1, SWEET_SCENT
 	db 1, STUN_SPORE
 	db 1, PETAL_DANCE
+endc
 	db 0 ; no more level-up moves
 
 ParasEvosAttacks:
@@ -3388,11 +3432,22 @@ endc
 
 BellossomEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, RAZOR_LEAF
+	db 1, MEGA_DRAIN
+	db 1, SWEET_SCENT
+	db 1, STUN_SPORE
+	db 1, SUNNY_DAY
+	db 39, COTTON_SPORE
+	db 47, PETAL_DANCE
+	db 57, SOLARBEAM
+else
 	db 1, ABSORB
 	db 1, SWEET_SCENT
 	db 1, STUN_SPORE
 	db 1, PETAL_DANCE
 	db 55, SOLARBEAM
+endc
 	db 0 ; no more level-up moves
 
 MarillEvosAttacks:
