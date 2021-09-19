@@ -1412,7 +1412,7 @@ AbraEvosAttacks:
 	db 0 ; no more level-up moves
 
 KadabraEvosAttacks:
-	db EVOLVE_TRADE, -1, ALAKAZAM
+	db EVOLVE_ITEM, LINK_CABLE, ALAKAZAM
 	db 0 ; no more evolutions
 if DEF(_CRYSTAL11_HACK)
 	db 1, TELEPORT
@@ -1499,7 +1499,7 @@ endc
 	db 0 ; no more level-up moves
 
 MachokeEvosAttacks:
-	db EVOLVE_TRADE, -1, MACHAMP
+	db EVOLVE_ITEM, LINK_CABLE, MACHAMP
 	db 0 ; no more evolutions
 if DEF(_CRYSTAL11_HACK)
 	db 1, LOW_KICK
@@ -1704,7 +1704,7 @@ endc
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
-	db EVOLVE_TRADE, -1, GOLEM
+	db EVOLVE_ITEM, LINK_CABLE, GOLEM
 	db 0 ; no more evolutions
 if DEF(_CRYSTAL11_HACK)
 	db 1, TACKLE
@@ -2035,7 +2035,7 @@ endc
 	db 0 ; no more level-up moves
 
 HaunterEvosAttacks:
-	db EVOLVE_TRADE, -1, GENGAR
+	db EVOLVE_ITEM, LINK_CABLE, GENGAR
 	db 0 ; no more evolutions
 if DEF(_CRYSTAL11_HACK)
 	db 1, HYPNOSIS
