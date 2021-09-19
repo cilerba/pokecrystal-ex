@@ -4036,6 +4036,28 @@ ForretressEvosAttacks:
 
 DunsparceEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, RAGE
+	db 1, DEFENSE_CURL
+	db 3, ROLLOUT
+	db 6, SPITE
+	db 8, PURSUIT
+	db 11, SCREECH
+	db 14, MUD_SLAP
+	db 18, ANCIENTPOWER
+	db 21, BODY_SLAM
+	db 23, MAGNITUDE
+	db 26, RECOVER
+	db 28, TAKE_DOWN
+	db 31, CONSTRICT
+	db 33, DIG
+	db 36, GLARE
+	db 38, DOUBLE_EDGE
+	db 42, SKY_ATTACK
+	db 46, DRAGONBREATH
+	db 48, ENDURE
+	db 51, FLAIL
+else
 	db 1, RAGE
 	db 5, DEFENSE_CURL
 	db 13, GLARE
@@ -4043,6 +4065,7 @@ DunsparceEvosAttacks:
 	db 26, PURSUIT
 	db 30, SCREECH
 	db 38, TAKE_DOWN
+endc
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
