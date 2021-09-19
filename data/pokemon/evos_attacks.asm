@@ -4214,6 +4214,19 @@ SneaselEvosAttacks:
 TeddiursaEvosAttacks:
 	db EVOLVE_LEVEL, 30, URSARING
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 1, LICK
+	db 1, LEER
+	db 8, FURY_SWIPES
+	db 15, FAINT_ATTACK
+	db 22, SWEET_SCENT
+	db 29, SLASH
+	db 36, CHARM
+	db 43, REST
+	db 43, SNORE
+	db 50, THRASH
+else
 	db 1, SCRATCH
 	db 1, LEER
 	db 8, LICK
@@ -4223,10 +4236,24 @@ TeddiursaEvosAttacks:
 	db 36, SLASH
 	db 43, SNORE
 	db 50, THRASH
+endc
 	db 0 ; no more level-up moves
 
 UrsaringEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 1, LICK
+	db 1, LEER
+	db 8, FURY_SWIPES
+	db 15, FAINT_ATTACK
+	db 22, SWEET_SCENT
+	db 29, SLASH
+	db 38, CHARM
+	db 46, REST
+	db 46, SNORE
+	db 52, THRASH
+else
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, LICK
@@ -4238,6 +4265,7 @@ UrsaringEvosAttacks:
 	db 39, SLASH
 	db 49, SNORE
 	db 59, THRASH
+endc
 	db 0 ; no more level-up moves
 
 SlugmaEvosAttacks:
