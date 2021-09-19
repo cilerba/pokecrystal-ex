@@ -1951,6 +1951,24 @@ endc
 OnixEvosAttacks:
 	db EVOLVE_TRADE, METAL_COAT, STEELIX
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, MUD_SLAP
+	db 1, TACKLE
+	db 1, HARDEN
+	db 1, BIND
+	db 4, CURSE
+	db 9, ROCK_THROW
+	db 13, RAGE
+	db 17, SPIKES
+	db 22, DRAGONBREATH
+	db 28, SLAM
+	db 31, SCREECH
+	db 34, ROCK_SLIDE
+	db 40, IRON_TAIL
+	db 43, DIG
+	db 49, DOUBLE_EDGE
+	db 52, SANDSTORM
+else
 	db 1, TACKLE
 	db 1, SCREECH
 	db 10, BIND
@@ -1959,6 +1977,7 @@ OnixEvosAttacks:
 	db 27, RAGE
 	db 36, SANDSTORM
 	db 40, SLAM
+endc
 	db 0 ; no more level-up moves
 
 DrowzeeEvosAttacks:
@@ -3988,6 +4007,25 @@ GligarEvosAttacks:
 
 SteelixEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, MUD_SLAP
+	db 1, TACKLE
+	db 1, HARDEN
+	db 1, BIND
+	db 4, CURSE
+	db 9, ROCK_THROW
+	db 13, RAGE
+	db 17, SPIKES
+	db 22, DRAGONBREATH
+	db 28, SLAM
+	db 31, SCREECH
+	db 34, ROCK_SLIDE
+	db 37, CRUNCH
+	db 40, IRON_TAIL
+	db 43, DIG
+	db 49, DOUBLE_EDGE
+	db 52, SANDSTORM
+else
 	db 1, TACKLE
 	db 1, SCREECH
 	db 10, BIND
@@ -3997,6 +4035,7 @@ SteelixEvosAttacks:
 	db 36, SANDSTORM
 	db 40, SLAM
 	db 49, CRUNCH
+endc
 	db 0 ; no more level-up moves
 
 SnubbullEvosAttacks:
