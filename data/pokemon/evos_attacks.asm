@@ -3626,6 +3626,18 @@ AzumarillEvosAttacks:
 
 SudowoodoEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 5, FLAIL
+	db 8, LOW_KICK
+	db 12, ROCK_THROW
+	db 15, MIMIC
+	db 19, FAINT_ATTACK
+	db 25, ROCK_SLIDE
+	db 30, COUNTER
+	db 35, SLAM
+	db 40, PURSUIT
+	db 45, DOUBLE_EDGE
+else
 	db 1, ROCK_THROW
 	db 1, MIMIC
 	db 10, FLAIL
@@ -3633,6 +3645,7 @@ SudowoodoEvosAttacks:
 	db 28, ROCK_SLIDE
 	db 37, FAINT_ATTACK
 	db 46, SLAM
+endc
 	db 0 ; no more level-up moves
 
 PolitoedEvosAttacks:
