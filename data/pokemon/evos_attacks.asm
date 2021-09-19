@@ -773,6 +773,23 @@ WigglytuffEvosAttacks:
 ZubatEvosAttacks:
 	db EVOLVE_LEVEL, 22, GOLBAT
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, ABSORB
+	db 5, SUPERSONIC
+	db 7, LICK
+	db 11, BITE
+	db 13, GUST
+	db 17, CONFUSE_RAY
+	db 19, WING_ATTACK
+	db 23, SWIFT
+	db 25, SLUDGE
+	db 29, MEAN_LOOK
+	db 31, LEECH_LIFE
+	db 35, HAZE
+	db 37, SLUDGE_BOMB
+	db 41, FLY
+	db 43, DETECT
+else
 	db 1, LEECH_LIFE
 	db 6, SUPERSONIC
 	db 12, BITE
@@ -780,11 +797,33 @@ ZubatEvosAttacks:
 	db 27, WING_ATTACK
 	db 36, MEAN_LOOK
 	db 46, HAZE
+endc
 	db 0 ; no more level-up moves
 
 GolbatEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, CROBAT
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCREECH
+	db 1, ABSORB
+	db 1, SUPERSONIC
+	db 1, LICK
+	db 1, BITE
+	db 5, SUPERSONIC
+	db 7, LICK
+	db 11, BITE
+	db 13, GUST
+	db 17, CONFUSE_RAY
+	db 19, WING_ATTACK
+	db 24, SWIFT
+	db 27, SLUDGE
+	db 32, MEAN_LOOK
+	db 35, LEECH_LIFE
+	db 40, HAZE
+	db 37, SLUDGE_BOMB
+	db 48, FLY
+	db 51, DETECT
+else
 	db 1, SCREECH
 	db 1, LEECH_LIFE
 	db 1, SUPERSONIC
@@ -794,6 +833,7 @@ GolbatEvosAttacks:
 	db 30, WING_ATTACK
 	db 42, MEAN_LOOK
 	db 55, HAZE
+endc
 	db 0 ; no more level-up moves
 
 OddishEvosAttacks:
@@ -3250,6 +3290,27 @@ endc
 
 CrobatEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCREECH
+	db 1, ABSORB
+	db 1, SUPERSONIC
+	db 1, LICK
+	db 1, BITE
+	db 5, SUPERSONIC
+	db 7, LICK
+	db 11, BITE
+	db 13, GUST
+	db 17, CONFUSE_RAY
+	db 19, WING_ATTACK
+	db 24, SWIFT
+	db 27, SLUDGE
+	db 32, MEAN_LOOK
+	db 35, LEECH_LIFE
+	db 40, HAZE
+	db 37, SLUDGE_BOMB
+	db 48, FLY
+	db 51, DETECT
+else
 	db 1, SCREECH
 	db 1, LEECH_LIFE
 	db 1, SUPERSONIC
@@ -3259,6 +3320,7 @@ CrobatEvosAttacks:
 	db 30, WING_ATTACK
 	db 42, MEAN_LOOK
 	db 55, HAZE
+endc
 	db 0 ; no more level-up moves
 
 ChinchouEvosAttacks:
