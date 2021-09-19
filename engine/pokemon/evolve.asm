@@ -353,7 +353,8 @@ LearnEvolutionMove:
 	ld b, 0
 	ld hl, EvolutionMoves
 	add hl, bc
-	ld a, [hl]
+	ld a, BANK("Evolution Moves")
+	call GetFarByte
 	and a
 	ret z
 

@@ -193,6 +193,9 @@ INCLUDE "engine/pokemon/search.asm"
 INCLUDE "mobile/mobile_12_2.asm"
 INCLUDE "engine/events/buena_menu.asm"
 
+SECTION "Evolution Moves", ROMX
+
+INCLUDE "data/pokemon/evos_moves.asm"
 
 SECTION "bank13", ROMX
 
