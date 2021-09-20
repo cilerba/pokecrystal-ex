@@ -196,6 +196,7 @@ INCLUDE "engine/events/buena_menu.asm"
 SECTION "Evolution Moves", ROMX
 
 INCLUDE "data/pokemon/evos_moves.asm"
+INCLUDE "engine/events/linkcablekid.asm"
 
 SECTION "bank13", ROMX
 

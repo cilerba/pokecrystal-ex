@@ -2876,7 +2876,8 @@ wStartSecond:: db
 
 wRTC:: ds 4
 
-	ds 4
+	ds 3
+wLinkCableKidType:: db
 
 wDST::
 ; bit 7: dst

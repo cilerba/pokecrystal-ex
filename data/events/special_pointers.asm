@@ -180,6 +180,7 @@ SpecialsPointers::
 	add_special LoadMapPalettes
 	add_special UnusedFindItemInPCOrBag
 	add_special MoveReminder
+	add_special LinkCableKid
 
 	add_special InitialSetDSTFlag
 	add_special InitialClearDSTFlag
