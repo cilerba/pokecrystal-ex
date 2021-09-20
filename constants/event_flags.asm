@@ -268,7 +268,14 @@
 	const EVENT_DANA_GAVE_THUNDERSTONE
 	const EVENT_TULLY_GAVE_WATER_STONE
 	const EVENT_TIFFANY_GAVE_PINK_BOW
-; Unused: next 339 events
+	const EVENT_FOUND_CUT
+	const EVENT_FOUND_FLY
+	const EVENT_FOUND_SURF
+	const EVENT_FOUND_STRENGTH
+	const EVENT_FOUND_FLASH
+	const EVENT_FOUND_WHIRLPOOL
+	const EVENT_FOUND_WATERFALL
+; Unused: next 332 events
 
 	const_next 600
 ; Kurt Apricorn events

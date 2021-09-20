@@ -377,9 +377,9 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
-	ld de, ENGINE_FOGBADGE
-	call CheckBadge
-	jr c, .nofogbadge
+	ld a, [wUnlockedSURF] ; Checks to see if we've unlocked the HM
+	cp 1
+	jr c, .noSurfUnlock
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .cannotsurf
@@ -398,7 +398,7 @@ SurfFunction:
 	jr c, .cannotsurf
 	ld a, $1
 	ret
-.nofogbadge
+.noSurfUnlock
 	ld a, $80
 	ret
 .alreadyfail
@@ -433,6 +433,8 @@ SurfFromMenuScript:
 	special UpdateTimePals
 
 UsedSurfScript:
+	reloadmappart
+	special UpdateTimePals
 	writetext UsedSurfText ; "used SURF!"
 	waitbutton
 	closetext
@@ -440,6 +442,9 @@ UsedSurfScript:
 	pokepic LAPRAS
 	cry LAPRAS
 	waitsfx
+
+	reloadmappart
+	refreshscreen
 
 	callasm .stubbed_fn
 
@@ -538,12 +543,8 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
-	ld de, ENGINE_FOGBADGE
-	call CheckEngineFlag
-	jr c, .quit
-
-	ld d, SURF
-	call CheckPartyMove
+	ld a, [wUnlockedSURF] ; Checks to see if we've unlocked the HM
+	cp 1
 	jr c, .quit
 
 	ld hl, wBikeFlags

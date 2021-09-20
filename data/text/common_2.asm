@@ -340,7 +340,9 @@ _AlreadySurfingText::
 
 _AskSurfText::
 	text "The water is calm."
-	line "Want to call LAPRAS?"
+	
+	para "Want to call"
+	line "LAPRAS?"
 	done
 
 _UseWaterfallText::

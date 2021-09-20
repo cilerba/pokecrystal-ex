@@ -105,7 +105,10 @@ DanceTheaterSurfGuy:
 .GetSurf:
 	writetext SurfGuyLikeADanceText
 	promptbutton
-	verbosegiveitem HM_SURF
+	loadmem wUnlockedSURF, 1
+	writetext SurfGuyGetLaprasText
+	playsound SFX_ITEM
+	waitsfx
 	setevent EVENT_GOT_HM03_SURF
 	writetext SurfGuySurfExplanationText
 	waitbutton
@@ -278,11 +281,22 @@ SurfGuyLikeADanceText:
 	done
 
 SurfGuySurfExplanationText:
-	text "That's SURF."
+	text "That is the"
+	line "access code to"
+	cont "LAPRAS."
 
-	para "It's a move that"
-	line "lets #MON swim"
-	cont "across water."
+	para "Calling LAPRAS"
+	line "for help will"
+	cont "allow you to"
+
+	para "swim across"
+	line "water."
+	done
+
+SurfGuyGetLaprasText:
+	text "<PLAYER> can now"
+	line "call LAPRAS!"
+
 	done
 
 SurfGuyElegantKimonoGirlsText:
@@ -302,7 +316,7 @@ DanceTheatreCooltrainerMText:
 
 	para "Says he wants a"
 	line "#MON that can"
-	cont "SURF and dance."
+	cont "swim and dance."
 
 	para "Is he trying to"
 	line "make a synchro-"
