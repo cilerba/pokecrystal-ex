@@ -7,6 +7,7 @@
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL2
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL3
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL4
+	const DARKCAVEVIOLETENTRANCE_POKE_BALL5
 
 DarkCaveVioletEntrance_MapScripts:
 	def_scene_scripts
@@ -24,6 +25,9 @@ DarkCaveVioletEntranceHyperPotion:
 
 DarkCaveVioletEntranceDireHit:
 	itemball DIRE_HIT
+
+DarkCaveVioletEntranceFlash:
+	itemball TM_FLASH
 
 DarkCaveVioletEntranceRock:
 	jumpstd SmashRockScript
@@ -53,3 +57,4 @@ DarkCaveVioletEntrance_MapEvents:
 	object_event 36, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceFullHeal, EVENT_DARK_CAVE_VIOLET_ENTRANCE_FULL_HEAL
 	object_event 35,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceHyperPotion, EVENT_DARK_CAVE_VIOLET_ENTRANCE_HYPER_POTION
 	object_event 30, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceDireHit, EVENT_DARK_CAVE_VIOLET_ENTRANCE_DIRE_HIT
+	object_event 11,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceFlash, EVENT_FOUND_FLASH
