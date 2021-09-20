@@ -132,9 +132,9 @@ EvolutionMoves::
 	db NO_MOVE              ; LAPRAS
 	db NO_MOVE              ; DITTO
 	db NO_MOVE              ; EEVEE
-	db NO_MOVE              ; VAPOREON
-	db NO_MOVE              ; JOLTEON
-	db NO_MOVE              ; FLAREON
+	db WATER_GUN	        ; VAPOREON
+	db THUNDERSHOCK         ; JOLTEON
+	db EMBER	            ; FLAREON
 	db NO_MOVE              ; PORYGON
 	db NO_MOVE              ; OMANYTE
 	db NO_MOVE              ; OMASTAR
@@ -194,8 +194,8 @@ EvolutionMoves::
 	db NO_MOVE              ; YANMA
 	db NO_MOVE              ; WOOPER
 	db NO_MOVE              ; QUAGSIRE
-	db NO_MOVE              ; ESPEON
-	db NO_MOVE              ; UMBREON
+	db CONFUSION            ; ESPEON
+	db PURSUIT		        ; UMBREON
 	db NO_MOVE              ; MURKROW
 	db NO_MOVE              ; SLOWKING
 	db NO_MOVE              ; MISDREAVUS

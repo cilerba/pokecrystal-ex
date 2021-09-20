@@ -2677,6 +2677,20 @@ EeveeEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
 	db EVOLVE_HAPPINESS, TR_NITE, UMBREON
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, GROWL
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 5, SAND_ATTACK
+	db 9, CHARM
+	db 13, QUICK_ATTACK
+	db 17, BITE
+	db 17, SWIFT
+	db 20, RECOVER
+	db 25, TAKE_DOWN
+	db 30, BATON_PASS
+	db 37, DOUBLE_EDGE
+else
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
@@ -2685,10 +2699,32 @@ EeveeEvosAttacks:
 	db 30, BITE
 	db 36, BATON_PASS
 	db 42, TAKE_DOWN
+endc
 	db 0 ; no more level-up moves
 
 VaporeonEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, WATER_GUN
+	db 1, SWIFT
+	db 1, BATON_PASS
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, CHARM
+	db 1, GROWL
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 5, SAND_ATTACK
+	db 10, QUICK_ATTACK
+	db 15, CHARM
+	db 20, HAZE
+	db 25, BUBBLEBEAM
+	db 30, AURORA_BEAM
+	db 35. RAIN_DANCE
+	db 40, SURF
+	db 45, ACID_ARMOR
+	db 50, HYDRO_PUMP
+else
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
@@ -2699,10 +2735,32 @@ VaporeonEvosAttacks:
 	db 42, HAZE
 	db 47, ACID_ARMOR
 	db 52, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 JolteonEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, THUNDERSHOCK
+	db 1, SWIFT
+	db 1, BATON_PASS
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, CHARM
+	db 1, GROWL
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 5, SAND_ATTACK
+	db 10, QUICK_ATTACK
+	db 15, CHARM
+	db 20, THUNDER_WAVE
+	db 25, DOUBLE_KICK
+	db 30, THUNDERPUNCH
+	db 35, PIN_MISSILE
+	db 40, THUNDERBOLT
+	db 45, AGILITY
+	db 50, THUNDER
+else
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
@@ -2713,10 +2771,32 @@ JolteonEvosAttacks:
 	db 42, THUNDER_WAVE
 	db 47, AGILITY
 	db 52, THUNDER
+endc
 	db 0 ; no more level-up moves
 
 FlareonEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, EMBER
+	db 1, SWIFT
+	db 1, BATON_PASS
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, CHARM
+	db 1, GROWL
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 5, SAND_ATTACK
+	db 10, QUICK_ATTACK
+	db 15, CHARM
+	db 20, SMOG
+	db 25, BITE
+	db 30, FIRE_PUNCH
+	db 35, FIRE_SPIN
+	db 40, FLAMETHROWER
+	db 45, SCARY_FACE
+	db 50, FIRE_BLAST
+else
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
@@ -2727,6 +2807,7 @@ FlareonEvosAttacks:
 	db 42, SMOG
 	db 47, LEER
 	db 52, FLAMETHROWER
+endc
 	db 0 ; no more level-up moves
 
 PorygonEvosAttacks:
@@ -4080,6 +4161,27 @@ endc
 
 EspeonEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, CONFUSION
+	db 1, BITE
+	db 1, BATON_PASS
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, CHARM
+	db 1, GROWL
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 5, SAND_ATTACK
+	db 10, QUICK_ATTACK
+	db 15, CHARM
+	db 20, SWIFT
+	db 25, PSYBEAM
+	db 30, SYNTHESIS
+	db 35. REFLECT
+	db 40, PSYCHIC_M
+	db 45, PSYCH_UP
+	db 50, FUTURE_SIGHT
+else
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
@@ -4090,10 +4192,33 @@ EspeonEvosAttacks:
 	db 42, PSYCH_UP
 	db 47, PSYCHIC_M
 	db 52, MORNING_SUN
+endc
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, PURSUIT
+	db 1, SWIFT
+	db 1, BITE
+	db 1, BATON_PASS
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, CHARM
+	db 1, GROWL
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 5, SAND_ATTACK
+	db 10, QUICK_ATTACK
+	db 15, CHARM
+	db 20, CONFUSE_RAY
+	db 25, FAINT_ATTACK
+	db 30, MOONLIGHT
+	db 35. BARRIER
+	db 40, CRUNCH
+	db 45, SCREECH
+	db 50, MEAN_LOOK
+else
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
@@ -4104,6 +4229,7 @@ UmbreonEvosAttacks:
 	db 42, MEAN_LOOK
 	db 47, SCREECH
 	db 52, MOONLIGHT
+endc
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
