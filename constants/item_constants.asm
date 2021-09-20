@@ -269,6 +269,13 @@ TM01 EQU const_value
 	add_tm FIRE_PUNCH   ; f0
 	add_tm FURY_CUTTER  ; f1
 	add_tm NIGHTMARE    ; f2
+	add_tm CUT          ; f3
+	add_tm FLY          ; f4
+	add_tm SURF         ; f5
+	add_tm STRENGTH     ; f6
+	add_tm FLASH        ; f7
+	add_tm WHIRLPOOL    ; f8
+	add_tm WATERFALL    ; f9
 NUM_TMS EQU __tmhm_value__ - 1
 
 add_hm: MACRO
@@ -283,13 +290,7 @@ HM{02d:HM_VALUE}_MOVE = \1
 ENDM
 
 HM01 EQU const_value
-	add_hm CUT          ; f3
-	add_hm FLY          ; f4
-	add_hm SURF         ; f5
-	add_hm STRENGTH     ; f6
-	add_hm FLASH        ; f7
-	add_hm WHIRLPOOL    ; f8
-	add_hm WATERFALL    ; f9
+
 NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
 add_mt: MACRO
