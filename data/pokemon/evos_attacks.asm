@@ -3560,6 +3560,20 @@ endc
 TogepiEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, TOGETIC
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, GROWL
+	db 1, CHARM
+	db 5, METRONOME
+	db 9, SWEET_KISS
+	db 13, HYPNOSIS
+	db 17, ENCORE
+	db 22, HEADBUTT
+	db 27, RECOVER
+	db 33, ANCIENTPOWER
+	db 37, SAFEGUARD
+	db 41, BATON_PASS
+	db 45, DOUBLE_EDGE
+else 
 	db 1, GROWL
 	db 1, CHARM
 	db 7, METRONOME
@@ -3567,10 +3581,28 @@ TogepiEvosAttacks:
 	db 25, ENCORE
 	db 31, SAFEGUARD
 	db 38, DOUBLE_EDGE
+endc
 	db 0 ; no more level-up moves
 
 TogeticEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, RAZOR_LEAF
+	db 1, GROWL
+	db 1, CHARM
+	db 1, METRONOME
+	db 1, SWEET_KISS
+	db 5, METRONOME
+	db 9, SWEET_KISS
+	db 13, HYPNOSIS
+	db 17, ENCORE
+	db 22, HEADBUTT
+	db 27, RECOVER
+	db 33, ANCIENTPOWER
+	db 37, SAFEGUARD
+	db 41, BATON_PASS
+	db 45, DOUBLE_EDGE
+else 
 	db 1, GROWL
 	db 1, CHARM
 	db 7, METRONOME
@@ -3578,6 +3610,7 @@ TogeticEvosAttacks:
 	db 25, ENCORE
 	db 31, SAFEGUARD
 	db 38, DOUBLE_EDGE
+endc
 	db 0 ; no more level-up moves
 
 NatuEvosAttacks:
