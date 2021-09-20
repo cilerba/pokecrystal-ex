@@ -176,7 +176,7 @@ EvolutionMoves::
 	db NO_MOVE              ; TOGEPI
 	db NO_MOVE              ; TOGETIC
 	db NO_MOVE              ; NATU
-	db NO_MOVE              ; XATU
+	db FLY		            ; XATU
 	db NO_MOVE              ; MAREEP
 	db NO_MOVE              ; FLAAFFY
 	db NO_MOVE              ; AMPHAROS

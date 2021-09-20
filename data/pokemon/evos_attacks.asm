@@ -3616,6 +3616,20 @@ endc
 NatuEvosAttacks:
 	db EVOLVE_LEVEL, 25, XATU
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, PECK
+	db 1, LEER
+	db 6, NIGHT_SHADE
+	db 9,  TELEPORT
+	db 12, FOCUS_ENERGY
+	db 17, HIDDEN_POWER
+	db 20, SHADOW_BALL
+	db 23, CONFUSE_RAY
+	db 28, RECOVER
+	db 33, PSYCHIC_M
+	db 40, PSYCH_UP
+	db 44, FUTURE_SIGHT
+else
 	db 1, PECK
 	db 1, LEER
 	db 10, NIGHT_SHADE
@@ -3623,10 +3637,28 @@ NatuEvosAttacks:
 	db 30, FUTURE_SIGHT
 	db 40, CONFUSE_RAY
 	db 50, PSYCHIC_M
+endc
 	db 0 ; no more level-up moves
 
 XatuEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, FLY
+	db 1, PECK
+	db 1, LEER
+	db 1, NIGHT_SHADE
+	db 1, TELEPORT
+	db 6, NIGHT_SHADE
+	db 9,  TELEPORT
+	db 12, FOCUS_ENERGY
+	db 17, HIDDEN_POWER
+	db 20, SHADOW_BALL
+	db 23, CONFUSE_RAY
+	db 29, RECOVER
+	db 35, PSYCHIC_M
+	db 43, PSYCH_UP
+	db 49, FUTURE_SIGHT
+else
 	db 1, PECK
 	db 1, LEER
 	db 1, NIGHT_SHADE
@@ -3635,6 +3667,7 @@ XatuEvosAttacks:
 	db 35, FUTURE_SIGHT
 	db 50, CONFUSE_RAY
 	db 65, PSYCHIC_M
+endc
 	db 0 ; no more level-up moves
 
 MareepEvosAttacks:
