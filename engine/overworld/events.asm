@@ -824,6 +824,10 @@ CheckMenuOW:
 	bit SELECT_F, a
 	jr nz, .Select
 
+	and B_BUTTON + START
+	cp  B_BUTTON + START
+	jr z, .PokePager
+
 	bit START_F, a
 	jr z, .NoMenu
 
@@ -844,6 +848,17 @@ CheckMenuOW:
 	call CallScript
 	scf
 	ret
+
+.PokePager:
+	ld a, BANK(BStartMenuScript)
+	ld hl, BStartMenuScript
+	call CallScript
+	scf
+	ret
+
+BStartMenuScript:
+	callasm BStartMenu
+	sjump StartMenuCallback
 
 StartMenuScript:
 	callasm StartMenu

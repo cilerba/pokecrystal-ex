@@ -819,8 +819,8 @@ DragonFangDesc:
 	next "type moves. (HOLD)@"
 
 PokePagerDesc:
-	db   "Calls a #MON"
-	next "for help.@"
+	db   "Calls a <POKE>MON for"
+	next "help. (B&START)@"
 
 LeftoversDesc:
 	db   "Restores HP during"

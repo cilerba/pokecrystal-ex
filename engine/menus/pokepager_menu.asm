@@ -8,7 +8,7 @@
     const POKEPAGER_WATERFALL
 
     
-PokePager:
+PokePager::
 	ld hl, Script_ExitMenu
     call QueueScript
     ld a, $1
@@ -19,6 +19,8 @@ Script_ExitMenu:
 	reloadmappart
 	special UpdateTimePals
     callasm _PokePager
+	reloadmappart
+	special UpdateTimePals
     end 
 
 _PokePager:
