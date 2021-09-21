@@ -1903,6 +1903,21 @@ FarfetchDEvosAttacks:
 DoduoEvosAttacks:
 	db EVOLVE_LEVEL, 31, DODRIO
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, PECK
+	db 1, GROWL
+	db 5, QUICK_ATTACK
+	db 8, RAGE
+	db 12, FURY_ATTACK
+	db 15, PURSUIT
+	db 19, GUST
+	db 22, HEADBUTT
+	db 27, AGILITY
+	db 35, SWORDS_DANCE
+	db 40, JUMP_KICK
+	db 45, DRILL_PECK
+	db 50, THRASH
+else
 	db 1, PECK
 	db 1, GROWL
 	db 9, PURSUIT
@@ -1911,10 +1926,29 @@ DoduoEvosAttacks:
 	db 25, RAGE
 	db 33, DRILL_PECK
 	db 37, AGILITY
+endc
 	db 0 ; no more level-up moves
 
 DodrioEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TRI_ATTACK
+	db 1, PECK
+	db 1, GROWL
+	db 1, QUICK_ATTACK
+	db 1, RAGE
+	db 5, QUICK_ATTACK
+	db 8, RAGE
+	db 12, FURY_ATTACK
+	db 15, PURSUIT
+	db 19, GUST
+	db 22, HEADBUTT
+	db 27, AGILITY
+	db 38, SWORDS_DANCE
+	db 43, JUMP_KICK
+	db 48, DRILL_PECK
+	db 55, THRASH
+else
 	db 1, PECK
 	db 1, GROWL
 	db 1, PURSUIT
@@ -1925,6 +1959,7 @@ DodrioEvosAttacks:
 	db 25, RAGE
 	db 38, DRILL_PECK
 	db 47, AGILITY
+endc
 	db 0 ; no more level-up moves
 
 SeelEvosAttacks:

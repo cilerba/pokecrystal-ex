@@ -83,7 +83,7 @@ EvolutionMoves::
 	db NO_MOVE              ; MAGNETON
 	db NO_MOVE              ; FARFETCH'D
 	db NO_MOVE              ; DODUO
-	db NO_MOVE              ; DODRIO
+	db TRI_ATTACK           ; DODRIO
 	db NO_MOVE              ; SEEL
 	db NO_MOVE              ; DEWGONG
 	db NO_MOVE              ; GRIMER
