@@ -4667,6 +4667,23 @@ PiloswineEvosAttacks:
 
 CorsolaEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, HARDEN
+	db 4, BUBBLE
+	db 8, RECOVER
+	db 10, BUBBLEBEAM
+	db 15, ANCIENTPOWER
+	db 20, SPIKE_CANNON
+	db 23, FOCUS_ENERGY
+	db 27, DEFENSE_CURL
+	db 31, ROLLOUT
+	db 35, ENDURE
+	db 41, ROCK_SLIDE
+	db 45, MIRROR_COAT
+	db 47, MAGNITUDE
+	db 50, FLAIL
+else
 	db 1, TACKLE
 	db 7, HARDEN
 	db 13, BUBBLE
@@ -4675,6 +4692,7 @@ CorsolaEvosAttacks:
 	db 31, SPIKE_CANNON
 	db 37, MIRROR_COAT
 	db 43, ANCIENTPOWER
+endc
 	db 0 ; no more level-up moves
 
 RemoraidEvosAttacks:
