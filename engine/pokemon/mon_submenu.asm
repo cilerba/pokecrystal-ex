@@ -153,6 +153,8 @@ GetMonSubmenuItems:
 	call AddMonMenuItem
 	ld a, MONMENUITEM_MOVE
 	call AddMonMenuItem
+	ld a, MONMENUITEM_NICKNAME
+	call AddMonMenuItem
 	ld a, [wLinkMode]
 	and a
 	jr nz, .skip2
