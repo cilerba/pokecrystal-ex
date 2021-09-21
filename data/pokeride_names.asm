@@ -3,7 +3,6 @@ PokeRideMenuHeader:
 	menu_coords 0, 0, 12, SCREEN_HEIGHT - 1
 	dw .RideMons
 	db 1 ; default option
-	db 0 ; ????
 	
 .RideMons:
 	db STATICMENU_CURSOR ; flags
