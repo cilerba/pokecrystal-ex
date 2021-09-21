@@ -1,5 +1,7 @@
 	object_const_def
 	const ROUTE42ECRUTEAKGATE_OFFICER
+	const ROUTE42ECRUTEAKGATE_ROADBLOCKA
+	const ROUTE42ECRUTEAKGATE_ROADBLOCKB
 
 Route42EcruteakGate_MapScripts:
 	def_scene_scripts
@@ -9,12 +11,47 @@ Route42EcruteakGate_MapScripts:
 Route42EcruteakGateOfficerScript:
 	jumptextfaceplayer Route42EcruteakGateOfficerText
 
+Route42EcruteakGateRoadblockAScript:
+	jumptextfaceplayer Route42EcruteakGateRoadblockAText
+
+Route42EcruteakGateRoadblockBScript:
+	jumptextfaceplayer Route42EcruteakGateRoadblockBText
+
 Route42EcruteakGateOfficerText:
 	text "MT.MORTAR is like"
 	line "a maze inside."
 
 	para "Be careful. Don't"
 	line "get lost in there."
+	done
+
+Route42EcruteakGateRoadblockAText:
+	text "Slow down, kid."
+
+	para "There was an acc-"
+	line "ident up ahead."
+
+	para "We've got every-"
+	line "thing under"
+	cont "control."
+
+	para "Though it will"
+	line "be a while be-"
+	cont "fore the road is"
+	cont "open."
+	done
+
+Route42EcruteakGateRoadblockBText:
+	text "Huh?"
+
+	para "Something hap-"
+	line "pened outside."
+
+	para "No clue what,"
+	line "though."
+
+	para "I just show up"
+	line "where I'm told."
 	done
 
 Route42EcruteakGate_MapEvents:
@@ -32,3 +69,5 @@ Route42EcruteakGate_MapEvents:
 
 	def_object_events
 	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route42EcruteakGateOfficerScript, -1
+	object_event  9,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route42EcruteakGateRoadblockAScript, EVENT_ECRUTEAK_ROADBLOCK
+	object_event  9,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route42EcruteakGateRoadblockBScript, EVENT_ECRUTEAK_ROADBLOCK
