@@ -137,6 +137,28 @@ endr
     ld a, POKEPAGER_FLY
     call .AppendMenuList
 .noFly
+
+    ld a, [wUnlockedSTRENGTH] ; Checks to see if we've unlocked the HM
+	cp 1
+	jr c, .noStrength
+    ld a, POKEPAGER_STRENGTH
+    call .AppendMenuList
+.noStrength
+
+    ld a, [wUnlockedWHIRLPOOL] ; Checks to see if we've unlocked the HM
+	cp 1
+	jr c, .noWhirlpool
+    ld a, POKEPAGER_WHIRLPOOL
+    call .AppendMenuList
+.noWhirlpool
+
+    ld a, [wUnlockedWATERFALL] ; Checks to see if we've unlocked the HM
+	cp 1
+	jr c, .noWaterfall
+    ld a, POKEPAGER_WATERFALL
+    call .AppendMenuList
+.noWaterfall
+
     ld a, c
     ld [wPPMenuItems], a
     ret
