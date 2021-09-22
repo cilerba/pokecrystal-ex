@@ -9,6 +9,10 @@
 	const ROUTE39_PSYCHIC_NORMAN
 	const ROUTE39_FRUIT_TREE
 	const ROUTE39_POKEFAN_F2
+	const ROUTE39_ROCKETA
+	const ROUTE39_ROCKETB
+	const ROUTE39_ROCKETC
+	const ROUTE39_ROCKETD
 
 Route39_MapScripts:
 	def_scene_scripts
@@ -19,6 +23,34 @@ Route39Miltank:
 	opentext
 	writetext Route39MiltankText
 	cry MILTANK
+	waitbutton
+	closetext
+	end
+
+Route39RocketA:
+	opentext
+	writetext Route39RocketAText
+	waitbutton
+	closetext
+	end
+
+Route39RocketB:
+	opentext
+	writetext Route39RocketBText
+	waitbutton
+	closetext
+	end
+
+Route39RocketC:
+	opentext
+	writetext Route39RocketCText
+	waitbutton
+	closetext
+	end
+
+Route39RocketD:
+	opentext
+	writetext Route39RocketDText
 	waitbutton
 	closetext
 	end
@@ -341,6 +373,37 @@ Route39TrainerTipsText:
 	line "any tree you see!"
 	done
 
+Route39RocketAText:
+	text "I don't know about"
+	line "this you guys…"
+	done
+
+Route39RocketBText:
+	text "Once the LIGHT-"
+	line "HOUSE goes out,"
+
+	para "we can sneak in"
+	line "and steal every-"
+	cont "body's #MON."
+	done
+
+Route39RocketCText:
+	text "The boss is going"
+	line "to be so pleased"
+	
+	para "when he sees the"
+	line "LIGHTHOUSE go"
+	cont "down."
+
+	done
+
+Route39RocketDText:
+	text "All we need to do"
+	line "is get AMPHAROS"
+	cont "sick."
+
+	done
+
 Route39_MapEvents:
 	db 0, 0 ; filler
 
@@ -367,3 +430,7 @@ Route39_MapEvents:
 	object_event 13,  7, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicNorman, -1
 	object_event  9,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
 	object_event  4, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, -1
+	object_event  8, 34, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39RocketA, EVENT_GOT_TM30_SHADOW_BALL
+	object_event  9, 34, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39RocketB, EVENT_GOT_TM30_SHADOW_BALL
+	object_event 10, 34, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39RocketC, EVENT_GOT_TM30_SHADOW_BALL
+	object_event 11, 34, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39RocketD, EVENT_GOT_TM30_SHADOW_BALL
