@@ -4445,6 +4445,21 @@ endc
 
 MisdreavusEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, GROWL
+	db 1, PSYWAVE
+	db 5, SPITE
+	db 10, LICK
+	db 14, CONFUSE_RAY
+	db 19, MEAN_LOOK
+	db 25, PSYBEAM
+	db 32, ENDURE
+	db 37, BITE
+	db 41, SHADOW_BALL
+	db 46, PERISH_SONG
+	db 50, CRUNCH
+	db 55, ROCK_THROW
+else
 	db 1, GROWL
 	db 1, PSYWAVE
 	db 6, SPITE
@@ -4453,6 +4468,7 @@ MisdreavusEvosAttacks:
 	db 27, PSYBEAM
 	db 36, PAIN_SPLIT
 	db 46, PERISH_SONG
+endc
 	db 0 ; no more level-up moves
 
 UnownEvosAttacks:
