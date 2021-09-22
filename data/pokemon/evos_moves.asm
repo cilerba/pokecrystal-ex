@@ -80,7 +80,7 @@ EvolutionMoves::
 	db NO_MOVE              ; SLOWPOKE
 	db WITHDRAW             ; SLOWBRO
 	db NO_MOVE              ; MAGNEMITE
-	db NO_MOVE              ; MAGNETON
+	db TRI_ATTACK           ; MAGNETON
 	db NO_MOVE              ; FARFETCH'D
 	db NO_MOVE              ; DODUO
 	db TRI_ATTACK           ; DODRIO
