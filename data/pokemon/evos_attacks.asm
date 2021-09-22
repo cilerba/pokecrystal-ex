@@ -1152,6 +1152,20 @@ DugtrioEvosAttacks:
 MeowthEvosAttacks:
 	db EVOLVE_LEVEL, 28, PERSIAN
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 1, GROWL
+	db 6, BITE
+	db 12, FURY_SWIPES
+	db 17, SCREECH
+	db 22, FAINT_ATTACK
+	db 25, ENCORE
+	db 30, PAY_DAY
+	db 33, SLASH
+	db 38, SWAGGER
+	db 43, CRUNCH
+	db 48, SWORDS_DANCE
+else
 	db 1, SCRATCH
 	db 1, GROWL
 	db 11, BITE
@@ -1160,10 +1174,27 @@ MeowthEvosAttacks:
 	db 35, SCREECH
 	db 41, FURY_SWIPES
 	db 46, SLASH
+endc
 	db 0 ; no more level-up moves
 
 PersianEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SWIFT
+	db 1, SCRATCH
+	db 1, GROWL
+	db 6, BITE
+	db 12, FURY_SWIPES
+	db 17, SCREECH
+	db 22, FAINT_ATTACK
+	db 25, ENCORE
+	db 30, PAY_DAY
+	db 33, ROCK_SLIDE
+	db 37, SLASH
+	db 45, SWAGGER
+	db 49, CRUNCH
+	db 56, SWORDS_DANCE
+else
 	db 1, SCRATCH
 	db 1, GROWL
 	db 1, BITE
@@ -1173,6 +1204,7 @@ PersianEvosAttacks:
 	db 38, SCREECH
 	db 46, FURY_SWIPES
 	db 53, SLASH
+endc
 	db 0 ; no more level-up moves
 
 PsyduckEvosAttacks:
