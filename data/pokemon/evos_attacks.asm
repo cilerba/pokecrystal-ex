@@ -2567,6 +2567,24 @@ StarmieEvosAttacks:
 
 MrMimeEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, RAZOR_LEAF
+	db 1, BARRIER
+	db 1, POUND
+	db 1, CONFUSION
+	db 8, MEDITATE
+	db 11, DOUBLESLAP
+	db 15, MIMIC
+	db 15, PSYWAVE
+	db 18, ENCORE
+	db 22, LIGHT_SCREEN
+	db 22, REFLECT
+	db 25, PSYBEAM
+	db 29, SUBSTITUTE
+	db 36, PSYCHIC_M
+	db 44, BATON_PASS
+	db 50, SAFEGUARD
+else
 	db 1, BARRIER
 	db 6, CONFUSION
 	db 11, SUBSTITUTE
@@ -2578,6 +2596,7 @@ MrMimeEvosAttacks:
 	db 36, PSYBEAM
 	db 41, BATON_PASS
 	db 46, SAFEGUARD
+endc
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:
