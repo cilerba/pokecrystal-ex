@@ -408,6 +408,7 @@ DayCareManOutside:
 	jr .Load0
 
 .Declined:
+	call DayCare_InitBreeding
 	ld hl, .IllKeepItThanksText
 
 .Load0:
