@@ -1921,6 +1921,26 @@ endc
 
 FarfetchDEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, AEROBLAST
+	db 1, SLUDGE
+	db 1, PECK
+	db 1, SAND_ATTACK
+	db 1, LEER
+	db 1, FURY_CUTTER
+	db 7, FURY_ATTACK
+	db 9, GUST
+	db 13, PURSUIT
+	db 19, CUT
+	db 21, WING_ATTACK
+	db 25, SWORDS_DANCE
+	db 31, AGILITY
+	db 33, CRUNCH
+	db 37, FLY
+	db 43, FAINT_ATTACK
+	db 45, FALSE_SWIPE
+	db 50, AEROBLAST
+else
 	db 1, PECK
 	db 7, SAND_ATTACK
 	db 13, LEER
@@ -1929,6 +1949,7 @@ FarfetchDEvosAttacks:
 	db 31, AGILITY
 	db 37, SLASH
 	db 44, FALSE_SWIPE
+endc
 	db 0 ; no more level-up moves
 
 DoduoEvosAttacks:
