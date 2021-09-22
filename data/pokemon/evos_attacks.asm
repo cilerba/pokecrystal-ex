@@ -2725,6 +2725,22 @@ PinsirEvosAttacks:
 
 TaurosEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 3, TAIL_WHIP
+	db 5, RAGE
+	db 8, HORN_ATTACK
+	db 11, SCARY_FACE
+	db 15, PURSUIT
+	db 19, REST
+	db 24, BITE
+	db 29, FOCUS_ENERGY
+	db 35, TAKE_DOWN
+	db 41, PSYBEAM
+	db 48, SWAGGER
+	db 55, THRASH
+	db 63, DOUBLE_EDGE
+else
 	db 1, TACKLE
 	db 4, TAIL_WHIP
 	db 8, RAGE
@@ -2734,6 +2750,7 @@ TaurosEvosAttacks:
 	db 34, REST
 	db 43, THRASH
 	db 53, TAKE_DOWN
+endc
 	db 0 ; no more level-up moves
 
 MagikarpEvosAttacks:
