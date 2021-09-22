@@ -313,29 +313,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons BURNED_TOWER_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 14, RATTATA
-	db 14, KOFFING
-	db 16, KOFFING
-	db 15, ZUBAT
-	db 12, KOFFING
-	db 16, KOFFING
-	db 16, WEEZING
+	db 18, RATTATA
+	db 19, KOFFING
+	db 20, KOFFING
+	db 19, ZUBAT
+	db 18, KOFFING
+	db 18, KOFFING
+	db 19, MISDREAVUS
 	; day
-	db 14, RATTATA
-	db 14, KOFFING
-	db 16, KOFFING
-	db 15, ZUBAT
-	db 12, KOFFING
-	db 16, KOFFING
-	db 16, WEEZING
+	db 18, RATTATA
+	db 19, KOFFING
+	db 20, KOFFING
+	db 19, ZUBAT
+	db 18, KOFFING
+	db 18, KOFFING
+	db 19, MISDREAVUS
 	; nite
-	db 14, RATTATA
-	db 14, KOFFING
-	db 16, KOFFING
-	db 15, ZUBAT
-	db 12, KOFFING
-	db 16, KOFFING
-	db 16, WEEZING
+	db 18, RATTATA
+	db 19, KOFFING
+	db 20, KOFFING
+	db 19, ZUBAT
+	db 18, KOFFING
+	db 18, KOFFING
+	db 19, MISDREAVUS
 	end_grass_wildmons
 
 	def_grass_wildmons NATIONAL_PARK
