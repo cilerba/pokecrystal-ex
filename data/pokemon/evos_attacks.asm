@@ -1861,6 +1861,19 @@ endc
 MagnemiteEvosAttacks:
 	db EVOLVE_LEVEL, 30, MAGNETON
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SUPERSONIC
+	db 1, TACKLE
+	db 5, THUNDERSHOCK
+	db 7, THUNDER_WAVE
+	db 12, LIGHT_SCREEN
+	db 16, SONICBOOM
+	db 20, SPARK
+	db 26, LOCK_ON
+	db 33, SWIFT
+	db 39, SCREECH
+	db 45, ZAP_CANNON
+else
 	db 1, TACKLE
 	db 6, THUNDERSHOCK
 	db 11, SUPERSONIC
@@ -1870,10 +1883,27 @@ MagnemiteEvosAttacks:
 	db 33, SWIFT
 	db 39, SCREECH
 	db 45, ZAP_CANNON
+endc
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TRI_ATTACK
+	db 1, ZAP_CANNON
+	db 1, SUPERSONIC
+	db 1, TACKLE
+	db 1, THUNDERSHOCK
+	db 5, THUNDERSHOCK
+	db 7, THUNDER_WAVE
+	db 12, LIGHT_SCREEN
+	db 16, SONICBOOM
+	db 20, SPARK
+	db 26, LOCK_ON
+	db 35, SWIFT
+	db 41, SCREECH
+	db 48, ZAP_CANNON
+else
 	db 1, TACKLE
 	db 1, THUNDERSHOCK
 	db 1, SUPERSONIC
@@ -1886,6 +1916,7 @@ MagnetonEvosAttacks:
 	db 35, TRI_ATTACK
 	db 43, SCREECH
 	db 53, ZAP_CANNON
+endc
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
