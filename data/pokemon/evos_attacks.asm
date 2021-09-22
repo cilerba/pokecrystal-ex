@@ -5038,6 +5038,21 @@ MagbyEvosAttacks:
 
 MiltankEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 3, GROWL
+	db 5, DEFENSE_CURL
+	db 8, STOMP
+	db 11, MILK_DRINK
+	db 15, BIDE
+	db 19, ROLLOUT
+	db 24, BODY_SLAM
+	db 29, PSYBEAM
+	db 35, LOCK_ON
+	db 41, IRON_TAIL
+	db 48, RECOVER
+	db 40, VITAL_THROW
+else
 	db 1, TACKLE
 	db 4, GROWL
 	db 8, DEFENSE_CURL
@@ -5047,6 +5062,7 @@ MiltankEvosAttacks:
 	db 34, ROLLOUT
 	db 43, BODY_SLAM
 	db 53, HEAL_BELL
+endc
 	db 0 ; no more level-up moves
 
 BlisseyEvosAttacks:
