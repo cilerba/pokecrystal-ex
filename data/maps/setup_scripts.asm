@@ -84,7 +84,7 @@ MapSetupScript_Connection:
 	mapsetup LoadMapTileset
 	mapsetup SaveScreen
 	mapsetup LoadMapObjects
-	mapsetup FadeToMapMusic
+	mapsetup FadeToMapMusicBike
 	mapsetup LoadMapPalettes
 	mapsetup InitMapNameSign
 	mapsetup ApplyMapPalettes
@@ -113,7 +113,7 @@ MapSetupScript_Train:
 	mapsetup LoadMapObjects
 	mapsetup LoadMapPalettes
 	mapsetup RefreshMapSprites
-	mapsetup FadeToMapMusic
+	mapsetup FadeToMapMusicBike
 	mapsetup FadeInPalettes
 	mapsetup ActivateMapAnims
 	mapsetup LoadWildMonData

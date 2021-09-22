@@ -359,6 +359,37 @@ PlayMapMusic::
 	pop hl
 	ret
 
+FadeToMapMusicBike::
+	push hl
+	push de
+	push bc
+	push af
+	
+	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	jr z, .done
+	
+	call GetMapMusic_MaybeSpecial
+	ld a, [wMapMusic]
+	cp e
+	jr z, .done
+
+	ld a, 8
+	ld [wMusicFade], a
+	ld a, e
+	ld [wMusicFadeID], a
+	ld a, d
+	ld [wMusicFadeID + 1], a
+	ld a, e
+	ld [wMapMusic], a
+
+.done
+	pop af
+	pop bc
+	pop de
+	pop hl
+	ret
+
 PlayMapMusicBike::
 ; If the player's on a bike, play the bike music instead of the map music
 	push hl
