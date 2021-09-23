@@ -1704,6 +1704,9 @@ BikeFunction:
 	call .CheckIfRegistered
 	call QueueScript
 	xor a
+	ld hl, wOptions2
+	bit BIKEMUSIC, [hl]
+	jr z, .skipMusic
 	ld [wMusicFade], a
 	ld de, MUSIC_NONE
 	call PlayMusic
@@ -1713,6 +1716,7 @@ BikeFunction:
 	ld a, e
 	ld [wMapMusic], a
 	call PlayMusic
+.skipMusic
 	ld a, $1
 	ret
 
