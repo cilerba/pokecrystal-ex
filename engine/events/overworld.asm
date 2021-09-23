@@ -456,6 +456,7 @@ UsedSurfScript:
 	waitbutton
 	closetext
 	
+	refreshscreen
 	pokepic LAPRAS
 	cry LAPRAS
 	waitsfx
