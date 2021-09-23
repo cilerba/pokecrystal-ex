@@ -899,6 +899,8 @@ CountStep:
 	; Count the step for poison and total steps
 	ld hl, wPoisonStepCount
 	inc [hl]
+	ld hl, wEggStepCount
+	inc [hl]
 	ld hl, wStepCount
 	inc [hl]
 	; Every 256 steps, increase the happiness of all your Pokemon.
@@ -910,10 +912,12 @@ CountStep:
 	; Every 256 steps, offset from the happiness incrementor by 128 steps,
 	; decrease the hatch counter of all your eggs until you reach the first
 	; one that is ready to hatch.
-	ld a, [wStepCount]
-	cp $80
-	jr nz, .skip_egg
-
+	ld hl, wEggStepCount
+	ld a, [hl]
+	cp $40
+	jr c, .skip_egg
+	ld [hl], 0
+	
 	farcall DoEggStep
 	jr nz, .hatch
 

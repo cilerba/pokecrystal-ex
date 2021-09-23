@@ -3229,7 +3229,8 @@ wdc60:: db
 
 wStepCount:: db
 wPoisonStepCount:: db
-	ds 2
+wEggStepCount:: db
+	ds 1
 wHappinessStepCount:: db
 	ds 1
 
