@@ -1,16 +1,31 @@
 ; GetOptionPointer.Pointers indexes
 	const_def
-	const OPT_TEXT_SPEED   ; 0
-	const OPT_BATTLE_SCENE ; 1
-	const OPT_BATTLE_STYLE ; 2
-	const OPT_SOUND        ; 3
-	const OPT_PRINT        ; 4
-	const OPT_MENU_ACCOUNT ; 5
-	const OPT_FRAME        ; 6
-	const OPT_CANCEL       ; 7
-NUM_OPTIONS EQU const_value    ; 8
+	const OPT_TEXT_SPEED   	; 0
+	const OPT_BATTLE_SCENE 	; 1
+	const OPT_BATTLE_STYLE 	; 2
+	const OPT_SOUND        	; 3
+	const OPT_PRINT        	; 4
+	const OPT_MENU_ACCOUNT 	; 5
+	const OPT_NEXT        	; 6
+	const OPT_CANCEL1       ; 7
+NUM_OPTIONS_1 EQU const_value    ; 8
+
+	const_def
+	const OPT_FRAME   		; 0
+	const OPT_BIKEMUSIC  	; 1
+	const OPT_BLANK1        ; 2
+	const OPT_BLANK2       	; 3
+	const OPT_BLANK3 		; 4
+	const OPT_BLANK4 		; 5
+	const OPT_PREV        	; 6
+	const OPT_CANCEL2       ; 7
+NUM_OPTIONS_2 EQU const_value    ; 8
 
 _Option:
+	ld a, [wCurOptionsPage]
+	xor a
+	ld [wCurOptionsPage], a
+
 	ld hl, hInMenu
 	ld a, [hl]
 	push af
@@ -22,32 +37,7 @@ _Option:
 	call Textbox
 	hlcoord 2, 2
 	ld de, StringOptions
-	call PlaceString
-	xor a
-	ld [wJumptableIndex], a
-
-; display the settings of each option when the menu is opened
-	ld c, NUM_OPTIONS - 2 ; omit frame type, the last option
-.print_text_loop
-	push bc
-	xor a
-	ldh [hJoyLast], a
-	call GetOptionPointer
-	pop bc
-	ld hl, wJumptableIndex
-	inc [hl]
-	dec c
-	jr nz, .print_text_loop
-	call UpdateFrame ; display the frame type
-
-	xor a
-	ld [wJumptableIndex], a
-	inc a
-	ldh [hBGMapMode], a
-	call WaitBGMap
-	ld b, SCGB_DIPLOMA
-	call GetSGBLayout
-	call SetPalettes
+	call OptionPrint
 
 .joypad_loop
 	call JoyTextDelay
@@ -73,6 +63,39 @@ _Option:
 	ldh [hInMenu], a
 	ret
 
+OptionPrint:
+	call PlaceString
+	xor a
+	ld [wJumptableIndex], a
+	ldh [hJoyPressed], a
+
+; display the settings of each option when the menu is opened
+	ld c, NUM_OPTIONS_1 - 2 ; omit frame type, the last option
+.print_text_loop
+	push bc
+	xor a
+	ldh [hJoyLast], a
+	call GetOptionPointer
+	pop bc
+	ld hl, wJumptableIndex
+	inc [hl]
+	dec c
+	jr nz, .print_text_loop
+	ld a, [wCurOptionsPage]
+	and a
+	call nz, UpdateFrame ; display the frame type
+
+	xor a
+	ld [wJumptableIndex], a
+	inc a
+	ldh [hBGMapMode], a
+	call WaitBGMap
+	ld b, SCGB_DIPLOMA
+	call GetSGBLayout
+	call SetPalettes
+
+
+
 StringOptions:
 	db "TEXT SPEED<LF>"
 	db "        :<LF>"
@@ -86,12 +109,34 @@ StringOptions:
 	db "        :<LF>"
 	db "MENU ACCOUNT<LF>"
 	db "        :<LF>"
+	db "NEXT<LF>"
+	db "<LF>"
+	db "CANCEL@"
+
+StringOptions2:
 	db "FRAME<LF>"
 	db "        :TYPE<LF>"
+	db "BIKE MUSIC<LF>"
+	db "        :<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "<LF>"
+	db "PREVIOUS<LF>"
+	db "<LF>"
 	db "CANCEL@"
 
 GetOptionPointer:
+	ld a, [wCurOptionsPage]
+	cp 1
+	jr z, .SecondPage
 	jumptable .Pointers, wJumptableIndex
+.SecondPage
+	jumptable .Pointers2, wJumptableIndex
 
 .Pointers:
 ; entries correspond to OPT_* constants
@@ -101,7 +146,17 @@ GetOptionPointer:
 	dw Options_Sound
 	dw Options_Print
 	dw Options_MenuAccount
+	dw Options_NextPrevious
+	dw Options_Cancel
+	
+.Pointers2
 	dw Options_Frame
+	dw Options_Bike
+	dw Options_Blank
+	dw Options_Blank
+	dw Options_Blank
+	dw Options_Blank
+	dw Options_NextPrevious
 	dw Options_Cancel
 
 	const_def
@@ -476,11 +531,89 @@ Options_Frame:
 	ld [hl], a
 UpdateFrame:
 	ld a, [wTextboxFrame]
-	hlcoord 16, 15 ; where on the screen the number is drawn
+	hlcoord 16, 3 ; where on the screen the number is drawn
 	add "1"
 	ld [hl], a
 	call LoadFontsExtra
 	and a
+	ret
+
+Options_Bike:
+	ld hl, wOptions2
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr z, .NonePressed
+	bit BIKEMUSIC, [hl]
+	jr nz, .ToggleOff
+	jr .ToggleOn
+
+.LeftPressed:
+	bit BIKEMUSIC, [hl]
+	jr z, .ToggleOn
+	jr .ToggleOff
+
+.NonePressed:
+	bit BIKEMUSIC, [hl]
+	jr nz, .ToggleOn
+
+.ToggleOff:
+	res BIKEMUSIC, [hl]
+	ld de, .Off
+	jr .Display
+
+.ToggleOn:
+	set BIKEMUSIC, [hl]
+	ld de, .On
+
+.Display:
+	hlcoord 11, 5
+	call PlaceString
+	and a
+	ret
+
+.Off: db "OFF@"
+.On:  db "ON @"
+
+
+Options_NextPrevious:
+	ld hl, wCurOptionsPage
+	ldh a, [hJoyPressed]
+	and A_BUTTON | D_RIGHT | D_LEFT
+	jr z, .NonePressed
+	bit 0, [hl]
+	jr z, .Page2
+	res 0, [hl]
+	ld de, StringOptions
+	jr .Display
+.Page2:
+	set 0, [hl]
+	ld de, StringOptions2
+.Display:
+	push de
+	hlcoord 0, 0
+	lb bc, 16, 18
+	call Textbox
+	pop de
+	hlcoord 2, 2
+	call PlaceString
+	call OptionPrint
+	ld a, OPT_FRAME
+	ld [wJumptableIndex], a
+.NonePressed:
+	and a
+	ret
+
+Options_Blank:
+	ldh a, [hJoyPressed]
+	and A_BUTTON
+	jr nz, .Exit
+	and a
+	ret
+	
+.Exit:
+	scf
 	ret
 
 Options_Cancel:
@@ -505,17 +638,30 @@ OptionsControl:
 	ret
 
 .DownPressed:
+	ld a, [wCurOptionsPage]
+	cp 1
+	jr z, .downSecPage
+	jr .downFirstPage
+.downSecPage
+	ld a, [hl] ; Load the cursor position to a
+	cp OPT_BIKEMUSIC ; Check if it's on the Bike Music option
+	jr nz, .downSecPageCancel ; Increase if it isn't
+	ld [hl], OPT_PREV
+	jr .doneDown
+.downSecPageCancel
 	ld a, [hl]
-	cp OPT_CANCEL ; maximum option index
-	jr nz, .CheckMenuAccount
-	ld [hl], OPT_TEXT_SPEED ; first option
-	scf
-	ret
-
-.CheckMenuAccount: ; I have no idea why this exists...
-	cp OPT_MENU_ACCOUNT
+	cp OPT_CANCEL2
 	jr nz, .Increase
-	ld [hl], OPT_MENU_ACCOUNT
+	ld [hl], OPT_FRAME
+	jr .doneDown
+.downFirstPage
+	ld a, [hl]
+	cp OPT_CANCEL1 ; maximum option index
+	jr nz, .Increase
+	ld [hl], OPT_TEXT_SPEED ; first option
+.doneDown
+	and a
+	ret
 
 .Increase:
 	inc [hl]
@@ -524,18 +670,30 @@ OptionsControl:
 
 .UpPressed:
 	ld a, [hl]
-
-; Another thing where I'm not sure why it exists
+	ld a, [wCurOptionsPage]
+	cp 1
+	jr z, .upSecPage
+	jr .upFirstPage
+.upSecPage
+	ld a, [hl] ; Load the cursor position to a
+	cp OPT_PREV ; Check if it's on the Bike Music option
+	jr nz, .upSecPageCancel ; Increase if it isn't
+	ld [hl], OPT_BIKEMUSIC
+	jr .doneUp
+.upSecPageCancel
+	ld a, [hl]
 	cp OPT_FRAME
-	jr nz, .NotFrame
-	ld [hl], OPT_MENU_ACCOUNT
-	scf
-	ret
-
-.NotFrame:
-	and a ; OPT_TEXT_SPEED, minimum option index
 	jr nz, .Decrease
-	ld [hl], NUM_OPTIONS ; decrements to OPT_CANCEL, maximum option index
+	ld [hl], OPT_CANCEL2
+	jr .doneUp
+.upFirstPage
+	ld a, [hl]
+	and a ; minimum option index
+	jr nz, .Decrease
+	ld [hl], OPT_CANCEL1 ; first option
+.doneUp
+	and a
+	ret
 
 .Decrease:
 	dec [hl]

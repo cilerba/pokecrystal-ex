@@ -733,7 +733,9 @@ wPokedexDataEnd::
 else
 wPokedexDataEnd:: ds 1
 endc
-	ds 2
+	ds 1
+	
+wCurOptionsPage:: db
 
 NEXTU
 ; pokegear
@@ -1794,6 +1796,7 @@ wGBPrinterBrightness::
 	db
 wOptions2::
 ; bit 1: menu account off/on
+; bit 2: bike music off/on
 	db
 	ds 2
 wOptionsEnd::
