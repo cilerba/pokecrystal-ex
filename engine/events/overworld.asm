@@ -1878,6 +1878,30 @@ CanCutText:
 	text_far _CanCutText
 	text_end
 
+PCLinkFunction:
+	call .LoadPCLink
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.LoadPCLink:
+	ld a, [wPlayerState]
+	ld hl, Script_LoadPCLink
+	ld de, Script_LoadPCLink_Register
+	call CheckIfRegistered
+	call QueueScript
+	ld a, $1
+	ret
+
+Script_LoadPCLink:
+	reloadmappart
+	special UpdateTimePals
+
+Script_LoadPCLink_Register:
+	special PokemonCenterPC
+	reloadmappart
+	end
+
 CheckIfRegistered:
 	ld a, [wUsingItemWithSelect]
 	and a

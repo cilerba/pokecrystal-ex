@@ -3,6 +3,7 @@
 	const AZALEAPOKECENTER1F_GENTLEMAN
 	const AZALEAPOKECENTER1F_FISHING_GURU
 	const AZALEAPOKECENTER1F_POKEFAN_F
+	const AZALEAPOKECENTER1F_SCIENTIST
 
 AzaleaPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -11,6 +12,25 @@ AzaleaPokecenter1F_MapScripts:
 	def_callbacks
 
 .DummyScene:
+	end
+
+AzaleaPokecenter1FScientistPC:
+	faceplayer
+	opentext
+	setevent EVENT_GOT_PC_LINK
+	writetext AzaleaPokecenter1FScientistText
+	waitbutton
+	verbosegiveitem PCLINK
+	writetext AzaleaPokecenter1FScientistTextAfter
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear AZALEAPOKECENTER1F_SCIENTIST
+	pause 15
+	playsound SFX_EXIT_BUILDING
+	waitsfx
+	special FadeInQuickly
 	end
 
 AzaleaPokecenter1FNurseScript:
@@ -30,6 +50,34 @@ AzaleaPokecenter1FGentlemanText:
 	line "my #PAGER!"
 	
 	done
+
+AzaleaPokecenter1FScientistText:
+	text "<PLAYER>!"
+
+	para "I was hoping I'd"
+	line "find you here."
+
+	para "PROF. ELM asked"
+	line "me to give you"
+	cont "this."
+	done
+
+AzaleaPokecenter1FScientistTextAfter:
+	text "This device is"
+	line "known as the"
+	cont "PC LINK."
+
+	para "It allows you to"
+	line "access the PC"
+	cont "from anywhere."
+
+	para "I hope you make"
+	line "great use of it."
+
+	para "Good luck on"
+	line "your adventure!"
+	done
+
 
 AzaleaPokecenter1FUnusedText: ; unreferenced
 	text "This BILL guy"
@@ -86,3 +134,4 @@ AzaleaPokecenter1F_MapEvents:
 	object_event  9,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FGentlemanScript, -1
 	object_event  6,  1, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FFishingGuruScript, -1
 	object_event  1,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FPokefanFScript, -1
+	object_event  5,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FScientistPC, EVENT_GOT_PC_LINK

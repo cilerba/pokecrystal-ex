@@ -175,7 +175,7 @@ ItemNames::
 	li "ORAN BERRY"
 	li "SITRUS BERRY"
 	li "SQUIRTBOTTLE"
-	li "TERU-SAMA"
+	li "PC LINK"
 	li "PARK BALL"
 	li "RAINBOW WING"
 	li "TERU-SAMA"

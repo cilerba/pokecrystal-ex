@@ -176,7 +176,7 @@ ItemDescriptions:
 	dw BerryDesc
 	dw GoldBerryDesc
 	dw SquirtBottleDesc
-	dw TeruSama23Desc
+	dw PCLinkDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
 	dw TeruSama24Desc
@@ -819,7 +819,7 @@ DragonFangDesc:
 	next "type moves. (HOLD)@"
 
 PokePagerDesc:
-	db   "Calls a <POKE>MON for"
+	db   "Calls a <PKMN> for"
 	next "help. (B&START)@"
 
 LeftoversDesc:
@@ -934,8 +934,8 @@ SquirtBottleDesc:
 	db   "A bottle used for"
 	next "watering plants.@"
 
-TeruSama23Desc:
-	db   "?@"
+PCLinkDesc:
+	db   "A portable PC.@"
 
 ParkBallDesc:
 	db   "The Bug-Catching"

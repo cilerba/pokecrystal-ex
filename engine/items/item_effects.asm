@@ -189,7 +189,7 @@ ItemEffects:
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
 	dw SquirtbottleEffect  ; SQUIRTBOTTLE
-	dw NoEffect            ; ITEM_B0
+	dw PCLinkEffect        ; PCLINK
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; ITEM_B3
@@ -2571,6 +2571,10 @@ PPRestoredText:
 
 SquirtbottleEffect:
 	farcall _Squirtbottle
+	ret
+
+PCLinkEffect:
+	farcall PCLinkFunction
 	ret
 
 CardKeyEffect:
