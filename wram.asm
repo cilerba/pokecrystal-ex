@@ -158,7 +158,8 @@ wScriptVar:: db
 wPlayerNextMovement:: db
 wPlayerMovement:: db
 
-	ds 2
+	ds 1
+wUsingPCLink:: db
 
 wMovementObject::
 	db

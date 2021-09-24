@@ -127,7 +127,7 @@ _DepositPKMN:
 	ret
 
 .Submenu:
-	ld hl, BillsPCDepositMenuHeader
+	call ChooseWhichDepositHeader
 	call CopyMenuHeader
 	ld a, [wMenuCursorY]
 	call StoreMenuCursorPosition
@@ -138,7 +138,7 @@ _DepositPKMN:
 	and %11
 	ld e, a
 	ld d, 0
-	ld hl, BillsPCDepositJumptable
+	call ChooseWhichDepositJumptable
 	add hl, de
 	add hl, de
 	ld a, [hli]
@@ -150,6 +150,11 @@ BillsPCDepositJumptable:
 	dw BillsPCDepositFuncDeposit ; Deposit Pokemon
 	dw BillsPCDepositFuncStats ; Pokemon Stats
 	dw BillsPCDepositFuncRelease ; Release Pokemon
+	dw BillsPCDepositFuncCancel ; Cancel
+
+BillsPCDepositJumptableNoRelease:
+	dw BillsPCDepositFuncDeposit ; Deposit Pokemon
+	dw BillsPCDepositFuncStats ; Pokemon Stats
 	dw BillsPCDepositFuncCancel ; Cancel
 
 BillsPCDepositFuncDeposit:
@@ -238,6 +243,39 @@ BillsPCDepositMenuHeader:
 	db "STATS@"
 	db "RELEASE@"
 	db "CANCEL@"
+	
+BillsPCDepositMenuHeaderNoRelease:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 9, 6, SCREEN_WIDTH - 1, 13
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "DEPOSIT@"
+	db "STATS@"
+	db "CANCEL@"
+
+ChooseWhichDepositHeader:
+	ld a, [wUsingPCLink]
+	cp 1
+	jr c, .release
+	ld hl, BillsPCDepositMenuHeaderNoRelease
+	ret
+.release
+	ld hl, BillsPCDepositMenuHeader
+	ret
+
+ChooseWhichDepositJumptable:
+	ld a, [wUsingPCLink]
+	and a
+	jr z, .release
+	ld hl, BillsPCDepositJumptableNoRelease
+	ret
+.release
+	ld hl, BillsPCDepositJumptable
+	ret
 
 BillsPCClearThreeBoxes: ; unreferenced
 	hlcoord 0, 0
@@ -384,7 +422,14 @@ _WithdrawPKMN:
 	ret
 
 BillsPC_Withdraw:
+	ld a, [wUsingPCLink]
+	cp 1
+	jr c, .menuRelease
+	ld hl, .MenuHeaderNoRelease
+	jr .menuSkip
+.menuRelease
 	ld hl, .MenuHeader
+.menuSkip
 	call CopyMenuHeader
 	ld a, [wMenuCursorY]
 	call StoreMenuCursorPosition
@@ -395,7 +440,14 @@ BillsPC_Withdraw:
 	and %11
 	ld e, a
 	ld d, 0
+	ld a, [wUsingPCLink]
+	and a
+	jr z, .jumptableRelease
+	ld hl, .noRelease
+	jr .jumptableSkip
+.jumptableRelease
 	ld hl, .dw
+.jumptableSkip
 	add hl, de
 	add hl, de
 	ld a, [hli]
@@ -407,6 +459,11 @@ BillsPC_Withdraw:
 	dw .withdraw ; Withdraw
 	dw .stats ; Stats
 	dw .release ; Release
+	dw .cancel ; Cancel
+
+.noRelease
+	dw .withdraw ; Withdraw
+	dw .stats ; Stats
 	dw .cancel ; Cancel
 
 .withdraw
@@ -490,6 +547,19 @@ BillsPC_Withdraw:
 	db "WITHDRAW@"
 	db "STATS@"
 	db "RELEASE@"
+	db "CANCEL@"
+
+.MenuHeaderNoRelease:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 9, 6, SCREEN_WIDTH - 1, 13
+	dw .MenuDataNoRelease
+	db 1 ; default option
+
+.MenuDataNoRelease:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "WITHDRAW@"
+	db "STATS@"
 	db "CANCEL@"
 
 _MovePKMNWithoutMail:

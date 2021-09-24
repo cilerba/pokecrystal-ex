@@ -1884,6 +1884,8 @@ CanCutText:
 	text_end
 
 PCLinkFunction:
+	ld a, $1
+	ld [wUsingPCLink], a
 	call .LoadPCLink
 	and $7f
 	ld [wFieldMoveSucceeded], a
@@ -1905,7 +1907,14 @@ Script_LoadPCLink:
 Script_LoadPCLink_Register:
 	special PokemonCenterPC
 	reloadmappart
+	callasm ResetPCLink
 	end
+
+ResetPCLink:
+	ld a, [wUsingPCLink]
+	xor a
+	ld [wUsingPCLink], a
+	ret
 
 CheckIfRegistered:
 	ld a, [wUsingItemWithSelect]
