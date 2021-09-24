@@ -668,12 +668,12 @@ SendGetMonIntoFromBox:
 	jr nz, .CloseSRAM_And_ClearCarryFlag
 	ld hl, MON_STATUS
 	add hl, bc
-	xor a
-	ld [hl], a
-	ld hl, MON_HP
-	add hl, bc
-	ld d, h
-	ld e, l
+	;xor a
+	;ld [hl], a
+	;ld hl, MON_HP
+	;add hl, bc
+	;ld d, h
+	;ld e, l
 	ld a, [wCurPartySpecies]
 	cp EGG
 	jr z, .egg
