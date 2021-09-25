@@ -55,8 +55,9 @@ CianwoodLugiaSpeechHouseTwinText:
 	cont "sea creature."
 
 	para "You might need a"
-	line "special move to"
-	cont "get past them."
+	line "special #MON"
+	cont "to get past"
+	cont "them."
 	done
 
 CianwoodLugiaSpeechHouse_MapEvents:
