@@ -13,7 +13,7 @@ NUM_OPTIONS_1 EQU const_value    ; 8
 	const_def
 	const OPT_FRAME   		; 0
 	const OPT_BIKEMUSIC  	; 1
-	const OPT_BLANK1        ; 2
+	const OPT_NUZLOCKE      ; 2
 	const OPT_BLANK2       	; 3
 	const OPT_BLANK3 		; 4
 	const OPT_BLANK4 		; 5
@@ -118,8 +118,8 @@ StringOptions2:
 	db "        :TYPE<LF>"
 	db "BIKE MUSIC<LF>"
 	db "        :<LF>"
-	db "<LF>"
-	db "<LF>"
+	db "NUZLOCKE<LF>"
+	db "        :<LF>"
 	db "<LF>"
 	db "<LF>"
 	db "<LF>"
@@ -152,7 +152,7 @@ GetOptionPointer:
 .Pointers2
 	dw Options_Frame
 	dw Options_Bike
-	dw Options_Blank
+	dw Options_Nuzlocke
 	dw Options_Blank
 	dw Options_Blank
 	dw Options_Blank
@@ -576,6 +576,44 @@ Options_Bike:
 .Off: db "OFF@"
 .On:  db "ON @"
 
+Options_Nuzlocke:
+	ld hl, wOptions2
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr z, .NonePressed
+	bit NUZLOCKE, [hl]
+	jr nz, .ToggleOff
+	jr .ToggleOn
+
+.LeftPressed:
+	bit NUZLOCKE, [hl]
+	jr z, .ToggleOn
+	jr .ToggleOff
+
+.NonePressed:
+	bit NUZLOCKE, [hl]
+	jr nz, .ToggleOn
+
+.ToggleOff:
+	res NUZLOCKE, [hl]
+	ld de, .Off
+	jr .Display
+
+.ToggleOn:
+	set NUZLOCKE, [hl]
+	ld de, .On
+
+.Display:
+	hlcoord 11, 7
+	call PlaceString
+	and a
+	ret
+
+.Off: db "OFF@"
+.On:  db "ON @"
+
 
 Options_NextPrevious:
 	ld hl, wCurOptionsPage
@@ -644,7 +682,7 @@ OptionsControl:
 	jr .downFirstPage
 .downSecPage
 	ld a, [hl] ; Load the cursor position to a
-	cp OPT_BIKEMUSIC ; Check if it's on the Bike Music option
+	cp OPT_NUZLOCKE ; Check if it's on the Bike Music option
 	jr nz, .downSecPageCancel ; Increase if it isn't
 	ld [hl], OPT_PREV
 	jr .doneDown
@@ -678,7 +716,7 @@ OptionsControl:
 	ld a, [hl] ; Load the cursor position to a
 	cp OPT_PREV ; Check if it's on the Bike Music option
 	jr nz, .upSecPageCancel ; Increase if it isn't
-	ld [hl], OPT_BIKEMUSIC
+	ld [hl], OPT_NUZLOCKE
 	jr .doneUp
 .upSecPageCancel
 	ld a, [hl]

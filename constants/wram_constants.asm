@@ -69,6 +69,7 @@ GBPRINTER_DARKEST  EQU $7f
 	const_def
 	const MENU_ACCOUNT ; 0
 	const BIKEMUSIC ; 1
+	const NUZLOCKE ; 2
 
 ; wWalkingDirection::
 	const_def -1
