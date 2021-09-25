@@ -1786,15 +1786,15 @@ SwimmerMGroup:
 
 	; SWIMMERM (2)
 	db "SIMON@", TRAINERTYPE_NORMAL
-	db 20, TENTACOOL
-	db 20, TENTACOOL
+	db 26, TENTACOOL
+	db 26, TENTACOOL
 	db -1 ; end
 
 	; SWIMMERM (3)
 	db "RANDALL@", TRAINERTYPE_NORMAL
-	db 18, SHELLDER
-	db 20, WARTORTLE
-	db 18, SHELLDER
+	db 25, SHELLDER
+	db 26, WARTORTLE
+	db 26, SHELLDER
 	db -1 ; end
 
 	; SWIMMERM (4)
@@ -1921,13 +1921,13 @@ SwimmerMGroup:
 SwimmerFGroup:
 	; SWIMMERF (1)
 	db "ELAINE@", TRAINERTYPE_NORMAL
-	db 21, STARYU
+	db 27, STARYU
 	db -1 ; end
 
 	; SWIMMERF (2)
 	db "PAULA@", TRAINERTYPE_NORMAL
-	db 19, STARYU
-	db 19, SHELLDER
+	db 26, STARYU
+	db 27, SHELLDER
 	db -1 ; end
 
 	; SWIMMERF (3)
