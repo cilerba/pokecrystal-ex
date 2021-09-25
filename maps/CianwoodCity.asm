@@ -200,9 +200,9 @@ ChucksWifeBeatChuckText:
 	para "give it to train-"
 	line "ers that are"
 	
-	para "strong enough to
+	para "strong enough to"
 	line "defeat the GYM"
-	cont "LEADER".
+	cont "LEADER."
 	done
 
 ChucksWifeGiveHMText:
