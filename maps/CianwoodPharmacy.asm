@@ -15,6 +15,8 @@ CianwoodPharmacist:
 	opentext
 	checkevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY
 	iftrue .Mart
+	checkevent EVENT_BEAT_CHUCK
+	iffalse .Mart
 	checkevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS
 	iffalse .Mart
 	writetext PharmacistGiveSecretpotionText
