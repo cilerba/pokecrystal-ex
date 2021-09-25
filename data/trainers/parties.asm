@@ -591,11 +591,11 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (4)
 	db "THEO@", TRAINERTYPE_NORMAL
-	db 17, PIDGEY
-	db 15, PIDGEY
-	db 19, PIDGEY
-	db 15, PIDGEY
-	db 15, PIDGEY
+	db 23, PIDGEY
+	db 24, PIDGEY
+	db 25, PIDGEY
+	db 26, PIDGEY
+	db 27, PIDGEY
 	db -1 ; end
 
 	; BIRD_KEEPER (5)
@@ -607,9 +607,9 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (6)
 	db "DENIS@", TRAINERTYPE_NORMAL
-	db 18, SPEAROW
-	db 20, FEAROW
-	db 18, SPEAROW
+	db 25, SPEAROW
+	db 27, FEAROW
+	db 25, SPEAROW
 	db -1 ; end
 
 	; BIRD_KEEPER (7)
@@ -715,7 +715,7 @@ LassGroup:
 
 	; LASS (5)
 	db "CONNIE@", TRAINERTYPE_NORMAL
-	db 21, MARILL
+	db 26, MARILL
 	db -1 ; end
 
 	; LASS (6)
@@ -1433,8 +1433,8 @@ GruntMGroup:
 GentlemanGroup:
 	; GENTLEMAN (1)
 	db "PRESTON@", TRAINERTYPE_NORMAL
-	db 18, GROWLITHE
-	db 18, GROWLITHE
+	db 25, GROWLITHE
+	db 27, GROWLITHE
 	db -1 ; end
 
 	; GENTLEMAN (2)
@@ -1455,7 +1455,7 @@ GentlemanGroup:
 
 	; GENTLEMAN (5)
 	db "ALFRED@", TRAINERTYPE_NORMAL
-	db 20, NOCTOWL
+	db 27, NOCTOWL
 	db -1 ; end
 
 SkierGroup:
@@ -2037,26 +2037,26 @@ SailorGroup:
 
 	; SAILOR (2)
 	db "HUEY@", TRAINERTYPE_NORMAL
-	db 18, POLIWAG
-	db 18, POLIWHIRL
+	db 25, POLIWAG
+	db 27, POLIWHIRL
 	db -1 ; end
 
 	; SAILOR (3)
 	db "TERRELL@", TRAINERTYPE_NORMAL
-	db 20, POLIWHIRL
+	db 26, POLIWHIRL
 	db -1 ; end
 
 	; SAILOR (4)
 	db "KENT@", TRAINERTYPE_MOVES
-	db 18, KRABBY,     BUBBLE, LEER, VICEGRIP, HARDEN
-	db 20, KRABBY,     BUBBLEBEAM, LEER, VICEGRIP, HARDEN
+	db 25, KRABBY,     BUBBLE, LEER, VICEGRIP, HARDEN
+	db 25, KRABBY,     BUBBLEBEAM, LEER, VICEGRIP, HARDEN
 	db -1 ; end
 
 	; SAILOR (5)
 	db "ERNEST@", TRAINERTYPE_NORMAL
-	db 18, MACHOP
-	db 18, MACHOP
-	db 18, POLIWHIRL
+	db 25, MACHOP
+	db 25, MACHOP
+	db 27, POLIWHIRL
 	db -1 ; end
 
 	; SAILOR (6)

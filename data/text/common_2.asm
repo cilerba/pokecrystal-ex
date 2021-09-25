@@ -94,6 +94,81 @@ _NameRaterNamedText::
 	text "."
 	prompt
 
+_LuckyEggGiftText::
+	text "Hey, kid. Check"
+	line "this out."
+
+	para "I came across this"
+	line "super rare EGG."
+
+	para "It must be really"
+	line "close to hatch-"
+	cont "ing!"
+
+	para "I'm willing to"
+	line "offer you the"
+	cont "deal of a life-"
+	cont "time."
+
+	para "If you hand me"
+	line "an ordinary"
+	cont "#MON EGG, I"
+	
+	para "will give you my"
+	line "EGG in exchange."
+
+	para "What do you say?"
+	line "Deal?"
+	done
+
+_LuckyEggGiftWhichMonText::
+	text "Show me what"
+	line "you got."
+	prompt
+
+_LuckyEggGiftNotEggText::
+	text "That's not an"
+	line "EGG."
+
+	para "Don't try and"
+	line "pull a fast one"
+	cont "on me."
+	done
+
+_LuckyEggGiftYourLossText::
+	text "Whatever."
+
+	para "Your loss, kid."
+	done
+
+_LuckyEggGiftSuccessText::
+	text "This EGG is per-"
+	line "fect!"
+
+	para "You made a good"
+	line "deal."
+
+	para "Here's my EGG"
+	line "as promised."
+
+	prompt
+
+_LuckyEggGiftSuckerText::
+	text "Sucker."
+
+	para "Poor kid has no"
+	line "idea it's not"
+	cont "even a real EGG!"
+	done
+
+_LuckyEggGiftBagFullText::
+	text "Your bag is full."
+
+	para "Empty it out,"
+	line "then come talk"
+	cont "to me."
+	done
+
 Text_Gained::
 	text_ram wStringBuffer1
 	text " gained@"

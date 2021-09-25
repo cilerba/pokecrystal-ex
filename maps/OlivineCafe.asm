@@ -1,7 +1,8 @@
 	object_const_def
-	const OLIVINECAFE_SAILOR1
+	;const OLIVINECAFE_SAILOR1
 	const OLIVINECAFE_FISHING_GURU
 	const OLIVINECAFE_SAILOR2
+	const OLIVINECAFE_SAILOR3
 
 OlivineCafe_MapScripts:
 	def_scene_scripts
@@ -22,6 +23,28 @@ OlivineCafeStrengthSailorScript:
 	waitbutton
 	closetext
 	end
+
+OlivineCafeLuckyEggSailorScript:
+	checkevent EVENT_GOT_LUCKY_EGG
+	iftrue .GotEgg
+	faceplayer
+	opentext
+	special LuckyEggGift
+	waitbutton
+	closetext
+	applymovement OLIVINECAFE_SAILOR3, .MoveDown
+	end
+.GotEgg
+	opentext
+	writetext LuckyEggGiftSuckerText
+	waitbutton
+	closetext
+	end
+
+.MoveDown
+	turn_head DOWN
+	step_end
+
 
 OlivineCafeFishingGuruScript:
 	jumptextfaceplayer OlivineCafeFishingGuruText
@@ -76,6 +99,10 @@ OlivineCafeSailorText:
 	line "stop eating!"
 	done
 
+LuckyEggGiftSuckerText:
+	text_far _LuckyEggGiftSuckerText
+	text_end
+
 OlivineCafe_MapEvents:
 	db 0, 0 ; filler
 
@@ -88,6 +115,7 @@ OlivineCafe_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  4,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeStrengthSailorScript, -1
+	;object_event  4,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeStrengthSailorScript, -1
 	object_event  7,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeFishingGuruScript, -1
 	object_event  6,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
+	object_event  3,  1, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeLuckyEggSailorScript, -1

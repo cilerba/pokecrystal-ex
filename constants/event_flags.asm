@@ -277,7 +277,8 @@
 	const EVENT_FOUND_FLASH
 	const EVENT_FOUND_WHIRLPOOL
 	const EVENT_FOUND_WATERFALL
-; Unused: next 332 events
+	const EVENT_GOT_LUCKY_EGG
+; Unused: next 331 events
 
 	const_next 600
 ; Kurt Apricorn events
