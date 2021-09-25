@@ -187,23 +187,22 @@ ChucksWifeEasierToFlyText:
 	line "been hard."
 
 	para "It would be much"
-	line "easier if your"
+	line "easier if you"
 
-	para "#MON knew how"
-	line "to FLY…"
+	para "had the access"
+	line "code to PIDGEOT…"
 	done
 
 ChucksWifeBeatChuckText:
-	text "But you can't use"
-	line "FLY without this"
-	cont "city's GYM BADGE."
-
-	para "If you beat the"
-	line "GYM LEADER here,"
-	cont "come see me."
-
-	para "I'll have a nice"
-	line "gift for you."
+	text "I have the access"
+	line "code, but I only"
+	
+	para "give it to train-"
+	line "ers that are"
+	
+	para "strong enough to
+	line "defeat the GYM"
+	cont "LEADER".
 	done
 
 ChucksWifeGiveHMText:
@@ -211,18 +210,21 @@ ChucksWifeGiveHMText:
 	line "GYM BADGE!"
 
 	para "Then you should"
-	line "take this HM."
+	line "take this access"
+	cont "code."
 	done
 
 ChucksWifeFlySpeechText:
 	text "Teach FLY to your"
 	line "#MON."
 
-	para "You will be able"
-	line "to FLY instantly"
+	text "Call PIDGEOT and"
+	line "you will be able"
+	
+	para "to fly instantly"
+	line "to anywhere you"
+	cont "have visited."
 
-	para "to anywhere you "
-	line "have visited."
 	done
 
 ChucksWifeChubbyText:
@@ -236,11 +238,12 @@ ChucksWifeChubbyText:
 	done
 
 CianwoodCityYoungsterText:
-	text "If you use FLY,"
-	line "you can get back"
+	text "If you use call"
+	line "PIDGEOT, you can"
+	
+	para "get back to OLI-"
+	line "VINE instantly."
 
-	para "to OLIVINE in-"
-	line "stantly."
 	done
 
 CianwoodCityPokefanMText:
