@@ -207,44 +207,44 @@ JohtoWaterWildMons:
 
 	def_water_wildmons NEW_BARK_TOWN
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 22, TENTACOOL
+	db 25, TENTACOOL
+	db 25, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons CHERRYGROVE_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 22, TENTACOOL
+	db 25, TENTACOOL
+	db 25, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons VIOLET_CITY
 	db 2 percent ; encounter rate
-	db 20, POLIWAG
-	db 15, POLIWAG
-	db 20, POLIWHIRL
+	db 22, POLIWAG
+	db 25, POLIWAG
+	db 25, POLIWHIRL
 	end_water_wildmons
 
 	def_water_wildmons CIANWOOD_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 25, QWILFISH
+	db 27, TENTACOOL
+	db 29, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons OLIVINE_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 22, TENTACOOL
+	db 25, TENTACOOL
+	db 25, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons ECRUTEAK_CITY
 	db 2 percent ; encounter rate
-	db 20, POLIWAG
-	db 15, POLIWAG
-	db 20, POLIWHIRL
+	db 22, POLIWAG
+	db 25, POLIWAG
+	db 25, POLIWHIRL
 	end_water_wildmons
 
 	def_water_wildmons LAKE_OF_RAGE
