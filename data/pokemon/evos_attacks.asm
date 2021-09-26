@@ -4949,6 +4949,24 @@ MantineEvosAttacks:
 
 SkarmoryEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, LEER
+	db 1, PECK
+	db 6, SAND_ATTACK
+	db 9, METAL_CLAW
+	db 12, WING_ATTACK
+	db 17, FURY_ATTACK
+	db 20, FAINT_ATTACK
+	db 23, SWIFT
+	db 28, SPIKES
+	db 31, AGILITY
+	db 34, STEEL_WING
+	db 39, SLASH
+	db 42, SCREECH
+	db 45, MINIMIZE
+	db 50, AEROBLAST
+	db 53, CRUNCH
+else
 	db 1, LEER
 	db 1, PECK
 	db 13, SAND_ATTACK
@@ -4956,6 +4974,7 @@ SkarmoryEvosAttacks:
 	db 25, AGILITY
 	db 37, FURY_ATTACK
 	db 49, STEEL_WING
+endc
 	db 0 ; no more level-up moves
 
 HoundourEvosAttacks:
