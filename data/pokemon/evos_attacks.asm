@@ -4501,6 +4501,21 @@ GirafarigEvosAttacks:
 PinecoEvosAttacks:
 	db EVOLVE_LEVEL, 31, FORRETRESS
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, PROTECT
+	db 6, SELFDESTRUCT
+	db 9, LEECH_LIFE
+	db 12, TAKE_DOWN
+	db 17, RAPID_SPIN
+	db 20, BIDE
+	db 23, RECOVER
+	db 28, SPIKES
+	db 31, FAINT_ATTACK
+	db 34, EXPLOSION
+	db 39, BARRIER
+	db 45, DOUBLE_EDGE
+else
 	db 1, TACKLE
 	db 1, PROTECT
 	db 8, SELFDESTRUCT
@@ -4510,10 +4525,32 @@ PinecoEvosAttacks:
 	db 36, EXPLOSION
 	db 43, SPIKES
 	db 50, DOUBLE_EDGE
+endc
 	db 0 ; no more level-up moves
 
 ForretressEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, MINIMIZE
+	db 1, ZAP_CANNON
+	db 1, SPIKES
+	db 1, TACKLE
+	db 1, PROTECT
+	db 1, SELFDESTRUCT
+	db 1, LEECH_LIFE
+	db 6, SELFDESTRUCT
+	db 9, LEECH_LIFE
+	db 12, TAKE_DOWN
+	db 17, RAPID_SPIN
+	db 20, BIDE
+	db 23, RECOVER
+	db 28, SPIKES
+	db 32, FAINT_ATTACK
+	db 36, EXPLOSION
+	db 42, BARRIER
+	db 50, DOUBLE_EDGE
+	db 60, ZAP_CANNON
+else
 	db 1, TACKLE
 	db 1, PROTECT
 	db 1, SELFDESTRUCT
@@ -4524,6 +4561,7 @@ ForretressEvosAttacks:
 	db 39, EXPLOSION
 	db 49, SPIKES
 	db 59, DOUBLE_EDGE
+endc
 	db 0 ; no more level-up moves
 
 DunsparceEvosAttacks:
