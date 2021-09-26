@@ -13,6 +13,8 @@ CianwoodPharmacy_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .RocketCheckCallback
 
 .RocketCheckCallback:
+	checkevent EVENT_BEAT_CHUCK
+	iffalse .HideRockets
 	checkevent EVENT_POST_CHUCK_ROCKET_DEFEATED
 	iftrue .HideRockets
 	sjump .PlaceRockets
