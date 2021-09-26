@@ -4776,6 +4776,27 @@ ShuckleEvosAttacks:
 
 HeracrossEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, ROCK_SMASH
+	db 1, RAZOR_LEAF
+	db 1, CRUNCH
+	db 1, TACKLE
+	db 1, LEER
+	db 1, HORN_ATTACK
+	db 1, ENDURE
+	db 7, FAINT_ATTACK
+	db 10, WING_ATTACK
+	db 13, LEECH_LIFE
+	db 16, BODY_SLAM
+	db 19, COUNTER
+	db 25, FURY_ATTACK
+	db 28, VITAL_THROW
+	db 31, PIN_MISSILE
+	db 34, TAKE_DOWN
+	db 37, MEGAHORN
+	db 43, CROSS_CHOP
+	db 46, REVERSAL
+else
 	db 1, TACKLE
 	db 1, LEER
 	db 6, HORN_ATTACK
@@ -4785,6 +4806,7 @@ HeracrossEvosAttacks:
 	db 35, TAKE_DOWN
 	db 44, REVERSAL
 	db 54, MEGAHORN
+endc
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
