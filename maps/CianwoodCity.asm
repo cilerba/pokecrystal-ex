@@ -215,9 +215,6 @@ ChucksWifeGiveHMText:
 	done
 
 ChucksWifeFlySpeechText:
-	text "Teach FLY to your"
-	line "#MON."
-
 	text "Call PIDGEOT and"
 	line "you will be able"
 	
