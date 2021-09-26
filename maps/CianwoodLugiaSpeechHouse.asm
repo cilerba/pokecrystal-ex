@@ -2,6 +2,7 @@
 	const CIANWOODLUGIASPEECHHOUSE_TEACHER
 	const CIANWOODLUGIASPEECHHOUSE_LASS
 	const CIANWOODLUGIASPEECHHOUSE_TWIN
+	const CIANWOODLUGIASPEECHHOUSE_MAN
 
 CianwoodLugiaSpeechHouse_MapScripts:
 	def_scene_scripts
@@ -19,6 +20,126 @@ CianwoodLugiaSpeechHouseTwinScript:
 
 CianwoodLugiaSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
+
+CianwoodLugiaSpeechHouseStrength:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_HM04_STRENGTH
+	iftrue .GotStrength
+	writetext CianwoodLugiaSpeechHouseStrengthText
+	yesorno
+	iffalse .Cancel
+	writetext CianwoodLugiaSpeechHouseStrengthGo
+	waitbutton
+	writetext CianwoodLugiaSpeechHouseStrengthPause
+	waitbutton
+	closetext
+	playsound SFX_STRENGTH
+	earthquake 30
+	pause 30
+	opentext
+	writetext CianwoodLugiaSpeechHouseStrengthPause
+	waitbutton
+	closetext
+	playsound SFX_STRENGTH
+	earthquake 30
+	pause 30
+	opentext
+	writetext CianwoodLugiaSpeechHouseStrengthPause
+	waitbutton
+	closetext
+	playsound SFX_STRENGTH
+	earthquake 90
+	pause 30
+	showemote EMOTE_SHOCK, CIANWOODLUGIASPEECHHOUSE_MAN, 15
+	setevent EVENT_GOT_HM04_STRENGTH
+	loadmem wUnlockedSTRENGTH, 1
+	opentext
+	writetext CianwoodLugiaSpeechHouseGettingStrengthText
+	waitbutton
+	writetext CianwoodLugiaSpeechHouseGetPrimeapeText
+	playsound SFX_ITEM
+	waitsfx
+.GotStrength
+	writetext CianwoodLugiaSpeechHouseGotStrengthText
+	waitbutton
+	closetext
+	end
+.Cancel
+	writetext CianwoodLugiaSpeechHouseCancelText
+	waitbutton
+	closetext
+	end
+
+CianwoodLugiaSpeechHouseStrengthText:
+	text "Howdy there,"
+	line "partner!"
+
+	para "This kind family"
+	line "is lettin' me"
+	cont "stay here 'til"
+
+	para "I get back on my"
+	line "feet and out in-"
+	cont "to the ocean."
+
+	para "Say, while I"
+	line "wait…"
+
+	para "How's about a"
+	line "good ol' arm"
+	cont "wrestle?"
+
+	done
+
+CianwoodLugiaSpeechHouseStrengthGo:
+	text "Let's rock!"
+	done
+
+CianwoodLugiaSpeechHouseStrengthPause:
+	text "<……> <……>"
+
+	done
+
+CianwoodLugiaSpeechHouseGettingStrengthText:
+	text "Boy howdy!"
+	
+	para "You sure got a"
+	line "heck of an arm"
+	cont "there."
+
+	para "For winning, let"
+	line "me give you this."
+
+	para "This here is the"
+	line "access code to"
+	cont "PRIMEAPE."
+
+	para "Callin' on a"
+	line "PRIMEAPE will"
+	
+	para "have you pushing"
+	line "boulders left"
+	cont "and right!"
+
+	done
+
+CianwoodLugiaSpeechHouseGotStrengthText:
+	text "You won fair an'"
+	line "square now I"
+	cont "tell you what."
+
+	done
+
+CianwoodLugiaSpeechHouseCancelText:
+	text "I'll be here."
+	done
+
+CianwoodLugiaSpeechHouseGetPrimeapeText:
+	text "<PLAYER> can now"
+	line "call PRIMEAPE!"
+
+	done
 
 CianwoodLugiaSpeechHouseTeacherText:
 	text "You came from"
@@ -75,5 +196,6 @@ CianwoodLugiaSpeechHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTeacherScript, -1
-	object_event  6,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseLassScript, -1
+	object_event  6,  2, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseLassScript, -1
 	object_event  0,  2, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTwinScript, -1
+	object_event  5,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseStrength, -1
