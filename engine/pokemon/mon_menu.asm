@@ -184,7 +184,6 @@ NicknameMon:
 	ld a, 3
 	ret
 .done
-	call Call_ExitMenu
 	ld a, 0
 	ret
 
