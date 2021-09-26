@@ -1683,6 +1683,22 @@ endc
 TentacoolEvosAttacks:
 	db EVOLVE_LEVEL, 30, TENTACRUEL
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, POISON_STING
+	db 4, SUPERSONIC
+	db 7, CONSTRICT
+	db 10, ACID
+	db 13, SPIKES
+	db 16, WATER_GUN
+	db 19, WRAP
+	db 22, ACID
+	db 28, BARRIER
+	db 31, SLUDGE_BOMB
+	db 34, BUBBLEBEAM
+	db 37, SCREECH
+	db 40, NIGHT_SHADE
+	db 46, HYDRO_PUMP
+else
 	db 1, POISON_STING
 	db 6, SUPERSONIC
 	db 12, CONSTRICT
@@ -1692,10 +1708,30 @@ TentacoolEvosAttacks:
 	db 36, BARRIER
 	db 43, SCREECH
 	db 49, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 TentacruelEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SUPERSONIC
+	db 1, CONSTRICT
+	db 1, ACID
+	db 1, POISON_STING
+	db 4, SUPERSONIC
+	db 7, CONSTRICT
+	db 10, ACID
+	db 13, SPIKES
+	db 16, WATER_GUN
+	db 19, WRAP
+	db 22, ACID
+	db 28, BARRIER
+	db 33, SLUDGE_BOMB
+	db 37, BUBBLEBEAM
+	db 40, SCREECH
+	db 43, NIGHT_SHADE
+	db 49, HYDRO_PUMP
+else
 	db 1, POISON_STING
 	db 1, SUPERSONIC
 	db 1, CONSTRICT
@@ -1707,6 +1743,7 @@ TentacruelEvosAttacks:
 	db 38, BARRIER
 	db 47, SCREECH
 	db 55, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 GeodudeEvosAttacks:
