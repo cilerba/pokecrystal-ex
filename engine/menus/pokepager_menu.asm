@@ -1,8 +1,8 @@
     const_def
     const POKEPAGER_FLASH
     const POKEPAGER_CUT
-    const POKEPAGER_FLY
     const POKEPAGER_STRENGTH
+    const POKEPAGER_FLY
     const POKEPAGER_SURF
     const POKEPAGER_WHIRLPOOL
     const POKEPAGER_WATERFALL
@@ -66,16 +66,16 @@ _PokePager:
 .Items:
     dw PokePager_Flash,         .FlashString
     dw PokePager_Cut,           .CutString
-    dw PokePager_Fly,           .FlyString
     dw PokePager_Strength,      .StrengthString
+    dw PokePager_Fly,           .FlyString
     dw PokePager_Surf,          .SurfString
     dw PokePager_Whirlpool,     .WhirlpoolString
     dw PokePager_Waterfall,     .WaterfallString
 
 .FlashString:       db "AMPHAROS@"
 .CutString:         db "SCYTHER@"
-.FlyString:         db "PIDGEOT@"
 .StrengthString     db "PRIMEAPE@"
+.FlyString:         db "PIDGEOT@"
 .SurfString         db "LAPRAS@"
 .WhirlpoolString    db "FERALIGATR@"
 .WaterfallString    db "GYARADOS@"
