@@ -26,13 +26,12 @@ OlivinePokecenter1FFisherText:
 	line "OLIVINE CAFE next"
 
 	para "door is really"
-	line "generous."
+	line "weird."
 
-	para "He taught my"
-	line "#MON STRENGTH."
+	para "He keeps going"
+	line "on about his."
+	cont "rare EGG."
 
-	para "Now it can move"
-	line "big boulders."
 	done
 
 OlivinePokecenter1FTeacherText:
