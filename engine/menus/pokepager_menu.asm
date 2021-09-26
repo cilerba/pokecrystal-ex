@@ -131,19 +131,19 @@ endr
     call .AppendMenuList
 .noSurf
 
-    ld a, [wUnlockedFLY] ; Checks to see if we've unlocked the HM
-	cp 1
-	jr c, .noFly
-    ld a, POKEPAGER_FLY
-    call .AppendMenuList
-.noFly
-
     ld a, [wUnlockedSTRENGTH] ; Checks to see if we've unlocked the HM
 	cp 1
 	jr c, .noStrength
     ld a, POKEPAGER_STRENGTH
     call .AppendMenuList
 .noStrength
+
+    ld a, [wUnlockedFLY] ; Checks to see if we've unlocked the HM
+	cp 1
+	jr c, .noFly
+    ld a, POKEPAGER_FLY
+    call .AppendMenuList
+.noFly
 
     ld a, [wUnlockedWHIRLPOOL] ; Checks to see if we've unlocked the HM
 	cp 1
@@ -196,6 +196,9 @@ PokePager_Fly:
 	ret
 
 PokePager_Strength:
+    ld a, 1
+    ld [wUsingHMItem], a
+    farcall StrengthFunction
 	ret
 
 PokePager_Surf:

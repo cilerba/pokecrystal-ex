@@ -1012,17 +1012,10 @@ TeleportFunction:
 	step_end
 
 StrengthFunction:
-	call .TryStrength
+	call .UseStrength
 	and $7f
 	ld [wFieldMoveSucceeded], a
 	ret
-
-.TryStrength:
-; Strength
-	;ld de, ENGINE_PLAINBADGE
-	;call CheckBadge
-	;jr c, .Failed
-	jr .UseStrength
 
 .AlreadyUsingStrength: ; unreferenced
 	ld hl, .AlreadyUsingStrengthText
@@ -1039,22 +1032,16 @@ StrengthFunction:
 	ret
 
 .UseStrength:
+	ld a, BANK(Script_StrengthFromMenu)
 	ld hl, Script_StrengthFromMenu
-	call QueueScript
+	call CallScript
+	scf
 	ld a, $81
 	ret
 
 SetStrengthFlag:
 	ld hl, wBikeFlags
 	set BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
-	ld a, [wCurPartyMon]
-	ld e, a
-	ld d, 0
-	ld hl, wPartySpecies
-	add hl, de
-	ld a, [hl]
-	ld [wStrengthSpecies], a
-	call GetPartyNickname
 	ret
 
 Script_StrengthFromMenu:
@@ -1063,6 +1050,7 @@ Script_StrengthFromMenu:
 
 Script_UsedStrength:
 	callasm SetStrengthFlag	
+	opentext
 	writetext .UseStrengthText
 	waitbutton
 	refreshscreen
@@ -1071,11 +1059,6 @@ Script_UsedStrength:
 	waitsfx
 	reloadmappart
 	refreshscreen
-	
-	;readmem wStrengthSpecies
-	;cry 0 ; plays [wStrengthSpecies] cry
-	;pause 3
-
 	writetext .MoveBoulderText
 	closetext
 	end
