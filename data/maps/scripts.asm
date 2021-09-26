@@ -227,7 +227,6 @@ INCLUDE "maps/Route39Farmhouse.asm"
 INCLUDE "maps/ManiasHouse.asm"
 INCLUDE "maps/CianwoodGym.asm"
 INCLUDE "maps/CianwoodPokecenter1F.asm"
-INCLUDE "maps/CianwoodPharmacy.asm"
 INCLUDE "maps/CianwoodPhotoStudio.asm"
 INCLUDE "maps/CianwoodLugiaSpeechHouse.asm"
 INCLUDE "maps/PokeSeersHouse.asm"
@@ -248,6 +247,7 @@ INCLUDE "maps/BrunosRoom.asm"
 INCLUDE "maps/KarensRoom.asm"
 INCLUDE "maps/LancesRoom.asm"
 INCLUDE "maps/HallOfFame.asm"
+INCLUDE "maps/CianwoodPharmacy.asm"
 
 
 SECTION "Map Scripts 14", ROMX

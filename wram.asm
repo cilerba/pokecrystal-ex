@@ -3105,7 +3105,8 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 49
+wPharmacyRocketSceneID:: db
+	ds 48
 
 ; fight counts
 wJackFightCount::    db

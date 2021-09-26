@@ -308,6 +308,7 @@ KRIS EQU __trainer_class__
 	const GRUNTM_29
 	const GRUNTM_30_UNUSED
 	const GRUNTM_31
+	const GRUNTM_32
 
 	trainerclass GENTLEMAN ; 20
 	const PRESTON
@@ -540,6 +541,7 @@ KRIS EQU __trainer_class__
 	const EXECUTIVEM_2
 	const EXECUTIVEM_3
 	const EXECUTIVEM_4
+	const EXECUTIVEM_5
 
 	trainerclass PSYCHIC_T ; 34
 	const NATHAN
@@ -699,6 +701,7 @@ KRIS EQU __trainer_class__
 	const GRUNTF_3
 	const GRUNTF_4
 	const GRUNTF_5
+	const GRUNTF_6
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
