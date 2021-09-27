@@ -1577,7 +1577,7 @@ JohtoGrassWildMons:
 	db 32, SPEAROW
 	db 31, MANKEY
 	db 33, RATICATE
-	db 35, ARBOK
+	db 31, ARBOK
 	db 30, FEAROW
 	db 31, FEAROW
 	; day
@@ -1585,7 +1585,7 @@ JohtoGrassWildMons:
 	db 32, SPEAROW
 	db 31, MANKEY
 	db 33, RATICATE
-	db 35, ARBOK
+	db 31, ARBOK
 	db 30, FEAROW
 	db 31, FEAROW
 	; nite
@@ -1593,7 +1593,7 @@ JohtoGrassWildMons:
 	db 32, ZUBAT
 	db 31, RATICATE
 	db 33, GOLBAT
-	db 35, MARILL
+	db 31, MARILL
 	db 30, GOLBAT
 	db 31, GOLBAT
 	end_grass_wildmons
