@@ -89,7 +89,7 @@ ItemNames::
 	li "BIG MUSHROOM"
 	li "SILVERPOWDER"
 	li "BLU APRICORN"
-	li "SOOTH BELL"
+	li "SOOTHE BELL"
 	li "AMULET COIN"
 	li "YLW APRICORN"
 	li "GRN APRICORN"

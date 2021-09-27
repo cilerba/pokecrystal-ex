@@ -119,17 +119,30 @@ StepHappiness::
 	and a
 	ret z
 
-	push bc 
 	ld c, a
 	ld hl, wPartyMon1Happiness
-	ld bc, wPartyMon1Item
 .loop
 	inc de
 	ld a, [de]
 	cp EGG
 	jr z, .next
-	inc [hl]
-	ld a, [bc]
+	inc [hl] ; increase wPartyMon1Happiness
+.doIncrement
+	push hl
+	ld hl, wPartyMon1Item
+	push hl
+	ld a, c
+	ld hl, wPartyCount
+	cp [hl]
+	pop hl
+	jr z, .skipIncrement
+	push de
+	ld de, PARTYMON_STRUCT_LENGTH
+	add hl, de
+	pop de
+.skipIncrement
+	ld a, [hl]
+	pop hl
 	cp SOOTHE_BELL
 	jr nz, .skipSoothe
 	inc [hl]
@@ -138,7 +151,6 @@ StepHappiness::
 	ld [hl], $ff
 
 .next
-	pop bc
 	push de
 	ld de, PARTYMON_STRUCT_LENGTH
 	add hl, de
