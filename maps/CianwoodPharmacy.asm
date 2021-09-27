@@ -246,9 +246,8 @@ SceneRocketContinueText:
 	para "Nevermind. You"
 	line "heard our plans."
 
-	para "Now it's time for"
-	line "us to defeat you"
-	cont "in a battle."
+	para "Let's keep this"
+	line "kid quiet."
 
 	done
 
