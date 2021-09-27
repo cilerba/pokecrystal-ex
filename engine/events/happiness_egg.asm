@@ -130,7 +130,7 @@ StepHappiness::
 	jr z, .next
 	inc [hl]
 	ld a, [bc]
-	cp SOOTH_BELL
+	cp SOOTHE_BELL
 	jr nz, .skipSoothe
 	inc [hl]
 .skipSoothe
