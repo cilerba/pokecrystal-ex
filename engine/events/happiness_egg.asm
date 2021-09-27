@@ -127,19 +127,18 @@ StepHappiness::
 	cp EGG
 	jr z, .next
 	inc [hl] ; increase wPartyMon1Happiness
+	jr nz, .doIncrement
+	ld [hl], $ff
 .doIncrement
 	push hl
 	ld hl, wPartyMon1Item
-	push hl
-	ld a, c
-	ld hl, wPartyCount
-	cp [hl]
-	pop hl
+	ld a, [wPartyCount]
+	sub c
 	jr z, .skipIncrement
-	push de
-	ld de, PARTYMON_STRUCT_LENGTH
-	add hl, de
-	pop de
+	push bc
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	pop bc
 .skipIncrement
 	ld a, [hl]
 	pop hl
