@@ -1180,8 +1180,8 @@ PokemaniacGroup:
 
 	; POKEMANIAC (4)
 	db "SHANE@", TRAINERTYPE_NORMAL
-	db 16, NIDORINA
-	db 16, NIDORINO
+	db 31, NIDORINA
+	db 31, NIDORINO
 	db -1 ; end
 
 	; POKEMANIAC (5)
@@ -1665,7 +1665,7 @@ FisherGroup:
 
 	; FISHER (7)
 	db "TULLY@", TRAINERTYPE_NORMAL
-	db 18, QWILFISH
+	db 31, QWILFISH
 	db -1 ; end
 
 	; FISHER (8)
@@ -2312,9 +2312,9 @@ HikerGroup:
 
 	; HIKER (6)
 	db "BENJAMIN@", TRAINERTYPE_NORMAL
-	db 14, DIGLETT
-	db 14, GEODUDE
-	db 16, DUGTRIO
+	db 30, DIGLETT
+	db 31, GEODUDE
+	db 33, DUGTRIO
 	db -1 ; end
 
 	; HIKER (7)

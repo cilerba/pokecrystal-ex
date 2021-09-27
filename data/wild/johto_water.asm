@@ -179,9 +179,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons ROUTE_42
 	db 4 percent ; encounter rate
-	db 20, GOLDEEN
-	db 15, GOLDEEN
-	db 20, SEAKING
+	db 30, GOLDEEN
+	db 31, GOLDEEN
+	db 32, SEAKING
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_43
