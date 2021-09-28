@@ -593,85 +593,85 @@ JohtoGrassWildMons:
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 31, RATICATE
-	db 32, GOLBAT
-	db 31, MACHOP
-	db 32, GOLBAT
-	db 30, GRAVELER
-	db 33, RATICATE
-	db 32, RATICATE
+	db 30, RATICATE
+	db 29, GOLBAT
+	db 30, MACHOP
+	db 30, GOLBAT
+	db 31, GRAVELER
+	db 30, RATICATE
+	db 29, RATICATE
 	; day
-	db 31, RATICATE
-	db 32, GOLBAT
-	db 31, MACHOP
-	db 32, GOLBAT
-	db 30, GRAVELER
-	db 33, RATICATE
-	db 32, RATICATE
+	db 30, RATICATE
+	db 29, GOLBAT
+	db 30, MACHOP
+	db 30, GOLBAT
+	db 31, GRAVELER
+	db 30, RATICATE
+	db 29, RATICATE
 	; nite
-	db 31, RATICATE
-	db 32, GOLBAT
-	db 31, MARILL
-	db 32, GOLBAT
-	db 30, GRAVELER
-	db 33, RATICATE
-	db 32, RATICATE
+	db 30, RATICATE
+	db 29, GOLBAT
+	db 30, MARILL
+	db 30, GOLBAT
+	db 31, GRAVELER
+	db 30, RATICATE
+	db 29, RATICATE
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 31, RATICATE
-	db 32, GOLBAT
-	db 31, MACHOP
-	db 32, GOLBAT
-	db 30, GRAVELER
-	db 33, RATICATE
-	db 32, RATICATE
+	db 30, RATICATE
+	db 29, GOLBAT
+	db 30, MACHOP
+	db 30, GOLBAT
+	db 31, GRAVELER
+	db 30, RATICATE
+	db 29, RATICATE
 	; day
-	db 31, RATICATE
-	db 32, GOLBAT
-	db 31, MACHOP
-	db 32, GOLBAT
-	db 30, GRAVELER
-	db 33, RATICATE
-	db 32, RATICATE
+	db 30, RATICATE
+	db 29, GOLBAT
+	db 30, MACHOP
+	db 30, GOLBAT
+	db 31, GRAVELER
+	db 30, RATICATE
+	db 29, RATICATE
 	; nite
-	db 31, RATICATE
-	db 32, GOLBAT
-	db 31, MARILL
-	db 32, GOLBAT
-	db 30, GRAVELER
-	db 33, RATICATE
-	db 32, RATICATE
+	db 30, RATICATE
+	db 29, GOLBAT
+	db 30, MARILL
+	db 30, GOLBAT
+	db 31, GRAVELER
+	db 30, RATICATE
+	db 29, RATICATE
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_2F_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 31, GRAVELER
-	db 32, MACHOKE
-	db 31, GEODUDE
+	db 30, GRAVELER
+	db 29, MACHOKE
+	db 30, GEODUDE
 	db 30, RATICATE
-	db 28, MACHOP
+	db 31, MACHOP
 	db 30, GOLBAT
-	db 30, SKARMORY
+	db 29, SKARMORY
 	; day
-	db 31, GRAVELER
-	db 32, MACHOKE
-	db 31, GEODUDE
+	db 30, GRAVELER
+	db 29, MACHOKE
+	db 30, GEODUDE
 	db 30, RATICATE
-	db 28, MACHOP
+	db 31, MACHOP
 	db 30, GOLBAT
-	db 30, SKARMORY
+	db 29, SKARMORY
 	; nite
-	db 31, GRAVELER
-	db 31, GEODUDE
+	db 30, GRAVELER
+	db 29, GEODUDE
 	db 30, RATICATE
 	db 30, GOLBAT
-	db 28, MARILL
-	db 32, GOLBAT
-	db 32, SKARMORY
+	db 31, MARILL
+	db 30, GOLBAT
+	db 29, SKARMORY
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_B1F
@@ -1574,28 +1574,28 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, EKANS
-	db 32, SPEAROW
-	db 31, MANKEY
-	db 33, RATICATE
+	db 29, SPEAROW
+	db 30, MANKEY
+	db 30, RATICATE
 	db 31, ARBOK
 	db 30, FEAROW
-	db 31, FEAROW
+	db 29, FEAROW
 	; day
 	db 30, EKANS
-	db 32, SPEAROW
-	db 31, MANKEY
-	db 33, RATICATE
+	db 29, SPEAROW
+	db 30, MANKEY
+	db 30, RATICATE
 	db 31, ARBOK
 	db 30, FEAROW
-	db 31, FEAROW
+	db 29, FEAROW
 	; nite
 	db 30, MANKEY
-	db 32, ZUBAT
-	db 31, RATICATE
-	db 33, GOLBAT
+	db 29, ZUBAT
+	db 30, RATICATE
+	db 30, GOLBAT
 	db 31, MARILL
 	db 30, GOLBAT
-	db 31, GOLBAT
+	db 29, GOLBAT
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_43
