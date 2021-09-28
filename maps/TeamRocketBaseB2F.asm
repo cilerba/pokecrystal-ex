@@ -221,7 +221,7 @@ TrainerGruntM19:
 
 RocketElectrode1:
 	cry ELECTRODE
-	loadwildmon ELECTRODE, 23
+	loadwildmon ELECTRODE, 35
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
 	disappear TEAMROCKETBASEB2F_ELECTRODE1
@@ -239,7 +239,7 @@ RocketElectrode1:
 
 RocketElectrode2:
 	cry ELECTRODE
-	loadwildmon ELECTRODE, 23
+	loadwildmon ELECTRODE, 35
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
 	disappear TEAMROCKETBASEB2F_ELECTRODE2
@@ -257,7 +257,7 @@ RocketElectrode2:
 
 RocketElectrode3:
 	cry ELECTRODE
-	loadwildmon ELECTRODE, 23
+	loadwildmon ELECTRODE, 35
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
 	disappear TEAMROCKETBASEB2F_ELECTRODE3
@@ -287,6 +287,10 @@ RocketBaseElectrodeScript:
 	promptbutton
 	;verbosegiveitem HM_WHIRLPOOL
 	setevent EVENT_GOT_HM06_WHIRLPOOL
+	loadmem wUnlockedWHIRLPOOL, 1
+	writetext RocketBaseReceivedCodeText
+	playsound SFX_ITEM
+	waitsfx
 	writetext RocketBaseLanceWhirlpoolText
 	waitbutton
 	closetext
@@ -725,32 +729,24 @@ RocketBaseLanceElectrodeDoneText:
 
 	para "Oh, yes. You"
 	line "should take this."
-
-	para "I found it here,"
-	line "but I don't have"
-	cont "any need for it."
 	done
 
-RocketBaseReceivedHM06Text: ; unreferenced
-	text "<PLAYER> received"
-	line "HM06."
+RocketBaseReceivedCodeText: ; unreferenced
+	text "<PLAYER> can now"
+	line "call FERALIGATR!"
+
 	done
 
 RocketBaseLanceWhirlpoolText:
-	text "That's WHIRLPOOL."
-	line "Teach it to a"
+	text "This here is the"
+	line "access code to"
+	cont "FERALIGATR."
 
-	para "#MON to get"
-	line "across wild water."
-
-	para "But keep this in"
-	line "mind."
-
-	para "You can use that"
-	line "out of battle only"
-
-	para "with the BADGE"
-	line "from MAHOGANY GYM."
+	para "This #MON will"
+	line "help you get"
+	
+	para "across wild"
+	line "water."
 	done
 
 RocketBaseLanceMonMasterText:
