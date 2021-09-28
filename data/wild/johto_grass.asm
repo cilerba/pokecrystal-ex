@@ -1601,29 +1601,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, SENTRET
-	db 16, PIDGEOTTO
-	db 16, FARFETCH_D
-	db 15, FURRET
-	db 17, RATICATE
-	db 17, FURRET
-	db 17, FURRET
+	db 30, SENTRET
+	db 32, PIDGEOTTO
+	db 31, FARFETCH_D
+	db 33, FURRET
+	db 31, RATICATE
+	db 30, FURRET
+	db 31, FURRET
 	; day
-	db 15, SENTRET
-	db 16, PIDGEOTTO
-	db 16, FARFETCH_D
-	db 15, FURRET
-	db 17, RATICATE
-	db 17, FURRET
-	db 17, FURRET
+	db 30, SENTRET
+	db 32, PIDGEOTTO
+	db 31, FARFETCH_D
+	db 33, FURRET
+	db 31, RATICATE
+	db 30, FURRET
+	db 31, FURRET
 	; nite
-	db 15, VENONAT
-	db 16, NOCTOWL
-	db 16, RATICATE
-	db 17, VENONAT
-	db 17, RATICATE
-	db 17, VENOMOTH
-	db 17, VENOMOTH
+	db 30, VENONAT
+	db 32, NOCTOWL
+	db 31, RATICATE
+	db 33, VENONAT
+	db 31, RATICATE
+	db 30, VENOMOTH
+	db 31, VENOMOTH
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_44
