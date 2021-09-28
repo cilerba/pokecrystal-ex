@@ -1538,64 +1538,79 @@ _MomLostGearBookletText::
 	prompt
 
 _MoveReminderIntro::
-    text "Hi, I'm the Move"
-    line "Reminder!"
+	text "Uh, hey dude."
 
-    para "I can teach your"
-    line "#MON a move it"
+	para "I'm the"
+	line "MOVE REMINDER."
 
-    para "has learned pre-"
-    line "viously."
+	para "Wicked, right?"
 
-	para "Are you"
-    line "interested?"
+	para "I can teach your"
+	line "#MON a move it"
+
+	para "has, like,"
+	line "learned before."
+
+	para "What do you say?"
+
     done
 
 _MoveReminderPrompt::
-    text "Are you"
-    line "interested?"
+	text "I just need one"
+	line "TINYMUSHROOM."
+
+	para "You interested?"
     done
 
 _MoveReminderWhichMon::
-    text "Which #MON"
-    next "would you like"
-
-    para "to make remember"
-    line "a move?"
+	text "Pick a #MON,"
+	line "dude."
     done
 
 _MoveReminderWhichMove::
-    text "Which move would"
-    next "you like to"
-    cont "remember?"
+	text "Which move are"
+	line "you thinking?"
     done
 
 _MoveReminderCancel::
-    text "Come back anytime."
+    text "See you later,"
+	line "dude."
     done
 
 _MoveReminderEgg::
-    text "Hey! What am I"
-    line "supposed to teach"
-    cont "an Egg?"
+	text "Whoa. It would"
+	line "be, like, super"
+	cont "cool to teach"
+
+	para "an EGG a move,"
+	line "but it doesn't"
+	cont "quite work like"
+	cont "that, bud."
     done
 
 _MoveReminderNoPay::
-    text "Hm. Come back with"
-    line "more money and I"
+	text "Hit me up when"
+	line "you have a"
+	
+	para "TINYMUSHROOM,"
+	line "dude."
 
-    para "can teach a move"
-    line "to your #MON."
+	para "I don't, like,"
+	line "work for free,"
+	cont "you know?"
     done
 
 _MoveReminderNoMon::
-    text "You don't have a"
-    line "#MON that can"
-    cont "remember a move."
+	text "Hey, like…"
+
+	para "None of your"
+	line "#MON can rem-"
+	cont "ember a move."
+
+	para "Not cool, dude."
     done
 
 _MoveReminderNoMoves::
-    text "There are no moves"
-    line "for this #MON"
-    cont "to learn."
+	text "You're all out"
+	line "of moves, dude."
     done

@@ -4,6 +4,17 @@ MoveReminder:
 	call YesNoBox
 	jp c, .cancel
 
+	ld a, TINYMUSHROOM
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, .not_enough_money
+
+	ld hl, Text_MoveReminderPrompt
+	call PrintText
+	call YesNoBox
+	jp c, .cancel
+
 	ld hl, Text_MoveReminderWhichMon
 	call PrintText
 	call JoyWaitAorB
@@ -42,13 +53,15 @@ MoveReminder:
 	and a
 	jr z, .skip_learn
 
-;	ld hl, .cost_to_relearn
-;	ld de, hMoneyTemp
-;	ld bc, 3
-;	call CopyBytes
-;	ld bc, hMoneyTemp
-;	ld de, wMoney
-;	farcall TakeMoney
+	ld a, TINYMUSHROOM
+	ld [wCurItem], a
+	ld a, 1
+	ld [wItemQuantityChange], a
+	ld a, -1
+	ld [wCurItemQuantity], a
+	ld hl, wNumItems
+	call TossItem
+
 	ld de, SFX_TRANSACTION
 	call PlaySFX
 	call WaitSFX
@@ -65,19 +78,22 @@ MoveReminder:
 	call PrintText
 	ret
 
-;.not_enough_money
-;	ld hl, Text_MoveReminderNoGoldLeaf
-;	call PrintText
-;	ret
+.not_enough_money
+	ld hl, Text_MoveReminderNoPay
+	call PrintText
+	call JoyWaitAorB
+	ret
 
 .no_mon
 	ld hl, Text_MoveReminderNoMon
 	call PrintText
+	call JoyWaitAorB
 	ret
 
 .no_moves
 	ld hl, Text_MoveReminderNoMoves
 	call PrintText
+	call JoyWaitAorB
 	ret
 
 ;.cost_to_relearn
@@ -392,6 +408,7 @@ ENDC
 	db "ICE@"
 	db "DRG@"
 	db "DRK@"
+	db "FAR@"
 
 .PrintMoveDesc
 	push de
@@ -411,9 +428,9 @@ Text_MoveReminderIntro:
 	text_far _MoveReminderIntro
 	text_end
 
-;Text_MoveReminderPrompt:
-;	text_far _MoveReminderPrompt
-;	text_end
+Text_MoveReminderPrompt:
+	text_far _MoveReminderPrompt
+	text_end
 	
 Text_MoveReminderWhichMon:
 	text_far _MoveReminderWhichMon
@@ -431,9 +448,9 @@ Text_MoveReminderEgg:
 	text_far _MoveReminderEgg
 	text_end
 
-;Text_MoveReminderNoGoldLeaf:
-;	text_far _MoveReminderNoPay
-;	text_end
+Text_MoveReminderNoPay:
+	text_far _MoveReminderNoPay
+	text_end
 
 Text_MoveReminderNoMon:
 	text_far _MoveReminderNoMon
