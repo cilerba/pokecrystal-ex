@@ -313,9 +313,9 @@ ScientistGroup:
 
 	; SCIENTIST (3)
 	db "JED@", TRAINERTYPE_NORMAL
-	db 20, MAGNEMITE
-	db 20, MAGNEMITE
-	db 20, MAGNEMITE
+	db 33, MAGNEMITE
+	db 34, MAGNEMITE
+	db 35, MAGNEMITE
 	db -1 ; end
 
 	; SCIENTIST (4)
@@ -1340,10 +1340,10 @@ GruntMGroup:
 
 	; GRUNTM (16)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 16, RATTATA
-	db 16, RATTATA
-	db 16, RATTATA
-	db 16, RATTATA
+	db 32, RATTATA
+	db 32, RATTATA
+	db 32, RATTATA
+	db 32, RATTATA
 	db -1 ; end
 
 	; GRUNTM (17)
@@ -1366,15 +1366,15 @@ GruntMGroup:
 
 	; GRUNTM (20)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 17, DROWZEE
-	db 19, ZUBAT
+	db 33, DROWZEE
+	db 34, GOLBAT
 	db -1 ; end
 
 	; GRUNTM (21)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 16, ZUBAT
-	db 17, GRIMER
-	db 18, RATTATA
+	db 33, GOLBAT
+	db 34, GRIMER
+	db 35, RATICATE
 	db -1 ; end
 
 	; GRUNTM (22)
