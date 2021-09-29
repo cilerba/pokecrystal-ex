@@ -1344,6 +1344,17 @@ if DEF(_CRYSTAL11_HACK)
 	db 1, EMBER
 	db 1, LEER
 	db 1, BITE
+	db 4, SHARPEN
+	db 8, BITE
+	db 12, FLAME_WHEEL
+	db 16, FOCUS_ENERGY
+	db 20, AGILITY
+	db 24, FIRE_SPIN
+	db 30, CRUNCH
+	db 36, TAKE_DOWN
+	db 40, FLAMETHROWER
+	db 44, ROAR
+	db 50, REVERSAL
 else
 	db 1, ROAR
 	db 1, LEER
