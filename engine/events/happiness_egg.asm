@@ -128,26 +128,21 @@ StepHappiness::
 	jr z, .next
 	inc [hl] ; increase wPartyMon1Happiness
 	jr nz, .doIncrement
-	ld [hl], $ff
+	dec [hl]
+	jr .next
 .doIncrement
 	push hl
-	ld hl, wPartyMon1Item
-	ld a, [wPartyCount]
-	sub c
-	jr z, .skipIncrement
 	push bc
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
+	ld bc, MON_ITEM - MON_HAPPINESS
+	add hl, bc
 	pop bc
-.skipIncrement
 	ld a, [hl]
 	pop hl
 	cp SOOTHE_BELL
-	jr nz, .skipSoothe
-	inc [hl]
-.skipSoothe
 	jr nz, .next
-	ld [hl], $ff
+	inc [hl]
+	jr nz, .next
+	dec [hl]
 
 .next
 	push de
