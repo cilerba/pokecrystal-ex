@@ -44,10 +44,12 @@ MortyGroup:
 
 PryceGroup:
 	; PRYCE (1)
-	db "PRYCE@", TRAINERTYPE_MOVES
-	db 27, SEEL,       HEADBUTT, ICY_WIND, AURORA_BEAM, REST
-	db 29, DEWGONG,    HEADBUTT, ICY_WIND, AURORA_BEAM, REST
-	db 31, PILOSWINE,  ICY_WIND, FURY_ATTACK, MIST, BLIZZARD
+	db "PRYCE@", TRAINERTYPE_NORMAL
+	db 40, LAPRAS
+	db 40, SNEASEL
+	db 41, JYNX
+	db 41, DEWGONG
+	db 42, PILOSWINE
 	db -1 ; end
 
 JasmineGroup:
@@ -1470,12 +1472,12 @@ GentlemanGroup:
 SkierGroup:
 	; SKIER (1)
 	db "ROXANNE@", TRAINERTYPE_NORMAL
-	db 28, JYNX
+	db 38, JYNX
 	db -1 ; end
 
 	; SKIER (2)
 	db "CLARISSA@", TRAINERTYPE_NORMAL
-	db 28, DEWGONG
+	db 38, DEWGONG
 	db -1 ; end
 
 TeacherGroup:
@@ -3212,22 +3214,22 @@ MediumGroup:
 BoarderGroup:
 	; BOARDER (1)
 	db "RONALD@", TRAINERTYPE_NORMAL
-	db 24, SEEL
-	db 25, DEWGONG
-	db 24, SEEL
+	db 37, SEEL
+	db 38, DEWGONG
+	db 37, SEEL
 	db -1 ; end
 
 	; BOARDER (2)
 	db "BRAD@", TRAINERTYPE_NORMAL
-	db 26, SWINUB
-	db 26, SWINUB
+	db 37, SWINUB
+	db 38, PILOSWINE
 	db -1 ; end
 
 	; BOARDER (3)
 	db "DOUGLAS@", TRAINERTYPE_NORMAL
-	db 24, SHELLDER
-	db 25, CLOYSTER
-	db 24, SHELLDER
+	db 37, SHELLDER
+	db 38, CLOYSTER
+	db 38, SHELLDER
 	db -1 ; end
 
 PokefanMGroup:
