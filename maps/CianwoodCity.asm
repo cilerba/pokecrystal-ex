@@ -98,7 +98,11 @@ CianwoodCityChucksWife:
 	writetext ChucksWifeGiveHMText
 	promptbutton
 	;verbosegiveitem HM_FLY
-	iffalse .Done
+	loadmem wUnlockedFLY, 1
+	writetext ChucksWifeGiveFlyText
+	playsound SFX_ITEM
+	waitsfx
+	waitbutton
 	setevent EVENT_GOT_HM02_FLY
 	writetext ChucksWifeFlySpeechText
 	promptbutton
@@ -178,6 +182,12 @@ CianwoodCityEusineDepartMovement:
 	step DOWN
 	step DOWN
 	step_end
+
+ChucksWifeGiveFlyText: ; unreferenced
+	text "<PLAYER> can now"
+	line "call PIDGEOT!"
+
+	done
 
 ChucksWifeEasierToFlyText:
 	text "You crossed the"
