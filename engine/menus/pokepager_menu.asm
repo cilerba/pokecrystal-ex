@@ -193,6 +193,9 @@ PokePager_Cut:
 	ret
 
 PokePager_Fly:
+    ld a, 1
+    ld [wUsingHMItem], a
+    farcall FlyFunction
 	ret
 
 PokePager_Strength:
@@ -202,6 +205,7 @@ PokePager_Strength:
 	ret
 
 PokePager_Surf:
+    call CloseWindow
 	ld a, 1
 	ld [wUsingHMItem], a
 

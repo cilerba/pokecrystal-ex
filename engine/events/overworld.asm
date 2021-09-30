@@ -613,9 +613,9 @@ FlyFunction:
 
 .TryFly:
 ; Fly
-	ld de, ENGINE_STORMBADGE
-	call CheckBadge
-	jr c, .nostormbadge
+	;ld de, ENGINE_STORMBADGE
+	;call CheckBadge
+	;jr c, .nostormbadge
 	call GetMapEnvironment
 	call CheckOutdoorMap
 	jr z, .outdoors
@@ -635,6 +635,7 @@ FlyFunction:
 
 	ld [wDefaultSpawnpoint], a
 	call CloseWindow
+	call .Reload
 	ld a, $1
 	ret
 
@@ -648,13 +649,26 @@ FlyFunction:
 
 .illegal
 	call CloseWindow
-	call WaitBGMap
+	call .Reload
 	ld a, $80
 	ret
 
+.Reload
+	call ClearBGPalettes
+	call ReloadTilesetAndPalettes
+	call UpdateSprites
+	call GSReloadPalettes
+	ld b, SCGB_MAPPALS
+	call GetSGBLayout
+	farcall LoadOW_BGPal7
+	call WaitBGMap2
+	farcall FadeInPalettes
+	ret
+
 .DoFly:
+	ld a, BANK(.FlyScript)
 	ld hl, .FlyScript
-	call QueueScript
+	call CallScript
 	ld a, $81
 	ret
 
