@@ -3513,8 +3513,8 @@ wMagnetTrainHoldPosition:: db
 wMagnetTrainFinalPosition:: db
 wMagnetTrainPlayerSpriteInitX:: db
 
-	ds 98
-wPPMenuItems:: ds 7
+	ds 96
+wPPMenuItems:: ds 9
 wPPMenuItemsEnd:: db
 
 wLYOverridesBackup:: ds SCREEN_HEIGHT_PX
