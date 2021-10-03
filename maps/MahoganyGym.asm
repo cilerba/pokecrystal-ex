@@ -198,7 +198,7 @@ Text_ReceivedGlacierBadge:
 	done
 
 PryceText_GlacierBadgeSpeech:
-	para "And this… This is"
+	text "And this… This is"
 	line "a gift from me!"
 	done
 
