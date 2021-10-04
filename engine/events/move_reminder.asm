@@ -71,11 +71,13 @@ MoveReminder:
 .cancel
 	ld hl, Text_MoveReminderCancel
 	call PrintText
+	call JoyWaitAorB
 	ret
 
 .egg
 	ld hl, Text_MoveReminderEgg
 	call PrintText
+	call JoyWaitAorB
 	ret
 
 .not_enough_money
