@@ -329,7 +329,7 @@ ScientistGroup:
 
 	; SCIENTIST (5)
 	db "RICH@", TRAINERTYPE_MOVES
-	db 30, PORYGON,    CONVERSION, CONVERSION2, RECOVER, TRI_ATTACK
+	db 37, PORYGON,    CONVERSION, CONVERSION2, RECOVER, TRI_ATTACK
 	db -1 ; end
 
 ErikaGroup:
@@ -1259,56 +1259,56 @@ GruntMGroup:
 
 	; GRUNTM (3)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24, RATICATE
-	db 24, RATICATE
+	db 38, RATICATE
+	db 39, RATICATE
 	db -1 ; end
 
 	; GRUNTM (4)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 23, GRIMER
-	db 23, GRIMER
-	db 25, MUK
+	db 37, GRIMER
+	db 37, GRIMER
+	db 38, MUK
 	db -1 ; end
 
 	; GRUNTM (5)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 21, RATTATA
-	db 21, RATTATA
-	db 23, RATTATA
-	db 23, RATTATA
-	db 23, RATTATA
+	db 35, RATICATE
+	db 35, RATICATE
+	db 35, RATICATE
+	db 36, RATICATE
+	db 37, RATICATE
 	db -1 ; end
 
 	; GRUNTM (6)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26, ZUBAT
-	db 26, ZUBAT
+	db 38, GOLBAT
+	db 39, GOLBAT
 	db -1 ; end
 
 	; GRUNTM (7)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 23, KOFFING
-	db 23, GRIMER
-	db 23, ZUBAT
-	db 23, RATTATA
+	db 36, KOFFING
+	db 37, GRIMER
+	db 37, GOLBAT
+	db 38, RATICATE
 	db -1 ; end
 
 	; GRUNTM (8)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26, WEEZING
+	db 37, WEEZING
 	db -1 ; end
 
 	; GRUNTM (9)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24, RATICATE
-	db 26, KOFFING
+	db 37, RATICATE
+	db 39, KOFFING
 	db -1 ; end
 
 	; GRUNTM (10)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 22, ZUBAT
-	db 24, GOLBAT
-	db 22, GRIMER
+	db 36, ZUBAT
+	db 38, GOLBAT
+	db 39, GRIMER
 	db -1 ; end
 
 	; GRUNTM (11)
@@ -3486,7 +3486,7 @@ GruntFGroup:
 
 	; GRUNTF (2)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26, ARBOK
+	db 39, ARBOK
 	db -1 ; end
 
 	; GRUNTF (3)
@@ -3497,10 +3497,10 @@ GruntFGroup:
 
 	; GRUNTF (4)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 21, EKANS
-	db 23, ODDISH
-	db 21, EKANS
-	db 24, GLOOM
+	db 36, EKANS
+	db 37, GLOOM
+	db 37, ARBOK
+	db 38, GLOOM
 	db -1 ; end
 
 	; GRUNTF (5)

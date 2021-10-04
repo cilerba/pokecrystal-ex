@@ -2586,6 +2586,21 @@ LickitungEvosAttacks:
 KoffingEvosAttacks:
 	db EVOLVE_LEVEL, 35, WEEZING
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, POISON_GAS
+	db 1, TACKLE
+	db 4, SMOG
+	db 7, SMOKESCREEN
+	db 12, FAINT_ATTACK
+	db 17, SLUDGE
+	db 23, SELFDESTRUCT
+	db 26, HAZE
+	;db 29, GYRO_BALL
+	db 34, SLUDGE_BOMB
+	db 37, EXPLOSION
+	db 40, DESTINY_BOND
+	db 45, PURSUIT
+else
 	db 1, POISON_GAS
 	db 1, TACKLE
 	db 9, SMOG
@@ -2595,10 +2610,26 @@ KoffingEvosAttacks:
 	db 33, HAZE
 	db 41, EXPLOSION
 	db 45, DESTINY_BOND
+endc
 	db 0 ; no more level-up moves
 
 WeezingEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, POISON_GAS
+	db 1, TACKLE
+	db 4, SMOG
+	db 7, SMOKESCREEN
+	db 12, FAINT_ATTACK
+	db 17, SLUDGE
+	db 23, SELFDESTRUCT
+	db 26, HAZE
+	;db 29, GYRO_BALL
+	db 34, SLUDGE_BOMB
+	db 40, EXPLOSION
+	db 43, DESTINY_BOND
+	db 48, PURSUIT
+else
 	db 1, POISON_GAS
 	db 1, TACKLE
 	db 1, SMOG
@@ -2610,6 +2641,7 @@ WeezingEvosAttacks:
 	db 33, HAZE
 	db 44, EXPLOSION
 	db 51, DESTINY_BOND
+endc
 	db 0 ; no more level-up moves
 
 RhyhornEvosAttacks:
