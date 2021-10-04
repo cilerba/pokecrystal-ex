@@ -103,6 +103,20 @@ MahoganyTownGrampsScript:
 	closetext
 	end
 
+MahoganyTownRocketAScript:
+	opentext
+	writetext MahoganyTownRocketAText
+	waitbutton
+	closetext
+	end
+
+MahoganyTownRocketBScript:
+	opentext
+	writetext MahoganyTownRocketBText
+	waitbutton
+	closetext
+	end
+
 MahoganyTownFisherScript:
 	jumptextfaceplayer MahoganyTownFisherText
 
@@ -139,6 +153,26 @@ MahoganyTownRageCandyBarMerchantReturnsMovement:
 	step UP
 	turn_head DOWN
 	step_end
+
+MahoganyTownRocketAText:
+	text "Fufufufu…"
+
+	para "The boss should"
+	line "be receiving"
+	cont "our message any"
+	cont "minute now."
+	done
+
+MahoganyTownRocketBText:
+	text "The boss is"
+	line "going to be so"
+	cont "proud."
+
+	para "TEAM ROCKET will"
+	line "return to its"
+	cont "full glory in"
+	cont "no time!"
+	done
 
 RageCandyBarMerchantTryOneText:
 	text "Hiya, kid!"
@@ -255,8 +289,8 @@ MahoganyTown_MapEvents:
 	warp_event  9,  1, ROUTE_43_MAHOGANY_GATE, 3
 
 	def_coord_events
-	coord_event 19,  8, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
-	coord_event 19,  9, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
+	coord_event 12,  2, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
+	coord_event 12,  3, SCENE_DEFAULT, MahoganyTownTryARageCandyBarScript
 
 	def_bg_events
 	bg_event  1,  5, BGEVENT_READ, MahoganyTownSign
@@ -265,7 +299,9 @@ MahoganyTown_MapEvents:
 	bg_event 16, 13, BGEVENT_READ, MahoganyTownPokecenterSign
 
 	def_object_events
-	object_event 19,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownPokefanMScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
+	object_event 12,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownPokefanMScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
 	object_event  6,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrampsScript, -1
 	object_event  6, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisherScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM
 	object_event 12,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLassScript, EVENT_MAHOGANY_MART_OWNERS
+	object_event 19,  8, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownRocketAScript, EVENT_CLEARED_RADIO_TOWER
+	object_event 19,  9, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownRocketBScript, EVENT_CLEARED_RADIO_TOWER
