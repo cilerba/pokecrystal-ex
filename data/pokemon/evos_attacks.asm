@@ -2186,6 +2186,22 @@ DewgongEvosAttacks:
 GrimerEvosAttacks:
 	db EVOLVE_LEVEL, 38, MUK
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, POUND
+	db 1, POISON_GAS
+	db 4, HARDEN
+	db 7, MUD_SLAP
+	db 12, DISABLE
+	db 15, SLUDGE
+	db 18, MAGNITUDE
+	db 21, MINIMIZE
+	db 26, HEADBUTT
+	db 29, SLUDGE_BOMB
+	db 32, SMOG
+	db 37, SCREECH
+	db 42, ACID_ARMOR
+	db 47, PURSUIT
+else
 	db 1, POISON_GAS
 	db 1, POUND
 	db 5, HARDEN
@@ -2195,11 +2211,28 @@ GrimerEvosAttacks:
 	db 31, SCREECH
 	db 40, ACID_ARMOR
 	db 50, SLUDGE_BOMB
+endc
 	db 0 ; no more level-up moves
 
 MukEvosAttacks:
 	db 0 ; no more evolutions
 	; moves are not sorted by level
+if DEF(_CRYSTAL11_HACK)
+	db 1, POUND
+	db 1, POISON_GAS
+	db 4, HARDEN
+	db 7, MUD_SLAP
+	db 12, DISABLE
+	db 15, SLUDGE
+	db 18, MAGNITUDE
+	db 21, MINIMIZE
+	db 26, HEADBUTT
+	db 29, SLUDGE_BOMB
+	db 32, SMOG
+	db 37, SCREECH
+	db 45, ACID_ARMOR
+	db 50, PURSUIT
+else
 	db 1, POISON_GAS
 	db 1, POUND
 	db 1, HARDEN
@@ -2210,6 +2243,7 @@ MukEvosAttacks:
 	db 31, SCREECH
 	db 45, ACID_ARMOR
 	db 60, SLUDGE_BOMB
+endc
 	db 0 ; no more level-up moves
 
 ShellderEvosAttacks:
