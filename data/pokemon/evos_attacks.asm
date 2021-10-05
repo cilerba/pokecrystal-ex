@@ -4461,6 +4461,21 @@ endc
 
 AipomEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, SCRATCH
+	db 1, TAIL_WHIP
+	db 4, SAND_ATTACK
+	db 8, LICK
+	db 11, BATON_PASS
+	db 15, CHARM
+	db 18, DOUBLESLAP
+	db 22, SWIFT
+	db 29, AGILITY
+	db 32, DOUBLE_KICK
+	db 36, PURSUIT
+	db 39, SWORDS_DANCE
+	db 44, DOUBLE_EDGE
+else
 	db 1, SCRATCH
 	db 1, TAIL_WHIP
 	db 6, SAND_ATTACK
@@ -4469,6 +4484,7 @@ AipomEvosAttacks:
 	db 27, SWIFT
 	db 36, SCREECH
 	db 46, AGILITY
+endc
 	db 0 ; no more level-up moves
 
 SunkernEvosAttacks:
