@@ -1657,29 +1657,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_45
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 23, GEODUDE
-	db 23, GRAVELER
-	db 24, GLIGAR
-	db 25, DONPHAN
-	db 20, PHANPY
-	db 27, SKARMORY
-	db 27, SKARMORY
+	db 40, GEODUDE
+	db 41, GRAVELER
+	db 42, GLIGAR
+	db 40, DONPHAN
+	db 40, PHANPY
+	db 41, SKARMORY
+	db 41, SKARMORY
 	; day
-	db 23, GEODUDE
-	db 23, GRAVELER
-	db 24, GLIGAR
-	db 25, DONPHAN
-	db 30, DONPHAN
-	db 27, SKARMORY
-	db 27, SKARMORY
+	db 40, HOUNDOUR
+	db 41, GRAVELER
+	db 42, GLIGAR
+	db 40, DONPHAN
+	db 40, DONPHAN
+	db 41, SKARMORY
+	db 41, SKARMORY
 	; nite
-	db 23, GEODUDE
-	db 23, GRAVELER
-	db 24, GLIGAR
-	db 25, GRAVELER
-	db 27, GRAVELER
-	db 27, GRAVELER
-	db 27, GRAVELER
+	db 40, HOUNDOUR
+	db 41, GRAVELER
+	db 42, GLIGAR
+	db 40, GRAVELER
+	db 40, GRAVELER
+	db 41, GRAVELER
+	db 41, GRAVELER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_46
