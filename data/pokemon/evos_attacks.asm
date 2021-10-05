@@ -4927,6 +4927,24 @@ endc
 
 GligarEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, POISON_STING
+	db 4, SAND_ATTACK
+	db 7, HARDEN
+	db 10, THIEF
+	db 13, QUICK_ATTACK
+	db 16, FURY_CUTTER
+	db 19, FAINT_ATTACK
+	db 22, WING_ATTACK
+	db 27, SLASH
+	db 30, LEECH_LIFE
+	db 35, SCREECH
+	db 40, MAGNITUDE
+	db 45, VITAL_THROW
+	db 50, SWORDS_DANCE
+	db 55, GUILLOTINE
+	db 60, EARTHQUAKE
+else
 	db 1, POISON_STING
 	db 6, SAND_ATTACK
 	db 13, HARDEN
@@ -4935,6 +4953,7 @@ GligarEvosAttacks:
 	db 36, SLASH
 	db 44, SCREECH
 	db 52, GUILLOTINE
+endc
 	db 0 ; no more level-up moves
 
 SteelixEvosAttacks:
