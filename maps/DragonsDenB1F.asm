@@ -52,7 +52,13 @@ DragonsDenB1F_ClairScene:
 	applymovement DRAGONSDENB1F_CLAIR, MovementDragonsDen_ClairWalksToYou
 	opentext
 	writetext ClairText_GiveDragonbreathDragonDen
-	promptbutton
+	waitbutton
+	writetext ClairText_GiveWaterfall
+	playsound SFX_ITEM
+	waitsfx
+	writetext ClairText_Gyarados
+	waitbutton
+	loadmem wUnlockedWATERFALL, 1
 	giveitem TM_DRAGONBREATH
 	iffalse .BagFull
 	getitemname STRING_BUFFER_3, TM_DRAGONBREATH
@@ -206,12 +212,29 @@ ClairText_Wait:
 	text "Wait!"
 	done
 
+ClairText_GiveWaterfall:
+	text "<PLAYER> can now"
+	line "call GYARADOS!"
+
+	done
+
 ClairText_GiveDragonbreathDragonDen:
 	text "CLAIR: I'm sorry"
 	line "about this."
 
 	para "Here, take this as"
 	line "my apology."
+	done
+
+ClairText_Gyarados:
+	text "You can now call"
+	line "on GYARADOS to"
+	
+	para "help you scale"
+	line "waterfalls."
+
+	para "There's also"
+	line "this…"
 	done
 
 Text_ReceivedTM24:
