@@ -4490,16 +4490,46 @@ endc
 SunkernEvosAttacks:
 	db EVOLVE_ITEM, SUN_STONE, SUNFLORA
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, ABSORB
+	db 1, GROWTH
+	db 10, MEGA_DRAIN
+	db 13, LEECH_SEED
+	db 16, RAZOR_LEAF
+	db 20, GIGA_DRAIN
+	db 24, ENDURE
+	db 28, SYNTHESIS
+	db 33, SOLARBEAM
+	db 37, DOUBLE_EDGE
+	db 40, SUNNY_DAY
+	db 43, PETAL_DANCE
+else
 	db 1, ABSORB
 	db 4, GROWTH
 	db 10, MEGA_DRAIN
 	db 19, SUNNY_DAY
 	db 31, SYNTHESIS
 	db 46, GIGA_DRAIN
+endc
 	db 0 ; no more level-up moves
 
 SunfloraEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, ABSORB
+	db 1, GROWTH
+	db 13, MEGA_DRAIN
+	db 16, LEECH_SEED
+	db 19, RAZOR_LEAF
+	db 23, GIGA_DRAIN
+	db 27, ENDURE
+	db 31, SYNTHESIS
+	db 36, SOLARBEAM
+	db 40, DOUBLE_EDGE
+	db 43, SUNNY_DAY
+	db 46, PETAL_DANCE
+	db 49, SOLARBEAM
+else
 	db 1, ABSORB
 	db 1, POUND
 	db 4, GROWTH
@@ -4507,6 +4537,7 @@ SunfloraEvosAttacks:
 	db 19, SUNNY_DAY
 	db 31, PETAL_DANCE
 	db 46, SOLARBEAM
+endc
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
