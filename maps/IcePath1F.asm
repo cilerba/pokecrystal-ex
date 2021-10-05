@@ -9,7 +9,7 @@ IcePath1F_MapScripts:
 	def_callbacks
 
 IcePath1FHMWaterfall:
-	;itemball HM_WATERFALL
+	itemball MAX_REVIVE
 	end
 
 IcePath1FPPUp:
