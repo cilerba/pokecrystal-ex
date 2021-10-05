@@ -162,9 +162,6 @@ NicknameMon:
 	ld de, wStringBuffer2
 	farcall NamingScreen
 	
-	farcall IsNewNameEmpty
-	jr c, .sameName
-
 	farcall CompareNewToOld
 	jr c, .sameName
 
@@ -177,6 +174,10 @@ NicknameMon:
 	ld hl, wStringBuffer2
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
+
+	ld hl, wPartyMonNicknames
+	ld de, wStringBuffer1
+	call InitName
 
 .sameName
 	jr .done
