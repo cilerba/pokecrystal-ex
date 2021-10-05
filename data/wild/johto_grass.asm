@@ -1629,29 +1629,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_44
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 23, TANGELA
-	db 22, LICKITUNG
-	db 22, BELLSPROUT
-	db 24, WEEPINBELL
-	db 24, LICKITUNG
-	db 26, LICKITUNG
-	db 26, LICKITUNG
+	db 37, TANGELA
+	db 39, LICKITUNG
+	db 38, BELLSPROUT
+	db 39, WEEPINBELL
+	db 38, LICKITUNG
+	db 39, LICKITUNG
+	db 40, LICKITUNG
 	; day
-	db 23, TANGELA
-	db 22, LICKITUNG
-	db 22, BELLSPROUT
-	db 24, WEEPINBELL
-	db 24, LICKITUNG
-	db 26, LICKITUNG
-	db 26, LICKITUNG
+	db 37, TANGELA
+	db 39, LICKITUNG
+	db 38, BELLSPROUT
+	db 39, WEEPINBELL
+	db 38, LICKITUNG
+	db 39, LICKITUNG
+	db 40, LICKITUNG
 	; nite
-	db 23, TANGELA
-	db 22, POLIWAG
-	db 22, BELLSPROUT
-	db 24, WEEPINBELL
-	db 24, POLIWHIRL
-	db 26, POLIWHIRL
-	db 26, POLIWHIRL
+	db 37, TANGELA
+	db 39, POLIWAG
+	db 38, BELLSPROUT
+	db 39, WEEPINBELL
+	db 38, POLIWHIRL
+	db 39, POLIWHIRL
+	db 40, POLIWHIRL
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_45
