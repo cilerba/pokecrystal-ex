@@ -628,11 +628,6 @@ PokeBallEffect:
 
 	call LoadStandardFont
 
-	call IsNewNameEmpty
-	jr c, .skipToNameParty
-	call CompareNewToOld
-	jr c, .skipToNameParty
-
 	pop hl
 	ld de, wStringBuffer1
 	call InitName
