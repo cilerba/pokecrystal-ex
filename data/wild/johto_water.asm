@@ -186,16 +186,16 @@ JohtoWaterWildMons:
 
 	def_water_wildmons ROUTE_43
 	db 2 percent ; encounter rate
-	db 20, MAGIKARP
-	db 15, MAGIKARP
-	db 10, MAGIKARP
+	db 35, MAGIKARP
+	db 40, MAGIKARP
+	db 40, MAGIKARP
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_44
 	db 2 percent ; encounter rate
-	db 25, POLIWAG
-	db 20, POLIWAG
-	db 25, POLIWHIRL
+	db 35, POLIWAG
+	db 40, POLIWHIRL
+	db 40, POLIWHIRL
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_45
