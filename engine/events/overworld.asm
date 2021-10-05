@@ -1161,9 +1161,6 @@ WhirlpoolFunction:
 	dw .FailWhirlpool
 
 .TryWhirlpool:
-	ld de, ENGINE_GLACIERBADGE
-	call CheckBadge
-	jr c, .noglacierbadge
 	call TryWhirlpoolMenu
 	jr c, .failed
 	ld a, $1
@@ -1178,8 +1175,9 @@ WhirlpoolFunction:
 	ret
 
 .DoWhirlpool:
+	ld a, BANK(Script_WhirlpoolFromMenu)
 	ld hl, Script_WhirlpoolFromMenu
-	call QueueScript
+	call CallScript
 	ld a, $81
 	ret
 
@@ -1227,8 +1225,11 @@ Script_WhirlpoolFromMenu:
 	special UpdateTimePals
 
 Script_UsedWhirlpool:
-	callasm GetPartyNickname
 	writetext UseWhirlpoolText
+	refreshscreen
+	pokepic FERALIGATR
+	cry FERALIGATR
+	waitsfx
 	reloadmappart
 	callasm DisappearWhirlpool
 	closetext
@@ -1252,12 +1253,6 @@ DisappearWhirlpool:
 	ret
 
 TryWhirlpoolOW::
-	ld d, WHIRLPOOL
-	call CheckPartyMove
-	jr c, .failed
-	ld de, ENGINE_GLACIERBADGE
-	call CheckEngineFlag
-	jr c, .failed
 	call TryWhirlpoolMenu
 	jr c, .failed
 	ld a, BANK(Script_AskWhirlpoolOW)

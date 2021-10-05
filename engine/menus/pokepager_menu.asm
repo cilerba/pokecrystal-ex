@@ -205,7 +205,6 @@ PokePager_Strength:
 	ret
 
 PokePager_Surf:
-    call CloseWindow
 	ld a, 1
 	ld [wUsingHMItem], a
 
@@ -213,6 +212,9 @@ PokePager_Surf:
 	ret
 
 PokePager_Whirlpool:
+    ld a, 1
+    ld [wUsingHMItem], a
+    farcall WhirlpoolFunction
 	ret
 
 PokePager_Waterfall:

@@ -497,8 +497,8 @@ _BouldersMayMoveText::
 	done
 
 _UseWhirlpoolText::
-	text "FERALIGATR swam"
-	line "through the"
+	text "FERALIGATR"
+	line "cleared the"
 	cont "whirlpool!"
 	prompt
 
@@ -507,7 +507,8 @@ _MayPassWhirlpoolText::
 	line "whirlpool!"
 
 	para "A #MON may be"
-	line "able to pass it."
+	line "able to clear"
+	cont "it."
 	done
 
 _AskWhirlpoolText::
