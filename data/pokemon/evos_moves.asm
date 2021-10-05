@@ -4,7 +4,7 @@ EvolutionMoves::
 	db PETAL_DANCE          ; VENUSAUR
 	db NO_MOVE              ; CHARMANDER
 	db NO_MOVE              ; CHARMELEON
-	db NO_MOVE              ; CHARIZARD
+	db WING_ATTACK          ; CHARIZARD
 	db NO_MOVE              ; SQUIRTLE
 	db NO_MOVE              ; WARTORTLE
 	db NO_MOVE              ; BLASTOISE
@@ -55,7 +55,7 @@ EvolutionMoves::
 	db NO_MOVE              ; PSYDUCK
 	db NO_MOVE              ; GOLDUCK
 	db NO_MOVE              ; MANKEY
-	db NO_MOVE              ; PRIMEAPE
+	db RAGE                 ; PRIMEAPE
 	db NO_MOVE              ; GROWLITHE
 	db EXTREMESPEED         ; ARCANINE
 	db NO_MOVE              ; POLIWAG
@@ -76,7 +76,7 @@ EvolutionMoves::
 	db NO_MOVE              ; GRAVELER
 	db NO_MOVE              ; GOLEM
 	db NO_MOVE              ; PONYTA
-	db NO_MOVE              ; RAPIDASH
+	db FURY_ATTACK          ; RAPIDASH
 	db NO_MOVE              ; SLOWPOKE
 	db WITHDRAW             ; SLOWBRO
 	db NO_MOVE              ; MAGNEMITE
@@ -128,7 +128,7 @@ EvolutionMoves::
 	db NO_MOVE              ; PINSIR
 	db NO_MOVE              ; TAUROS
 	db NO_MOVE              ; MAGIKARP
-	db NO_MOVE              ; GYARADOS
+	db BITE                 ; GYARADOS
 	db NO_MOVE              ; LAPRAS
 	db NO_MOVE              ; DITTO
 	db NO_MOVE              ; EEVEE
@@ -147,7 +147,7 @@ EvolutionMoves::
 	db NO_MOVE              ; MOLTRES
 	db NO_MOVE              ; DRATINI
 	db NO_MOVE              ; DRAGONAIR
-	db NO_MOVE              ; DRAGONITE
+	db WING_ATTACK          ; DRAGONITE
 	db NO_MOVE              ; MEWTWO
 	db NO_MOVE              ; MEW
 	db NO_MOVE              ; CHIKORITA
@@ -219,10 +219,10 @@ EvolutionMoves::
 	db NO_MOVE              ; SLUGMA
 	db NO_MOVE              ; MAGCARGO
 	db NO_MOVE              ; SWINUB
-	db NO_MOVE              ; PILOSWINE
+	db FURY_ATTACK          ; PILOSWINE
 	db NO_MOVE              ; CORSOLA
 	db NO_MOVE              ; REMORAID
-	db NO_MOVE              ; OCTILLERY
+	db OCTAZOOKA            ; OCTILLERY
 	db NO_MOVE              ; DELIBIRD
 	db NO_MOVE              ; MANTINE
 	db NO_MOVE              ; SKARMORY
@@ -230,7 +230,7 @@ EvolutionMoves::
 	db NO_MOVE              ; HOUNDOOM
 	db NO_MOVE              ; KINGDRA
 	db NO_MOVE              ; PHANPY
-	db NO_MOVE              ; DONPHAN
+	db FURY_ATTACK	        ; DONPHAN
 	db NO_MOVE              ; PORYGON2
 	db NO_MOVE              ; STANTLER
 	db NO_MOVE              ; SMEARGLE
