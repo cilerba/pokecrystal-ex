@@ -789,29 +789,29 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_27
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, DODUO
-	db 28, ARBOK
-	db 30, RATICATE
-	db 30, DODUO
-	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
+	db 42, DODUO
+	db 45, ARBOK
+	db 43, RATICATE
+	db 40, DODUO
+	db 42, PONYTA
+	db 44, DODRIO
+	db 46, DODRIO
 	; day
-	db 28, DODUO
-	db 28, ARBOK
-	db 30, RATICATE
-	db 30, DODUO
-	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
+	db 42, DODUO
+	db 45, ARBOK
+	db 43, RATICATE
+	db 40, DODUO
+	db 42, PONYTA
+	db 44, DODRIO
+	db 46, DODRIO
 	; nite
-	db 28, QUAGSIRE
-	db 28, NOCTOWL
-	db 30, RATICATE
-	db 30, QUAGSIRE
-	db 32, NOCTOWL
-	db 32, NOCTOWL
-	db 32, NOCTOWL
+	db 42, QUAGSIRE
+	db 45, NOCTOWL
+	db 43, RATICATE
+	db 40, QUAGSIRE
+	db 42, NOCTOWL
+	db 44, NOCTOWL
+	db 46, NOCTOWL
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_28
