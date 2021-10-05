@@ -3908,6 +3908,22 @@ endc
 ChinchouEvosAttacks:
 	db EVOLVE_LEVEL, 27, LANTURN
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, BUBBLE
+	db 1, SUPERSONIC
+	db 6, THUNDER_WAVE
+	db 9, THUNDERSHOCK
+	db 12, WATER_GUN
+	db 17, CONFUSE_RAY
+	db 20, BUBBLEBEAM
+	db 23, SPARK
+	db 28, LEECH_LIFE
+	db 31, FLAIL
+	db 34, THUNDERBOLT
+	db 39, TAKE_DOWN
+	db 45, HYDRO_PUMP
+	db 50, THUNDER
+else
 	db 1, BUBBLE
 	db 1, THUNDER_WAVE
 	db 5, SUPERSONIC
@@ -3917,10 +3933,27 @@ ChinchouEvosAttacks:
 	db 29, CONFUSE_RAY
 	db 37, TAKE_DOWN
 	db 41, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 LanturnEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, BUBBLE
+	db 1, SUPERSONIC
+	db 6, THUNDER_WAVE
+	db 9, THUNDERSHOCK
+	db 12, WATER_GUN
+	db 17, CONFUSE_RAY
+	db 20, BUBBLEBEAM
+	db 23, SPARK
+	db 31, LEECH_LIFE
+	db 34, FLAIL
+	db 37, THUNDERBOLT
+	db 42, TAKE_DOWN
+	db 48, HYDRO_PUMP
+	db 53, THUNDER
+else
 	db 1, BUBBLE
 	db 1, THUNDER_WAVE
 	db 1, SUPERSONIC
@@ -3931,6 +3964,7 @@ LanturnEvosAttacks:
 	db 33, CONFUSE_RAY
 	db 45, TAKE_DOWN
 	db 53, HYDRO_PUMP
+endc
 	db 0 ; no more level-up moves
 
 PichuEvosAttacks:
