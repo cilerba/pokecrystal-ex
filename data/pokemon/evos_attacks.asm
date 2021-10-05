@@ -4239,6 +4239,22 @@ endc
 MarillEvosAttacks:
 	db EVOLVE_LEVEL, 18, AZUMARILL
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, BUBBLE
+	db 5, TAIL_WHIP
+	db 7, WATER_GUN
+	db 10, DEFENSE_CURL
+	db 10, ROLLOUT
+	db 13, BUBBLEBEAM
+	db 16, FOCUS_ENERGY
+	db 21, SURF
+	db 26, DOUBLE_EDGE
+	db 31, RECOVER
+	db 34, RAIN_DANCE
+	db 40, VITAL_THROW
+	db 43, HYDRO_PUMP
+else
 	db 1, TACKLE
 	db 3, DEFENSE_CURL
 	db 6, TAIL_WHIP
@@ -4247,10 +4263,27 @@ MarillEvosAttacks:
 	db 21, BUBBLEBEAM
 	db 28, DOUBLE_EDGE
 	db 36, RAIN_DANCE
+endc
 	db 0 ; no more level-up moves
 
 AzumarillEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, TACKLE
+	db 1, BUBBLE
+	db 5, TAIL_WHIP
+	db 7, WATER_GUN
+	db 10, DEFENSE_CURL
+	db 10, ROLLOUT
+	db 13, BUBBLEBEAM
+	db 16, FOCUS_ENERGY
+	db 20, SURF
+	db 23, DOUBLE_EDGE
+	db 28, RECOVER
+	db 31, RAIN_DANCE
+	db 37, VITAL_THROW
+	db 40, HYDRO_PUMP
+else
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
 	db 1, TAIL_WHIP
@@ -4262,6 +4295,7 @@ AzumarillEvosAttacks:
 	db 25, BUBBLEBEAM
 	db 36, DOUBLE_EDGE
 	db 48, RAIN_DANCE
+endc
 	db 0 ; no more level-up moves
 
 SudowoodoEvosAttacks:
