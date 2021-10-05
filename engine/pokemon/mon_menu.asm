@@ -155,36 +155,23 @@ NicknameMon:
 	cp EGG
 	jr z, .cancel
 
-	ld [wNamedObjectIndex], a
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld b, NAME_MON
-	ld de, wStringBuffer2
-	farcall NamingScreen
-	
-	farcall CompareNewToOld
-	jr c, .sameName
-
 	ld hl, wPartyMonNicknames
 	ld bc, MON_NAME_LENGTH
 	ld a, [wCurPartyMon]
 	call AddNTimes
+
 	ld e, l
 	ld d, h
-	ld hl, wStringBuffer2
-	ld bc, MON_NAME_LENGTH
-	call CopyBytes
+	push de
+	xor a ; PARTYMON
+	ld [wMonType], a
+	ld b, NAME_MON
+	farcall NamingScreen
 
-	ld hl, wPartyMonNicknames
+	pop hl
 	ld de, wStringBuffer1
 	call InitName
 
-.sameName
-	jr .done
-.cancel
-	ld a, 3
-	ret
-.done
 	ld a, 0
 	ret
 
