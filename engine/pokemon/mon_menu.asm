@@ -171,7 +171,12 @@ NicknameMon:
 	pop hl
 	ld de, wStringBuffer1
 	call InitName
-
+	
+	jr .done
+.cancel
+	ld a, 0
+	ret
+.done
 	ld a, 0
 	ret
 
