@@ -774,11 +774,8 @@ Script_UsedWaterfall:
 	text_end
 
 TryWaterfallOW::
-	ld d, WATERFALL
-	call CheckPartyMove
-	jr c, .failed
-	ld de, ENGINE_RISINGBADGE
-	call CheckEngineFlag
+	ld a, [wUnlockedWATERFALL] ; Checks to see if we've unlocked the HM
+	cp 1
 	jr c, .failed
 	call CheckMapCanWaterfall
 	jr c, .failed
@@ -1118,12 +1115,8 @@ BouldersMayMoveText:
 	text_end
 
 TryStrengthOW:
-	ld d, STRENGTH
-	call CheckPartyMove
-	jr c, .nope
-
-	ld de, ENGINE_PLAINBADGE
-	call CheckEngineFlag
+	ld a, [wUnlockedSTRENGTH] ; Checks to see if we've unlocked the HM
+	cp 1
 	jr c, .nope
 
 	ld hl, wBikeFlags
@@ -1253,6 +1246,10 @@ DisappearWhirlpool:
 	ret
 
 TryWhirlpoolOW::
+	ld a, [wUnlockedWHIRLPOOL] ; Checks to see if we've unlocked the HM
+	cp 1
+	jr c, .failed
+
 	call TryWhirlpoolMenu
 	jr c, .failed
 	ld a, BANK(Script_AskWhirlpoolOW)
