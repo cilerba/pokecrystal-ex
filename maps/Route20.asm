@@ -79,9 +79,9 @@ SwimmerfLoriBeatenText:
 	done
 
 SwimmerfLoriAfterBattleText:
-	text "SURF is no longer"
-	line "the only HM move"
-	cont "you use in water."
+	text "Calling LAPRAS"
+	line "to swim is so"
+	cont "cool!"
 	done
 
 SwimmermCameronSeenText:
