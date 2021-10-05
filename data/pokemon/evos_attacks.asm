@@ -4797,6 +4797,21 @@ WobbuffetEvosAttacks:
 
 GirafarigEvosAttacks:
 	db 0 ; no more evolutions
+if DEF(_CRYSTAL11_HACK)
+	db 1, LICK
+	db 1, TACKLE
+	db 1, GROWL
+	db 5, CONFUSION
+	db 10, FAINT_ATTACK
+	db 14, STOMP
+	db 19, PSYBEAM
+	db 23, AGILITY
+	db 28, DOUBLE_KICK
+	db 32, PSYWAVE
+	db 37, CRUNCH
+	db 41, BATON_PASS
+	db 50, PSYCHIC_M
+else
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, CONFUSION
@@ -4807,6 +4822,7 @@ GirafarigEvosAttacks:
 	db 30, BATON_PASS
 	db 41, PSYBEAM
 	db 54, CRUNCH
+endc
 	db 0 ; no more level-up moves
 
 PinecoEvosAttacks:
