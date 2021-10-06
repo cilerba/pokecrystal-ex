@@ -3027,6 +3027,7 @@ endc
 ExeggutorEvosAttacks:
 	db 0 ; no more evolutions
 if DEF(_CRYSTAL11_HACK)
+	db 1, PSYCHIC_M
 	db 1, STOMP
 	db 1, BARRAGE
 	db 1, HYPNOSIS
