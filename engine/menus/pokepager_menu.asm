@@ -9,13 +9,13 @@
 
     
 PokePager::
-	ld hl, Script_ExitMenu
+	ld hl, Script_PokePager
     call QueueScript
     ld a, $1
     ld [wFieldMoveSucceeded], a
     ret
 
-Script_ExitMenu:
+Script_PokePager:
 	reloadmappart
 	special UpdateTimePals
     callasm _PokePager
@@ -24,31 +24,143 @@ Script_ExitMenu:
     end 
 
 _PokePager:
+    call ClearWindowData
+    farcall ReanchorBGMap_NoOAMUpdate
     ld hl, .MenuHeader
-	call LoadMenuHeader
+    call LoadMenuHeader
 	call .SetUpMenuItems
-.loop
-    xor a
-    ldh [hBGMapMode], a
-    ld [wWhichIndexSet], a
-    call DoNthMenu
-    jr c, .Exit
-    ld a, [wMenuSelection]
-    ld hl, .Items
-    call MenuJumptable
-    ld a, [wFieldMoveSucceeded]
-    and a
-    jr z, .loop
+	ld a, [wBattleMenuCursorPosition]
+	ld [wMenuCursorPosition], a
+	call .DrawMenuAccount
+	call DrawVariableLengthMenuBox
+	call SafeUpdateSprites
+	call _OpenAndCloseMenu_HDMATransferTilemapAndAttrmap
+	farcall LoadFonts_NoOAMUpdate
+	call UpdateTimePals
+	jr .Select
+
+.Reopen:
+	call UpdateSprites
+	call UpdateTimePals
+	call .SetUpMenuItems
+	ld a, [wBattleMenuCursorPosition]
+	ld [wMenuCursorPosition], a
+
+.Select:
+	call .GetInput
+	jr c, .Exit
+	call ._DrawMenuAccount
+	ld a, [wMenuCursorPosition]
+	ld [wBattleMenuCursorPosition], a
+	call PlayClickSFX
+	call PlaceHollowCursor
+	call .OpenMenu
+; Menu items have different return functions.
+; For example, saving exits the menu.
+    ld hl, .MenuReturns
+    ld e, a
+    ld d, 0
+    add hl, de
+    add hl, de
+    ld a, [hli]
+    ld h, [hl]
+    ld l, a
+    jp hl
+    
+.MenuReturns:
+    dw .Reopen
+    dw .Exit
+    dw .ExitMenuCallFuncCloseText
+    dw .ExitMenuRunScriptCloseText
+    dw .ExitMenuRunScript
+    dw .ReturnEnd
+    dw .ReturnRedraw
+
 
 .Exit:
-    
-	ld [wUsingHMItem], a
-    cp 1
-    ret z
-	call CloseWindow
-	xor a
-	ld [wFieldMoveSucceeded], a
+	ldh a, [hOAMUpdate]
+	push af
+	ld a, 1
+	ldh [hOAMUpdate], a
+	call LoadFontsExtra
+	pop af
+	ldh [hOAMUpdate], a
+.ReturnEnd:
+	call ExitMenu
+.ReturnEnd2:
+	call CloseText
+	call UpdateTimePals
 	ret
+    .ExitMenuRunScript:
+	call ExitMenu
+	ld a, HMENURETURN_SCRIPT
+	ldh [hMenuReturn], a
+	ret
+
+
+.GetInput:
+; Return carry on exit, and no-carry on selection.
+    xor a
+    ldh [hBGMapMode], a
+    call ._DrawMenuAccount
+    call SetUpMenu
+    ld a, $ff
+    ld [wMenuSelection], a
+.loop
+    call .PrintMenuAccount
+    call GetScrollingMenuJoypad
+    ld a, [wMenuJoypad]
+    cp B_BUTTON
+    jr z, .b
+    cp A_BUTTON
+    jr z, .a
+    jr .loop
+.a
+    call PlayClickSFX
+    and a
+    ret
+.b
+    scf
+    ret
+
+.ExitMenuRunScriptCloseText:
+	call ExitMenu
+	ld a, HMENURETURN_SCRIPT
+	ldh [hMenuReturn], a
+	jr .ReturnEnd2
+
+.ExitMenuCallFuncCloseText:
+	call ExitMenu
+	ld hl, wQueuedScriptAddr
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wQueuedScriptBank]
+	rst FarCall
+	jr .ReturnEnd2
+
+.ReturnRedraw:
+	call .Clear
+	jp .Reopen
+
+.Clear:
+	call ClearBGPalettes
+	call Call_ExitMenu
+	call ReloadTilesetAndPalettes
+	call .DrawMenuAccount
+	call DrawVariableLengthMenuBox
+	call UpdateSprites
+	call GSReloadPalettes
+	call FinishExitMenu
+	ret
+
+.OpenMenu:
+	ld a, [wMenuSelection]
+	call .GetMenuAccountTextPointer
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
 
 .MenuHeader:
     db MENU_BACKUP_TILES ; flags
@@ -64,13 +176,13 @@ _PokePager:
     dw .Items
 
 .Items:
-    dw PokePager_Flash,         .FlashString
-    dw PokePager_Cut,           .CutString
-    dw PokePager_Surf,          .SurfString
-    dw PokePager_Strength,      .StrengthString
-    dw PokePager_Fly,           .FlyString
-    dw PokePager_Whirlpool,     .WhirlpoolString
-    dw PokePager_Waterfall,     .WaterfallString
+    dw PokePager_Flash,         .FlashString,       .FlashDesc
+    dw PokePager_Cut,           .CutString,         .CutDesc
+    dw PokePager_Surf,          .SurfString,        .SurfDesc
+    dw PokePager_Strength,      .StrengthString,    .StrengthDesc
+    dw PokePager_Fly,           .FlyString,         .FlyDesc
+    dw PokePager_Whirlpool,     .WhirlpoolString,   .WhirlpoolDesc
+    dw PokePager_Waterfall,     .WaterfallString,   .WaterfallDesc
 
 .FlashString:       db "AMPHAROS@"
 .CutString:         db "SCYTHER@"
@@ -79,6 +191,14 @@ _PokePager:
 .FlyString:         db "PIDGEOT@"
 .WhirlpoolString    db "FERALIGATR@"
 .WaterfallString    db "GYARADOS@"
+
+.FlashDesc:         db "FLASH@"
+.CutDesc:           db "CUT@"
+.SurfDesc:          db "SURF@"
+.StrengthDesc:      db "STRENGTH@"
+.FlyDesc:           db "FLY@"
+.WhirlpoolDesc:     db "WHIRLPOOL@"
+.WaterfallDesc:     db "WATERFALL@"
 
 .PPString:
 	push de
@@ -93,6 +213,25 @@ _PokePager:
 	call PlaceString
 	ret
 
+.MenuDesc:
+	push de
+	ld a, [wMenuSelection]
+	cp $ff
+	jr z, .none
+	call .GetMenuAccountTextPointer
+rept 4
+	inc hl
+endr
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	call PlaceString
+	ret
+.none
+	pop de
+	ret
+
 .GetMenuAccountTextPointer:
 	ld e, a
 	ld d, 0
@@ -100,7 +239,7 @@ _PokePager:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-rept 4
+rept 6
 	add hl, de
 endr
 	ret
@@ -180,28 +319,50 @@ endr
     inc c ; c gets incremented as a counter for wPPMenuItems
     ret
 
+.DrawMenuAccount:
+	jp ._DrawMenuAccount
+
+.PrintMenuAccount:
+	call ._DrawMenuAccount
+	decoord 0, 17
+	jp .MenuDesc
+
+._DrawMenuAccount:
+	hlcoord 0, 16
+	lb bc, 2, 12
+	call ClearBox
+	hlcoord 0, 16
+	ld b, 3
+	ld c, 8
+	jp TextboxPalette
+
+
 PokePager_Flash:
 	ld a, 1
 	ld [wUsingHMItem], a
     farcall FlashFunction
+    ld a, 4
 	ret
 
 PokePager_Cut:
 	ld a, 1
 	ld [wUsingHMItem], a
     farcall CutFunction
+    ld a, 4
 	ret
 
 PokePager_Fly:
     ld a, 1
     ld [wUsingHMItem], a
     farcall FlyFunction
+    ld a, 4
 	ret
 
 PokePager_Strength:
     ld a, 1
     ld [wUsingHMItem], a
     farcall StrengthFunction
+    ld a, 4
 	ret
 
 PokePager_Surf:
@@ -209,13 +370,19 @@ PokePager_Surf:
 	ld [wUsingHMItem], a
 
     farcall SurfFunction
+    ld a, 4
 	ret
 
 PokePager_Whirlpool:
     ld a, 1
     ld [wUsingHMItem], a
     farcall WhirlpoolFunction
+    ld a, 4
 	ret
 
 PokePager_Waterfall:
+    ld a, 1
+    ld [wUsingHMItem], a
+    farcall WaterfallFunction
+    ld a, 4
 	ret
