@@ -816,16 +816,15 @@ PlayerMovementPointers:
 	ret
 
 CheckMenuOW:
-	call GetJoypad
-	ld hl, hJoyDown
-	ld a, [hl]
+	xor a
+	ldh [hMenuReturn], a
+	ldh [hUnusedByte], a
+	
+	ldh a, [hJoyDown]
 	and B_BUTTON + START
 	cp  B_BUTTON + START
 	jr z, .PokePager
 
-	xor a
-	ldh [hMenuReturn], a
-	ldh [hUnusedByte], a
 	ldh a, [hJoyPressed]
 
 	bit SELECT_F, a
