@@ -224,8 +224,6 @@ Script_CutFromMenu:
 	special UpdateTimePals
 
 Script_Cut:
-	writetext UseCutText
-	refreshscreen
 	pokepic SCYTHER
 	cry SCYTHER
 	waitsfx
@@ -382,9 +380,9 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
-	;ld a, [wUnlockedSURF] ; Checks to see if we've unlocked the HM
-	;cp 1
-	;jr c, .noSurfUnlock
+	ld a, [wUnlockedSURF] ; Checks to see if we've unlocked the HM
+	cp 1
+	jr c, .noSurfUnlock
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .cannotsurf
@@ -449,13 +447,6 @@ SurfFromMenuScript:
 	special UpdateTimePals
 
 UsedSurfScript:
-	reloadmappart
-	special UpdateTimePals
-	opentext
-	writetext UsedSurfText ; "used SURF!"
-	waitbutton
-	closetext
-	
 	refreshscreen
 	pokepic LAPRAS
 	cry LAPRAS
@@ -678,6 +669,10 @@ FlyFunction:
 	ret
 
 .FlyScript:
+	refreshscreen
+	pokepic PIDGEOT
+	cry PIDGEOT
+	waitsfx
 	reloadmappart
 	callasm HideSprites
 	special UpdateTimePals
@@ -709,8 +704,11 @@ WaterfallFunction:
 ; Waterfall
 	call CheckMapCanWaterfall
 	jr c, .failed
+
+	ld a, BANK(Script_WaterfallFromMenu)
 	ld hl, Script_WaterfallFromMenu
-	call QueueScript
+	call CallScript
+	scf
 	ld a, $81
 	ret
 
@@ -739,9 +737,8 @@ Script_WaterfallFromMenu:
 	special UpdateTimePals
 
 Script_UsedWaterfall:
-	writetext .UseWaterfallText
-	closetext
-	refreshscreen
+	reloadmappart
+	special UpdateTimePals
 	pokepic GYARADOS
 	cry GYARADOS
 	waitsfx
@@ -1060,9 +1057,6 @@ Script_StrengthFromMenu:
 
 Script_UsedStrength:
 	callasm SetStrengthFlag	
-	opentext
-	writetext .UseStrengthText
-	waitbutton
 	refreshscreen
 	pokepic PRIMEAPE
 	cry PRIMEAPE
