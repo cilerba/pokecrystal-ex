@@ -329,9 +329,9 @@ endr
 
 ._DrawMenuAccount:
 	hlcoord 0, 16
-	lb bc, 2, 12
+	lb bc, 5, 10
 	call ClearBox
-	hlcoord 0, 16
+	hlcoord 0, 13
 	ld b, 3
 	ld c, 8
 	jp TextboxPalette
