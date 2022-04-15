@@ -324,16 +324,16 @@ endr
 
 .PrintMenuAccount:
 	call ._DrawMenuAccount
-	decoord 0, 17
+	decoord 2, 17
 	jp .MenuDesc
 
 ._DrawMenuAccount:
 	hlcoord 0, 16
-	lb bc, 5, 10
+	lb bc, 2, 13
 	call ClearBox
-	hlcoord 0, 13
-	ld b, 3
-	ld c, 8
+	hlcoord 0, 14
+	ld b, 2
+	ld c, 11
 	jp TextboxPalette
 
 
