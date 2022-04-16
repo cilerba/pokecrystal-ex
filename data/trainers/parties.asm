@@ -455,9 +455,9 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (5)
 	db "DANNY@", TRAINERTYPE_NORMAL
-	db 31, JYNX
-	db 31, ELECTABUZZ
-	db 31, MAGMAR
+	db 43, JYNX
+	db 45, ELECTABUZZ
+	db 45, MAGMAR
 	db -1 ; end
 
 	; SCHOOLBOY (6)
@@ -1027,8 +1027,8 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (14)
 	db "QUINN@", TRAINERTYPE_NORMAL
-	db 38, IVYSAUR
-	db 38, STARMIE
+	db 45, IVYSAUR
+	db 46, STARMIE
 	db -1 ; end
 
 	; COOLTRAINERF (15)

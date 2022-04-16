@@ -173,29 +173,29 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 2, PIDGEY
-	db 2, RATTATA
-	db 3, SENTRET
-	db 3, PIDGEY
-	db 6, FURRET
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db 42, PIDGEY
+	db 44, RATTATA
+	db 43, SENTRET
+	db 41, PIDGEY
+	db 44, FURRET
+	db 45, PIDGEOTTO
+	db 45, PIDGEOTTO
 	; day
-	db 2, PIDGEY
-	db 2, RATTATA
-	db 3, SENTRET
-	db 3, PIDGEY
-	db 6, FURRET
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db 42, PIDGEY
+	db 44, RATTATA
+	db 43, SENTRET
+	db 41, PIDGEY
+	db 44, FURRET
+	db 45, PIDGEOTTO
+	db 45, PIDGEOTTO
 	; nite
-	db 2, HOOTHOOT
-	db 2, RATTATA
-	db 3, RATTATA
-	db 3, HOOTHOOT
-	db 6, RATICATE
-	db 4, HOOTHOOT
-	db 4, HOOTHOOT
+	db 42, HOOTHOOT
+	db 44, RATTATA
+	db 43, RATTATA
+	db 41, HOOTHOOT
+	db 44, RATICATE
+	db 45, NOCTOWL
+	db 45, NOCTOWL
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_2
