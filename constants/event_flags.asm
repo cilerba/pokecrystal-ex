@@ -1469,7 +1469,9 @@
 	const EVENT_DARK_CAVE_VIOLET_ENTRANCE_DIRE_HIT
 	const EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
 	const EVENT_NATIONAL_PARK_SOOTHE_BELL
-; Unused: next 47 events (updated)
+	const EVENT_ON_KANTO_JOURNEY
+	const EVENT_LANDED_IN_PALLET
+; Unused: next 45 events (updated)
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800

@@ -5,6 +5,7 @@
 	const VERMILIONCITY_SUPER_NERD
 	const VERMILIONCITY_BIG_SNORLAX
 	const VERMILIONCITY_POKEFAN_M
+	const VERMILIONCITY_OAK
 
 VermilionCity_MapScripts:
 	def_scene_scripts
@@ -13,6 +14,11 @@ VermilionCity_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .FlyPoint:
+	checkevent EVENT_ON_KANTO_JOURNEY
+	iftrue .SetFlyPoint
+	endcallback
+
+.SetFlyPoint:
 	setflag ENGINE_FLYPOINT_VERMILION
 	endcallback
 
@@ -122,6 +128,21 @@ VermilionCityMartSign:
 
 VermilionCityHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_VERMILION_CITY_HIDDEN_FULL_HEAL
+
+VermilionCityOakScript:
+	playmusic MUSIC_PROF_OAK
+	showemote EMOTE_SHOCK, VERMILIONCITY_OAK, 15
+	applymovement VERMILIONCITY_OAK, VermilionCityOakAlertMovement
+	pause 15
+	opentext
+	writetext VermilionCityOakText
+	waitbutton
+	closetext
+	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_OAK
+	special FadeOutPalettes
+	pause 15
+	warp PALLET_TOWN, 8, 2
+	end	
 
 VermilionCityTeacherText:
 	text "VERMILION PORT is"
@@ -265,6 +286,35 @@ VermilionCityPortSignText:
 	line "ENTRANCE"
 	done
 
+VermilionCityOakText:
+	text "OAK: <PLAY_G>!"
+
+	para "Welcome to KANTO!"
+
+	para "As soon as I heard"
+	line "you were on your"
+	cont "way I rushed over."
+
+	para "Say, let's"
+	line "continue this"
+	cont "conversation in"
+	cont "my lab."
+
+	para "It resides in a"
+	line "small town called"
+	cont "PALLET TOWN."
+
+	para "You'll love it!"
+
+	para "Let's have a"
+	line "stroll through"
+	cont "KANTO, shall we?"
+	done
+
+VermilionCityOakAlertMovement:
+	turn_head DOWN
+	step_end
+
 VermilionCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -281,6 +331,8 @@ VermilionCity_MapEvents:
 	warp_event 34,  7, DIGLETTS_CAVE, 1
 
 	def_coord_events
+	coord_event 18, 28, SCENE_VERMILIONCITY_OAK, VermilionCityOakScript
+	coord_event 19, 28, SCENE_VERMILIONCITY_OAK, VermilionCityOakScript
 
 	def_bg_events
 	bg_event 25,  3, BGEVENT_READ, VermilionCitySign
@@ -299,3 +351,4 @@ VermilionCity_MapEvents:
 	object_event 14, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
 	object_event 34,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionSnorlax, EVENT_VERMILION_CITY_SNORLAX
 	object_event 31, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionGymBadgeGuy, -1
+	object_event 19, 26, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VermilionCityOakScript, -1

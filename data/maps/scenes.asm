@@ -79,10 +79,13 @@ MapScenes::
 	scene_var DRAGON_SHRINE,                               wDragonShrineSceneID
 	scene_var OLIVINE_PORT,                                wOlivinePortSceneID
 	scene_var VERMILION_PORT,                              wVermilionPortSceneID
+	scene_var VERMILION_CITY,							   wVermilionCitySceneID
 	scene_var FAST_SHIP_1F,                                wFastShip1FSceneID
 	scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
 	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
 	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
 	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
 	scene_var CIANWOOD_PHARMACY,                           wPharmacyRocketSceneID
+	scene_var OAKS_LAB,									   wOaksLabSceneID
+	scene_var PALLET_TOWN,								   wPalletTownSceneID
 	db -1 ; end

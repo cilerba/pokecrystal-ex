@@ -6,28 +6,54 @@
 
 OaksLab_MapScripts:
 	def_scene_scripts
+	scene_script .DummyScene
+	scene_script .BeginJourney
 
 	def_callbacks
 
 .DummyScene: ; unreferenced
 	end
 
+.BeginJourney:
+	applymovement PLAYER, MovePlayerUpHalfway
+	readvar VAR_XCOORD
+	ifequal 4, .KeepMoving
+	applymovement PLAYER, MovePlayerLeft
+.KeepMoving
+	applymovement PLAYER, MovePlayerUpRest
+	opentext
+	writetext ProfOakKantoJourneyText1
+.Loop
+	yesorno
+	iftrue .SaidYes
+	writetext ProfOakKantoJourneyTextMustSayYes
+	sjump .Loop
+
+.SaidYes:
+	writetext ProfOakKantoJourneyText2
+	waitbutton
+	closetext
+	setevent EVENT_ON_KANTO_JOURNEY
+	setscene SCENE_DEFAULT
+	setmapscene PALLET_TOWN, SCENE_DEFAULT
+	end
+
 Oak:
 	faceplayer
 	opentext
-	checkevent EVENT_OPENED_MT_SILVER
-	iftrue .CheckPokedex
-	checkevent EVENT_TALKED_TO_OAK_IN_KANTO
-	iftrue .CheckBadges
-	writetext OakWelcomeKantoText
-	promptbutton
-	setevent EVENT_TALKED_TO_OAK_IN_KANTO
-.CheckBadges:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, .OpenMtSilver
-	ifequal NUM_JOHTO_BADGES, .Complain
-	sjump .AhGood
-
+;	checkevent EVENT_OPENED_MT_SILVER
+;	iftrue .CheckPokedex
+;	checkevent EVENT_TALKED_TO_OAK_IN_KANTO
+;	iftrue .CheckBadges
+;	writetext OakWelcomeKantoText
+;	promptbutton
+;	setevent EVENT_TALKED_TO_OAK_IN_KANTO
+;.CheckBadges:
+;	readvar VAR_BADGES
+;	ifequal NUM_BADGES, .OpenMtSilver
+;	ifequal NUM_JOHTO_BADGES, .Complain
+;	sjump .AhGood
+;
 .CheckPokedex:
 	writetext OakLabDexCheckText
 	waitbutton
@@ -253,6 +279,91 @@ OaksLabPCText:
 	para "ELM in NEW BARK"
 	line "TOWN 8-)"
 	done
+
+ProfOakKantoJourneyText1:
+	text "Here we are!"
+
+	para "I'm delighted"
+	line "to have you join"
+	cont "us in KANTO."
+
+	para "There are many"
+	line "sites to see in"
+	cont "here."
+
+	para "You have recently"
+	line "defeated the ELITE"
+	cont "FOUR - a"
+	cont "marvelous feat!"
+
+	para "Now that you're in"
+	line "KANTO, I think"
+	cont "the best step for"
+	cont "an accomplished"
+	cont "TRAINER like your-"
+	cont "self is to take"
+	cont "on the KANTO GYM"
+	cont "CHALLENGE!"
+
+	para "Eight more GYM"
+	line "LEADERS for you"
+	cont "to battle against."
+
+	para "What do you say?"
+	done
+
+ProfOakKantoJourneyTextMustSayYes:
+	text "I really think"
+	line "it's the right"
+	cont "move."
+
+	para "What do you say?"
+	done
+
+ProfOakKantoJourneyText2:
+	text "OAK: Wonderful!"
+
+	para "Well, let's see…"
+	
+	para "You should"
+	line "start in PEWTER"
+	cont "CITY!"
+
+	para "That's where BROCK"
+	line "trains his ROCK-"
+	cont "type #MON."
+
+	para "Oh, right. PEWTER"
+	line "CITY is north of"
+	cont "here."
+
+	para "You will pass"
+	line "VIRIDIAN FOREST"
+	cont "on your way."
+
+	para "Come see me if"
+	line "you want to check"
+	cont "your #DEX"
+	cont "progress."
+	done
+
+MovePlayerUpHalfway:
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+
+MovePlayerUpRest:
+	step UP
+	step UP
+	step UP
+	step_end
+
+MovePlayerLeft:
+	step LEFT
+	step_end
+
 
 OaksLab_MapEvents:
 	db 0, 0 ; filler

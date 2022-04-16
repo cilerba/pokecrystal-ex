@@ -3106,7 +3106,10 @@ wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
 wPharmacyRocketSceneID:: db
-	ds 48
+wVermilionCitySceneID:: db
+wPalletTownSceneID:: db
+wOaksLabSceneID:: db
+	ds 45
 
 ; fight counts
 wJackFightCount::    db
