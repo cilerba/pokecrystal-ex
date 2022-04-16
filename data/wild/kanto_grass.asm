@@ -677,29 +677,29 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_22
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, RATTATA
-	db 3, SPEAROW
-	db 5, SPEAROW
-	db 4, DODUO
-	db 6, PONYTA
-	db 7, FEAROW
-	db 7, FEAROW
+	db 42, RATTATA
+	db 44, SPEAROW
+	db 43, SPEAROW
+	db 41, DODUO
+	db 44, PONYTA
+	db 46, FEAROW
+	db 46, FEAROW
 	; day
-	db 3, RATTATA
-	db 3, SPEAROW
-	db 5, SPEAROW
-	db 4, DODUO
-	db 6, PONYTA
-	db 7, FEAROW
-	db 7, FEAROW
+	db 42, RATTATA
+	db 44, SPEAROW
+	db 43, SPEAROW
+	db 41, DODUO
+	db 44, PONYTA
+	db 46, FEAROW
+	db 46, FEAROW
 	; nite
-	db 3, RATTATA
-	db 3, POLIWAG
-	db 5, RATTATA
-	db 4, POLIWAG
-	db 6, RATTATA
-	db 7, RATTATA
-	db 7, RATTATA
+	db 42, RATTATA
+	db 44, POLIWAG
+	db 43, RATTATA
+	db 41, POLIWAG
+	db 44, RATTATA
+	db 46, RATICATE
+	db 46, RATICATE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_24
