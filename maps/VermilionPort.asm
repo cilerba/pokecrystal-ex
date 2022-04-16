@@ -19,6 +19,11 @@ VermilionPort_MapScripts:
 	end
 
 .FlyPoint:
+	checkevent EVENT_ON_KANTO_JOURNEY
+	iftrue .SetFlyPoint
+	endcallback
+
+.SetFlyPoint:
 	setflag ENGINE_FLYPOINT_VERMILION
 	endcallback
 
