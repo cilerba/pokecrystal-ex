@@ -1775,6 +1775,7 @@ GivePoke::
 	bit NUZLOCKE, a
 	jr nz, .nuzlockeSkip
 	farcall GiveANickname_YesNo
+	pop de
 	jr c, .skip_nickname
 .nuzlockeSkip
 	pop de
