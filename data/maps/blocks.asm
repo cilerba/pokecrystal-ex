@@ -210,6 +210,8 @@ Route34IlexForestGate_Blocks:
 Route6SaffronGate_Blocks:
 Route40BattleTowerGate_Blocks:
 Route2Gate_Blocks:
+Route2NorthGate_Blocks:
+Route2SouthGate_Blocks:
 Route29Route46Gate_Blocks:
 Route5SaffronGate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
@@ -1045,3 +1047,8 @@ BetaBlank_Blocks: ; unreferenced
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
+
+SECTION "Map Blocks 4", ROMX
+
+ViridianForest_Blocks:
+	INCBIN "maps/ViridianForest.blk"

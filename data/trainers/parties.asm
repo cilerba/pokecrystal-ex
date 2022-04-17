@@ -1520,15 +1520,15 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (2)
 	db "ROB@", TRAINERTYPE_NORMAL
-	db 32, BEEDRILL
-	db 32, BUTTERFREE
+	db 45, BEEDRILL
+	db 46, BUTTERFREE
 	db -1 ; end
 
 	; BUG_CATCHER (3)
 	db "ED@", TRAINERTYPE_NORMAL
-	db 30, BEEDRILL
-	db 30, BEEDRILL
-	db 30, BEEDRILL
+	db 45, BEEDRILL
+	db 45, BEEDRILL
+	db 45, BEEDRILL
 	db -1 ; end
 
 	; BUG_CATCHER (4)
@@ -1586,7 +1586,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (12)
 	db "DOUG@", TRAINERTYPE_NORMAL
-	db 34, ARIADOS
+	db 46, ARIADOS
 	db -1 ; end
 
 	; BUG_CATCHER (13)
@@ -1630,6 +1630,39 @@ BugCatcherGroup:
 	db  12, LEDYBA
 	db 15, PARAS
 	db -1 ; end
+
+	; BUG_CATCHER (20)
+	db "ABNER@", TRAINERTYPE_NORMAL
+	db 46, BUTTERFREE
+	db 46, BEEDRILL
+	db 47, PIKACHU
+	db -1 ; end
+
+	; BUG_CATCHER (21)
+	db "ELLIS@", TRAINERTYPE_NORMAL
+	db 43, KAKUNA
+	db 46, BEEDRILL
+	db 47, BEEDRILL
+	db -1 ; end
+
+	; BUG_CATCHER (22)
+	db "STACEY@", TRAINERTYPE_NORMAL
+	db 45, METAPOD
+	db 45, METAPOD
+	db 45, METAPOD
+	db -1 ; end
+
+	; BUG_CATCHER (23)
+	db "DION@", TRAINERTYPE_NORMAL
+	db 47, ARIADOS
+	db -1 ; end
+
+	; BUG_CATCHER (24)
+	db "DANE@", TRAINERTYPE_NORMAL
+	db 44, BEEDRILL
+	db 47, BUTTERFREE
+	db -1 ; end
+
 
 FisherGroup:
 	; FISHER (1)
