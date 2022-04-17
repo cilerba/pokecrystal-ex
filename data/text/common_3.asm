@@ -1404,13 +1404,6 @@ _BallBoxFullText::
 	cont "can't be used now."
 	prompt
 
-_BallNuzlockeFailText::
-	text "You already"
-	line "encountered a"
-	cont "#MON in this"
-	cont "area."
-	prompt
-
 _ItemUsedText::
 	text "<PLAYER> used the@"
 	text_low

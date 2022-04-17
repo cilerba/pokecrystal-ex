@@ -808,12 +808,6 @@ Text_CharcoalMasterOutro:
 	
 	para "dodge an opponent's"
 	line "attack."
-
-	para "Of course, a"
-	line "great Trainer like"
-
-	para "would know all"
-	line "about that, eh?"
 	done
 
 Text_CharcoalMasterTalkAfter:
