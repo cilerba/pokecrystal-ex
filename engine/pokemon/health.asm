@@ -10,19 +10,10 @@ HealParty:
 	jr z, .next
 
 	push hl
-	ld a, [wOptions2]
-	bit NUZLOCKE, a
-	jr z, .heal
-
-	farcall IsMonFainted
-	ld a, TRUE
-	jr z, .next
-
-.heal
 	call HealPartyMon
+	pop hl
 
 .next
-	pop hl
 	ld a, [wCurPartyMon]
 	inc a
 	ld [wCurPartyMon], a

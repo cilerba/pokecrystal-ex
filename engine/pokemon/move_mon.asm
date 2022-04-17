@@ -1771,14 +1771,9 @@ GivePoke::
 .party
 	farcall SetCaughtData
 .set_caught_data
-	ld a, [wOptions2]
-	bit NUZLOCKE, a
-	jr nz, .nuzlockeSkip
 	farcall GiveANickname_YesNo
 	pop de
 	jr c, .skip_nickname
-.nuzlockeSkip
-	pop de
 	call InitNickname
 
 .skip_nickname

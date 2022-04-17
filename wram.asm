@@ -3248,8 +3248,7 @@ wSafariTimeRemaining:: dw
 
 wPhoneList:: ds CONTACT_LIST_SIZE + 1
 
-	wNuzlockeEncounters:: flag_array NUM_LANDMARKS
-	ds 10
+ds 22
 
 wLuckyNumberShowFlag:: db
 wRepelType:: db

@@ -142,19 +142,12 @@ DrawEnemyHUDBorder:
 	ld a, [wBattleMode]
 	dec a
 	ret nz
-	farcall NuzlockeCaptureCheck
-	jr c, .nuzlocke
 	ld a, [wTempEnemyMonSpecies]
 	dec a
 	call CheckCaughtMon
 	ret z
 	hlcoord 1, 1
 	ld [hl], $5d
-	ret
-
-.nuzlocke
-	hlcoord 1, 1
-	ld [hl], "×"
 	ret
 
 .tiles

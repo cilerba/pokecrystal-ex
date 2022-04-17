@@ -8298,7 +8298,6 @@ FillEnemyMovesFromMoveIndicesBuffer: ; unreferenced
 
 ExitBattle:
 	call .HandleEndOfBattle
-	call NuzlockeFlags
 	call CleanUpBattleRAM
 	ret
 
@@ -8322,28 +8321,6 @@ ExitBattle:
 	predef EvolveAfterBattle
 	farcall GivePokerusAndConvertBerries
 	ret
-
-NuzlockeFlags:
-	ld a, [wBattleMode]
-	cp $1
-	ret nz
-
-	ld a, [wTempEnemyMonSpecies]
-	dec a
-	call CheckCaughtMon
-	ret nz
-
-	ld de, EVENT_DUDE_TALKED_TO_YOU
-    ld b, CHECK_FLAG
-	call EventFlagAction
-	ret z
-
-	farcall TownMap_GetCurrentLandmark
-
-	ld c, a
-	ld hl, wNuzlockeEncounters
-	ld b, SET_FLAG
-	predef_jump SmallFarFlagAction
 
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons

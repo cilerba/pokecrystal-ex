@@ -214,9 +214,6 @@ PokeBallEffect:
 	dec a
 	jp nz, UseBallInTrainerBattle
 
-	call NuzlockeCaptureCheck
-	jp c, Ball_NuzlockFailMessage
-
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
 	jr nz, .room_in_party
@@ -594,10 +591,6 @@ PokeBallEffect:
 	ld [hl], a
 
 .SkipPartyMonFriendBall:
-	ld a, [wOptions2]
-	bit NUZLOCKE, a
-	jr nz, .skipToNameParty
-
 	ld hl, AskGiveNicknameText
 	call PrintText
 
@@ -608,7 +601,6 @@ PokeBallEffect:
 	call YesNoBox
 	jp c, .return_from_capture
 
-.skipToNameParty
 	ld a, [wPartyCount]
 	dec a
 	ld [wCurPartyMon], a
@@ -659,10 +651,6 @@ PokeBallEffect:
 .SkipBoxMonFriendBall:
 	call CloseSRAM
 
-	ld a, [wOptions2]
-	bit NUZLOCKE, a
-	jr nz, .skipToNameBox
-
 	ld hl, AskGiveNicknameText
 	call PrintText
 
@@ -673,7 +661,6 @@ PokeBallEffect:
 	call YesNoBox
 	jr c, .SkipBoxMonNickname
 
-.skipToNameBox
 	xor a
 	ld [wCurPartyMon], a
 	ld a, BOXMON
@@ -750,35 +737,6 @@ PokeBallEffect:
 .used_park_ball
 	ld hl, wParkBallsRemaining
 	dec [hl]
-	ret
-
-NuzlockeCaptureCheck:
-	ld a, [wOptions2]
-	bit NUZLOCKE, a
-	jr z, .false
-
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .false
-
-	farcall BattleCheckEnemyShininess
-	jr c, .false
-
-	farcall TownMap_GetCurrentLandmark
-	ld c, a
-	ld hl, wNuzlockeEncounters
-	ld b, CHECK_FLAG
-	ld d, $0
-	predef SmallFarFlagAction
-	ld a, c
-	and a
-	jr z, .false
-
-	scf
-	ret
-
-.false
-	xor a
 	ret
 
 BallMultiplierFunctionTable:
@@ -1576,10 +1534,6 @@ StatusHealer_Jumptable:
 	dw StatusHealer_ExitMenu
 
 RevivalHerbEffect:
-	ld a, [wOptions2]
-	bit NUZLOCKE, a
-	jp nz, StatusHealer_NoEffect
-
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 	jp c, StatusHealer_ExitMenu
@@ -1598,10 +1552,6 @@ RevivalHerbEffect:
 	jp StatusHealer_Jumptable
 
 ReviveEffect:
-	ld a, [wOptions2]
-	bit NUZLOCKE, a
-	jp nz, StatusHealer_NoEffect
-
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 	jp c, StatusHealer_ExitMenu
@@ -2713,14 +2663,6 @@ LooksBitterMessage:
 	ld hl, ItemLooksBitterText
 	jp PrintText
 
-Ball_NuzlockFailMessage:
-	ld hl, BallNuzlockeFailText
-	call PrintText
-
-	ld a, $2
-	ld [wItemEffectSucceeded], a
-	ret
-
 Ball_BoxIsFullMessage:
 	ld hl, BallBoxFullText
 	call PrintText
@@ -2798,10 +2740,6 @@ ItemCantGetOnText:
 
 BallBoxFullText:
 	text_far _BallBoxFullText
-	text_end
-
-BallNuzlockeFailText:
-	text_far _BallNuzlockeFailText
 	text_end
 
 ItemUsedText:
